@@ -101,10 +101,10 @@ subroutine fhash_tbl_unset(tbl,key,stat)
   integer :: index
   logical :: found
 
-  stat = 0
+  if (present(stat)) stat = 0
 
   if (.not.allocated(tbl%buckets)) then
-    stat = FHASH_EMPTY_TABLE
+    if (present(stat)) stat = FHASH_EMPTY_TABLE
     return
   end if
 
@@ -130,6 +130,7 @@ subroutine fhash_tbl_check_key(tbl,key,stat)
   integer, intent(out) :: stat
 
   integer :: index
+  logical :: found
   type(fhash_container_t), pointer :: data
 
   if (.not.allocated(tbl%buckets)) then
@@ -141,19 +142,11 @@ subroutine fhash_tbl_check_key(tbl,key,stat)
 
   index = modulo(key%hash(),size(tbl%buckets)) + 1
 
-  call sll_find_in(tbl%buckets(index),key,data)
+  call sll_find_in(tbl%buckets(index),key,data,found)
 
-  if (associated(data)) then
+  stat = merge(0,FHASH_KEY_NOT_FOUND,found)
 
-      stat = merge(0,FHASH_INTERNAL_ERROR, data%allocated())
-      return
-
-  else
-
-    stat = FHASH_KEY_NOT_FOUND
-    return
-
-  end if
+  return
 
 end subroutine fhash_tbl_check_key
 
@@ -334,12 +327,17 @@ subroutine fhash_tbl_get_intrinsic_scalar(tbl,key,i32,i64,r32,r64,char,raw,bool,
     return
   end if
 
-  call data%get(i32,i64,r32,r64,char_temp,bool,raw,type_match)
+  if (present(char)) then      ! (Work-around for weird gfortran bug re char dummy)
 
-  if (type_match .and. present(char)) then
-    char = char_temp
-    return
-  end if
+    call data%get(i32,i64,r32,r64,char_temp,bool,raw,type_match)
+
+    if (type_match) char = char_temp
+
+  else
+
+    call data%get(i32,i64,r32,r64,bool=bool,raw=raw,match=type_match)
+
+  end if 
 
   if (.not.type_match) then
     if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
@@ -387,12 +385,17 @@ subroutine fhash_tbl_get_intrinsic_scalar_ptr(tbl,key,i32,i64,r32,r64,char,bool,
     return
   end if
 
-  call data%get_ptr(i32,i64,r32,r64,char_temp,bool,raw,type_match)
+  if (present(char)) then   ! (Work-around for weird gfortran bug re char dummy)
 
-  if (type_match .and. present(char)) then
-    char => char_temp
-    return
-  end if
+    call data%get_ptr(i32,i64,r32,r64,char_temp,bool,raw,type_match)
+
+    if (type_match) char => char_temp
+
+  else
+
+    call data%get_ptr(i32,i64,r32,r64,bool=bool,raw=raw,match=type_match)
+
+  end if 
 
   if (.not.type_match) then
     if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE

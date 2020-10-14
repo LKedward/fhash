@@ -71,6 +71,8 @@ contains
 
     logical, intent(out), optional :: found
     
+    data => NULL()
+
     if (present(found)) found = .false.
 
     if (.not.allocated(node%key)) then
