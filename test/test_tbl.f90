@@ -16,14 +16,17 @@ module test_tbl
     type(unittest_t), allocatable, intent(out) :: testsuite(:)
     
     testsuite = [ &
-        & new_unittest("fhash-tbl-scalars", test_fhash_scalars), &
-        & new_unittest("fhash-tbl-scalar-pointers", test_fhash_scalar_ptrs) &
+        & new_unittest("fhash-tbl-intrinsics", test_fhash_intrinsics), &
+        & new_unittest("fhash-tbl-intrinsic-pointers", test_fhash_intrinsic_ptrs), &
+        & new_unittest("fhash-tbl-value-pointer", test_fhash_value_pointer), &
+        & new_unittest("fhash-tbl-pointer-value", test_fhash_pointer_value), &
+        & new_unittest("fhash-tbl-high-load", test_fhash_high_low) &
         ]
         
   end subroutine collect_tbl
 
-  !>  Test scalar set and retrieve
-  subroutine test_fhash_scalars(error)
+  !>  Test intrinsic set and retrieve
+  subroutine test_fhash_intrinsics(error)
     type(error_t), allocatable, intent(out) :: error
 
     type(fhash_tbl_t) :: tbl
@@ -56,45 +59,45 @@ module test_tbl
     ! Get values
     call tbl%get(key('int32'),get_int32)
     if (get_int32 /= set_int32) then
-        call test_failed(error,'int32 value retrieved does not match value set.')
-        return
+      call test_failed(error,'int32 value retrieved does not match value set.')
+      return
     end if
 
     call tbl%get(key('int64'),get_int64)
     if (get_int64 /= set_int64) then
-        call test_failed(error,'int64 value retrieved does not match value set.')
-        return
+      call test_failed(error,'int64 value retrieved does not match value set.')
+      return
     end if
 
     call tbl%get(key('float'),get_float)
     if (get_float /= set_float) then
-        call test_failed(error,'float value retrieved does not match value set.')
-        return
+      call test_failed(error,'float value retrieved does not match value set.')
+      return
     end if
 
     call tbl%get(key('double'),get_double)
     if (get_double /= set_double) then
-        call test_failed(error,'double value retrieved does not match value set.')
-        return
+      call test_failed(error,'double value retrieved does not match value set.')
+      return
     end if
     
     call tbl%get(key('char'),get_char)
     if (get_char /= set_char) then
-        call test_failed(error,'char value retrieved does not match value set.')
-        return
+      call test_failed(error,'char value retrieved does not match value set.')
+      return
     end if
 
     call tbl%get(key('bool'),get_bool)
     if (get_bool .neqv. set_bool) then
-        call test_failed(error,'logical value retrieved does not match value set.')
-        return
+      call test_failed(error,'logical value retrieved does not match value set.')
+      return
     end if
 
-  end subroutine test_fhash_scalars
+  end subroutine test_fhash_intrinsics
 
 
-  !>  Test scalar pointer set and retrieve
-  subroutine test_fhash_scalar_ptrs(error)
+  !>  Test intrinsic pointer set and retrieve
+  subroutine test_fhash_intrinsic_ptrs(error)
     type(error_t), allocatable, intent(out) :: error
 
     type(fhash_tbl_t) :: tbl
@@ -134,40 +137,175 @@ module test_tbl
     ! Get pointers
     call tbl%get_ptr(key('int32'),get_int32)
     if (.not.associated(get_int32,set_int32)) then
-        call test_failed(error,'int32 pointer retrieved is not associated with variable set.')
-        return
+      call test_failed(error,'int32 pointer retrieved is not associated with variable set.')
+      return
     end if
 
     call tbl%get_ptr(key('int64'),get_int64)
     if (.not.associated(get_int64,set_int64)) then
-        call test_failed(error,'int64 pointer retrieved is not associated with variable set.')
-        return
+      call test_failed(error,'int64 pointer retrieved is not associated with variable set.')
+      return
     end if
 
     call tbl%get_ptr(key('float'),get_float)
     if (.not.associated(get_float,set_float)) then
-        call test_failed(error,'float pointer retrieved is not associated with variable set.')
-        return
+      call test_failed(error,'float pointer retrieved is not associated with variable set.')
+      return
     end if
 
     call tbl%get_ptr(key('double'),get_double)
     if (.not.associated(get_double,set_double)) then
-        call test_failed(error,'double pointer retrieved is not associated with variable set.')
-        return
+      call test_failed(error,'double pointer retrieved is not associated with variable set.')
+      return
     end if
 
     call tbl%get_ptr(key('char'),get_char)
     if (.not.associated(get_char,set_char)) then
-        call test_failed(error,'char pointer retrieved is not associated with variable set.')
-        return
+      call test_failed(error,'char pointer retrieved is not associated with variable set.')
+      return
     end if
 
     call tbl%get_ptr(key('bool'),get_bool)
     if (.not.associated(get_bool,set_bool)) then
-        call test_failed(error,'bool pointer retrieved is not associated with variable set.')
-        return
+      call test_failed(error,'bool pointer retrieved is not associated with variable set.')
+      return
     end if
 
-  end subroutine test_fhash_scalar_ptrs
+  end subroutine test_fhash_intrinsic_ptrs
+
+
+  !>  Store a value and retrieve a pointer
+  subroutine test_fhash_value_pointer(error)
+    type(error_t), allocatable, intent(out) :: error
+
+    type(fhash_tbl_t) :: tbl
+    integer :: stat
+    character(:), pointer :: ptr
+
+    call tbl%set(key('key'),'A string to store')
+
+    call tbl%check_key(key('key'),stat)
+    if (stat /= 0) then
+      call test_failed(error,'Key check failed, error setting key-value.')
+    end if
+
+    call tbl%get_ptr(key('key'),ptr)
+
+    if (.not.associated(ptr)) then
+      call test_failed(error,'Retrieved pointer is not associated.')
+      return
+    end if
+
+    if (ptr /= 'A string to store') then
+      call test_failed(error,'Retrieved pointer has the wrong value.')
+      return
+    end if
+
+  end subroutine test_fhash_value_pointer
+
+
+  !>  Store a pointer and retrieve a value
+  subroutine test_fhash_pointer_value(error)
+    type(error_t), allocatable, intent(out) :: error
+
+    type(fhash_tbl_t) :: tbl
+    integer :: stat
+    character(:), allocatable :: set_char
+    character(:), allocatable :: get_char
+
+    set_char = 'A string to store'
+
+    call tbl%set_ptr(key('key'),set_char)
+
+    call tbl%check_key(key('key'),stat)
+    if (stat /= 0) then
+      call test_failed(error,'Key check failed, error setting key-value.')
+    end if
+
+    ! Mutate value
+    set_char(:) = 'An updated string'
+
+    call tbl%get(key('key'),get_char,stat)
+
+    if (stat /= 0 .OR. .not.allocated(get_char)) then
+      call test_failed(error,'Retrieved pointer is not associated.')
+      return
+    end if
+
+    if (get_char /= set_char) then
+      call test_failed(error,'Retrieved pointer has the wrong value.')
+      return
+    end if
+
+  end subroutine test_fhash_pointer_value
+
+
+  !>  Store lots of values and check stats
+  subroutine test_fhash_high_low(error)
+    type(error_t), allocatable, intent(out) :: error
+
+    type(fhash_tbl_t) :: tbl
+    integer :: i, j, val, stat
+    integer :: num_buckets, num_items, num_collisions, max_depth
+    character(2) :: key_str
+
+    call tbl%allocate(877)
+
+    do i=0,25
+      do j=0,25
+
+        key_str = char(iachar('a')+i)//char(iachar('a')+j)
+        call tbl%set(key(key_str),i*j)
+
+      end do
+    end do
+
+    do i=0,25
+      do j=0,25
+
+        key_str = char(iachar('a')+i)//char(iachar('a')+j)
+        call tbl%get(key(key_str),val,stat)
+
+        if (stat /= 0) then
+          call test_failed(error,'Error while retrieving value for key"'//key_str//'"')
+          return
+        end if
+
+        if (val /= i*j) then
+          call test_failed(error,'Incorrect value retrieved for key"'//key_str//'"')
+          return
+        end if
+
+      end do
+    end do
+
+    call tbl%stats(num_buckets,num_items,num_collisions,max_depth)
+
+    if (num_buckets /= 877) then
+      print *, 'num_buckets: ', num_buckets
+      call test_failed(error,'stats routine returned incorrect value for num_buckets')
+      return
+    end if
+
+    if (num_items /= 26*26) then
+      print *, 'num_items: ', num_items
+      call test_failed(error,'stats routine returned incorrect value for num_items')
+      return
+    end if
+
+    if (num_collisions > 200) then
+      print *, 'num_collisions: ', num_collisions
+      call test_failed(error,'stats routine returned a larger than expected value for num_collisions')
+      return
+    end if
+
+    if (max_depth > 5) then
+      print *, 'max_depth: ', max_depth
+      call test_failed(error,'stats routine returned a larger than expected value for max_depth')
+      return
+    end if
+
+  end subroutine test_fhash_high_low
+
 
 end module test_tbl
