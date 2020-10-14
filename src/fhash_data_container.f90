@@ -136,7 +136,10 @@ contains
         bool = d
         return
       end if
-  
+      
+    class default
+      if (present(type_string)) type_string = 'unknown'
+
     end select
 
   end subroutine fhash_container_get_scalar
@@ -214,13 +217,13 @@ contains
         bool => d
         return
       end if
-  
+        
+    class default
+      if (present(type_string)) type_string = 'unknown'
+      
     end select
 
   end subroutine fhash_container_get_scalar_ptr
-
-
   
-
 
 end module fhash_data_container

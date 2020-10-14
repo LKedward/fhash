@@ -235,7 +235,7 @@ module test_sll
     integer(int32), intent(in), optional :: expect
     logical, intent(in), optional :: should_exist
 
-    logical :: expect_exists
+    logical :: expect_exists, found
     type(fhash_container_t), pointer :: data
 
     if (present(should_exist)) then
@@ -244,14 +244,14 @@ module test_sll
       expect_exists = .true.
     end if
 
-    call sll_find_in(node,fhash_key(key),data)
+    call sll_find_in(node,fhash_key(key),data,found)
 
-    if (associated(data) .neqv. expect_exists) then
+    if (found .neqv. expect_exists) then
       call test_failed(error,'Node data not found for key "'//key//'"')
       return
     end if
 
-    if (present(expect)) then
+    if (found .and. present(expect)) then
       call check_int32_data(error,data,expect)
     end if
 

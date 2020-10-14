@@ -140,7 +140,7 @@ module test_tbl
 
     call tbl%get_ptr(key('int64'),get_int64)
     if (.not.associated(get_int64,set_int64)) then
-        call test_failed(error,'int64  pointer retrieved is not associated with variable set.')
+        call test_failed(error,'int64 pointer retrieved is not associated with variable set.')
         return
     end if
 

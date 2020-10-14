@@ -1,5 +1,6 @@
 module fhash_tbl
   use iso_fortran_env, only: int32, int64, sp=>real32, dp=>real64
+  use fhash_data_container, only: fhash_container
   use fhash_sll
   implicit none
 
@@ -31,6 +32,7 @@ module fhash_tbl
 
     procedure :: allocate => fhash_tbl_allocate
     procedure :: unset => fhash_tbl_unset
+    procedure :: check_key => fhash_tbl_check_key
 
     procedure :: fhash_tbl_set_scalar
     generic :: set => fhash_tbl_set_scalar
@@ -38,11 +40,8 @@ module fhash_tbl
     procedure :: fhash_tbl_set_scalar_ptr
     generic :: set_ptr => fhash_tbl_set_scalar_ptr
 
-    procedure :: fhash_tbl_get_scalar
-    generic :: get_raw => fhash_tbl_get_scalar
-
-    procedure :: fhash_tbl_get_scalar_ptr
-    generic :: get_raw_ptr => fhash_tbl_get_scalar_ptr
+    procedure :: fhash_tbl_get_data
+    generic :: get_raw => fhash_tbl_get_data
 
     procedure :: fhash_tbl_get_int32, fhash_tbl_get_int64
     procedure :: fhash_tbl_get_float, fhash_tbl_get_double
@@ -133,25 +132,12 @@ subroutine fhash_tbl_set_scalar(tbl,key,value,pointer)
   logical, intent(in), optional :: pointer
 
   integer :: index
-  logical :: set_ptr
-  type(fhash_container_t) :: value_container
 
   if (.not.allocated(tbl%buckets)) call fhash_tbl_allocate(tbl)
 
-  if (.not.present(pointer)) then
-    set_ptr = .false.
-  else
-    set_ptr = pointer
-  end if
-  
-  if (set_ptr) then
-    value_container%scalar_ptr => value
-  else
-    value_container%scalar_data = value
-  end if
-
   index = modulo(key%hash(),size(tbl%buckets)) + 1
-  call sll_push_node(tbl%buckets(index),key,value_container)
+
+  call sll_push_node(tbl%buckets(index),key,fhash_container(value,pointer))
 
 end subroutine fhash_tbl_set_scalar
 
@@ -220,8 +206,8 @@ subroutine fhash_tbl_check_key(tbl,key,stat)
 end subroutine fhash_tbl_check_key
 
 
-!> Retrieve a polymorphic scalar value from the hash table
-subroutine fhash_tbl_get_scalar(tbl,key,value,stat)
+!> Retrieve data container from the hash table
+subroutine fhash_tbl_get_data(tbl,key,data,stat)
 
   !> Hash table object
   class(fhash_tbl_t), intent(inout) :: tbl
@@ -230,14 +216,14 @@ subroutine fhash_tbl_get_scalar(tbl,key,value,stat)
   class(fhash_key_t), intent(in) :: key
 
   !> Copy of value retrieved for key
-  class(*), intent(out), allocatable :: value
+  type(fhash_container_t), pointer :: data
 
   !> Status flag. Zero if successful.
   !> Unsuccessful: `FHASH_EMPTY_TABLE` | `FHASH_KEY_NOT_FOUND`
   integer, intent(out), optional :: stat
 
   integer :: index
-  type(fhash_container_t), pointer :: data
+  logical :: found
 
   if (.not.allocated(tbl%buckets)) then
     if (present(stat)) stat = FHASH_EMPTY_TABLE
@@ -248,94 +234,16 @@ subroutine fhash_tbl_get_scalar(tbl,key,value,stat)
 
   index = modulo(key%hash(),size(tbl%buckets)) + 1
 
-  call sll_find_in(tbl%buckets(index),key,data)
+  call sll_find_in(tbl%buckets(index),key,data,found)
 
-  if (associated(data)) then
-
-    if (allocated(data%scalar_data)) then
-      
-      value = data%scalar_data
-      return
-
-    elseif (associated(data%scalar_ptr)) then
-
-      value = data%scalar_ptr
-      return
-
-    else
-
-      if (present(stat)) stat = FHASH_INTERNAL_ERROR
-      return
-
-    end if
-
-  else
+  if (.not.found) then
 
     if (present(stat)) stat = FHASH_KEY_NOT_FOUND
     return
 
   end if
 
-end subroutine fhash_tbl_get_scalar
-
-
-!> Retrieve a polymorphic scalar pointer from the hash table
-subroutine fhash_tbl_get_scalar_ptr(tbl,key,value,stat)
-
-  !> Hash table object
-  class(fhash_tbl_t), intent(inout) :: tbl
-
-  !> Key to retrieve
-  class(fhash_key_t), intent(in) :: key
-
-  !> Pointer to value retrieved for key
-  class(*), intent(out), pointer :: value
-
-  !> Status flag. Zero if successful.
-  !> Unsuccessful: `FHASH_EMPTY_TABLE` | `FHASH_KEY_NOT_FOUND`
-  integer, intent(out), optional :: stat
-
-  integer :: index
-  type(fhash_container_t), pointer :: data
-
-  if (.not.allocated(tbl%buckets)) then
-    if (present(stat)) stat = FHASH_EMPTY_TABLE
-    return
-  end if
-
-  if (present(stat)) stat = 0
-
-  index = modulo(key%hash(),size(tbl%buckets)) + 1
-
-  call sll_find_in(tbl%buckets(index),key,data)
-
-  if (associated(data)) then
-
-    if (allocated(data%scalar_data)) then
-      
-      value => data%scalar_data
-      return
-
-    elseif (associated(data%scalar_ptr)) then
-
-      value => data%scalar_ptr
-      return
-
-    else
-
-      if (present(stat)) stat = FHASH_INTERNAL_ERROR
-      return
-
-    end if
-
-  else
-
-    if (present(stat)) stat = FHASH_KEY_NOT_FOUND
-    return
-
-  end if
-
-end subroutine fhash_tbl_get_scalar_ptr
+end subroutine fhash_tbl_get_data
 
 
 !> Get wrapper to retrieve a scalar intrinsic type value
@@ -360,74 +268,32 @@ subroutine fhash_tbl_get_intrinsic_scalar(tbl,key,i32,i64,r32,r64,char,bool,stat
   !>  `FHASH_FOUND_WRONG_TYPE` | `FHASH_KEY_NOT_FOUND`
   integer, intent(out), optional :: stat
   
+  logical :: type_match
   integer :: local_stat
-  class(*), allocatable :: data
+  type(fhash_container_t), pointer :: data
 
-  call fhash_tbl_get_scalar(tbl,key,data,local_stat)
+  character(:), allocatable :: char_temp
+
+  if (present(stat)) stat = 0
+
+  call fhash_tbl_get_data(tbl,key,data,local_stat)
+
   if (local_stat /= 0) then
     if (present(stat)) stat = local_stat
     return
   end if
 
-  select type(d=>data)
+  call data%get(i32,i64,r32,r64,char_temp,bool,type_match)
 
-  type is (integer(int32))
-    if (present(i32)) then
-      i32 = d
-      return
-    else
-      if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
-      return
-    end if
+  if (type_match .and. present(char)) then
+    char = char_temp
+    return
+  end if
 
-  type is (integer(int64))
-    if (present(i64)) then
-      i64 = d
-      return
-    else
-      if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
-      return
-    end if
-
-  type is (real(sp))
-    if (present(r32)) then
-      r32 = d
-      return
-    else
-      if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
-      return
-    end if
-
-  type is (real(dp))
-    if (present(r64)) then
-      r64 = d
-      return
-    else
-      if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
-      return
-    end if
-
-  type is (character(*))
-    if (present(char)) then
-      char = d
-      return
-    else
-      if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
-      return
-    end if
-
-  type is (logical)
-    if (present(bool)) then
-      bool = d
-      return
-    else
-      if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
-      return
-    end if
-
-  class default
+  if (.not.type_match) then
     if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
-  end select
+    return
+  end if
 
 end subroutine fhash_tbl_get_intrinsic_scalar
 
@@ -454,74 +320,32 @@ subroutine fhash_tbl_get_intrinsic_scalar_ptr(tbl,key,i32,i64,r32,r64,char,bool,
   !>  `FHASH_FOUND_WRONG_TYPE` | `FHASH_KEY_NOT_FOUND`
   integer, intent(out), optional :: stat
   
+  logical :: type_match
   integer :: local_stat
-  class(*), pointer :: data
+  type(fhash_container_t), pointer :: data
 
-  call fhash_tbl_get_scalar_ptr(tbl,key,data,local_stat)
+  character(:), pointer :: char_temp
+
+  if (present(stat)) stat = 0
+
+  call fhash_tbl_get_data(tbl,key,data,local_stat)
+
   if (local_stat /= 0) then
     if (present(stat)) stat = local_stat
     return
   end if
 
-  select type(d=>data)
+  call data%get_ptr(i32,i64,r32,r64,char_temp,bool,type_match)
 
-  type is (integer(int32))
-    if (present(i32)) then
-      i32 => d
-      return
-    else
-      if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
-      return
-    end if
+  if (type_match .and. present(char)) then
+    char => char_temp
+    return
+  end if
 
-  type is (integer(int64))
-    if (present(i64)) then
-      i64 => d
-      return
-    else
-      if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
-      return
-    end if
-
-  type is (real(sp))
-    if (present(r32)) then
-      r32 => d
-      return
-    else
-      if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
-      return
-    end if
-
-  type is (real(dp))
-    if (present(r64)) then
-      r64 => d
-      return
-    else
-      if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
-      return
-    end if
-
-  type is (character(*))
-    if (present(char)) then
-      char => d
-      return
-    else
-      if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
-      return
-    end if
-
-  type is (logical)
-    if (present(bool)) then
-      bool => d
-      return
-    else
-      if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
-      return
-    end if
-
-  class default
+  if (.not.type_match) then
     if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
-  end select
+    return
+  end if
 
 end subroutine fhash_tbl_get_intrinsic_scalar_ptr
 

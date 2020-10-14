@@ -57,7 +57,7 @@ contains
   !> Search for a node with a specific key.
   !> Returns a pointer to the 'data' component of the corresponding node.
   !> Pointer is not associated if node cannot be found
-  recursive subroutine sll_find_in(node,key,found)
+  recursive subroutine sll_find_in(node,key,data,found)
 
     !> Node to search in
     type(fhash_node_t), intent(in), target :: node
@@ -67,22 +67,25 @@ contains
 
     !> Pointer to value container if found.
     !> (Unassociated if the key is not found in node)
-    type(fhash_container_t), pointer, intent(out) :: found
+    type(fhash_container_t), pointer, intent(out) :: data
 
-    found => NULL()
+    logical, intent(out), optional :: found
     
+    if (present(found)) found = .false.
+
     if (.not.allocated(node%key)) then
 
       return
 
     else if (node%key == key) then
 
-      found => node%value
+      if (present(found)) found = .true.
+      data => node%value
       return
 
     else if (associated(node%next)) then
 
-      call sll_find_in(node%next,key,found) 
+      call sll_find_in(node%next,key,data,found) 
       
     end if
 
