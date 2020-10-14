@@ -33,31 +33,33 @@ module fhash_tbl
     procedure :: allocate => fhash_tbl_allocate
     procedure :: unset => fhash_tbl_unset
     procedure :: check_key => fhash_tbl_check_key
-
+    procedure :: stats => fhash_tbl_stats
+    
     procedure :: fhash_tbl_set_scalar
     generic :: set => fhash_tbl_set_scalar
 
     procedure :: fhash_tbl_set_scalar_ptr
     generic :: set_ptr => fhash_tbl_set_scalar_ptr
 
-    procedure :: fhash_tbl_get_data
-    generic :: get_raw => fhash_tbl_get_data
-
     procedure :: fhash_tbl_get_int32, fhash_tbl_get_int64
     procedure :: fhash_tbl_get_float, fhash_tbl_get_double
     procedure :: fhash_tbl_get_char,fhash_tbl_get_logical
+    procedure :: fhash_tbl_get_data,fhash_tbl_get_raw
 
     generic :: get => fhash_tbl_get_int32, fhash_tbl_get_int64
     generic :: get => fhash_tbl_get_float, fhash_tbl_get_double
     generic :: get => fhash_tbl_get_char, fhash_tbl_get_logical
+    generic :: get => fhash_tbl_get_data, fhash_tbl_get_raw
 
     procedure :: fhash_tbl_get_int32_ptr, fhash_tbl_get_int64_ptr
     procedure :: fhash_tbl_get_float_ptr, fhash_tbl_get_double_ptr
     procedure :: fhash_tbl_get_char_ptr,fhash_tbl_get_logical_ptr
+    procedure :: fhash_tbl_get_raw_ptr
 
     generic :: get_ptr => fhash_tbl_get_int32_ptr, fhash_tbl_get_int64_ptr
     generic :: get_ptr => fhash_tbl_get_float_ptr, fhash_tbl_get_double_ptr
     generic :: get_ptr => fhash_tbl_get_char_ptr, fhash_tbl_get_logical_ptr
+    generic :: get_ptr => fhash_tbl_get_raw_ptr
 
   end type fhash_tbl_t
   
@@ -114,6 +116,97 @@ subroutine fhash_tbl_unset(tbl,key,stat)
 end subroutine fhash_tbl_unset
 
 
+!> Check if key exists in table
+subroutine fhash_tbl_check_key(tbl,key,stat)
+
+  !> Hash table object
+  class(fhash_tbl_t), intent(inout) :: tbl
+
+  !> Key to retrieve
+  class(fhash_key_t), intent(in) :: key
+
+  !> Status flag. Zero if key is found.
+  !> Unsuccessful: `FHASH_EMPTY_TABLE` | `FHASH_KEY_NOT_FOUND`
+  integer, intent(out) :: stat
+
+  integer :: index
+  type(fhash_container_t), pointer :: data
+
+  if (.not.allocated(tbl%buckets)) then
+    stat = FHASH_EMPTY_TABLE
+    return
+  end if
+
+  stat = 0
+
+  index = modulo(key%hash(),size(tbl%buckets)) + 1
+
+  call sll_find_in(tbl%buckets(index),key,data)
+
+  if (associated(data)) then
+
+      stat = merge(0,FHASH_INTERNAL_ERROR, data%allocated())
+      return
+
+  else
+
+    stat = FHASH_KEY_NOT_FOUND
+    return
+
+  end if
+
+end subroutine fhash_tbl_check_key
+
+
+!> Get stats about the hash table
+subroutine fhash_tbl_stats(tbl,num_buckets,num_items,num_collisions,max_depth)
+
+  !> Hash table object
+  class(fhash_tbl_t), intent(inout) :: tbl
+
+  !> Number of buckets allocated in table
+  integer, intent(out), optional :: num_buckets
+
+  !> Number of key-value pairs stored in table
+  integer, intent(out), optional :: num_items
+
+  !> Number of hash collisions
+  integer, intent(out), optional :: num_collisions
+
+  !> Maximum depth of bucket in table
+  integer, intent(out), optional :: max_depth
+
+  integer :: i, depth
+
+  if (.not.allocated(tbl%buckets)) then
+    if (present(num_buckets)) num_buckets = 0
+    return
+  end if
+
+  if (present(num_buckets)) then
+    num_buckets = size(tbl%buckets)
+  end if
+
+  if (present(num_items)) num_items = 0
+  if (present(num_collisions)) num_collisions = 0
+  if (present(max_depth)) max_depth = -1*huge(max_depth)
+
+  do i=1,size(tbl%buckets)
+    
+    depth = node_depth(tbl%buckets(i))
+    
+    if (present(num_items)) num_items = num_items + depth
+    
+    if (present(num_collisions)) num_collisions = num_collisions + &
+                                          merge(depth-1,0,depth > 1)
+
+    if (present(max_depth)) max_depth = max(max_depth,depth)
+    
+  end do
+
+end subroutine fhash_tbl_stats
+
+
 !> Set/update a polymorphic scalar value in the table
 !>
 !> `tbl` is allocated with default size if not already allocated
@@ -161,50 +254,6 @@ subroutine fhash_tbl_set_scalar_ptr(tbl,key,value)
 end subroutine fhash_tbl_set_scalar_ptr
 
 
-!> Check if key exists in table
-subroutine fhash_tbl_check_key(tbl,key,stat)
-
-  !> Hash table object
-  class(fhash_tbl_t), intent(inout) :: tbl
-
-  !> Key to retrieve
-  class(fhash_key_t), intent(in) :: key
-
-  !> Status flag. Zero if key is found.
-  !> Unsuccessful: `FHASH_EMPTY_TABLE` | `FHASH_KEY_NOT_FOUND`
-  integer, intent(out) :: stat
-
-  integer :: index
-  type(fhash_container_t), pointer :: data
-
-  if (.not.allocated(tbl%buckets)) then
-    stat = FHASH_EMPTY_TABLE
-    return
-  end if
-
-  stat = 0
-
-  index = modulo(key%hash(),size(tbl%buckets)) + 1
-
-  call sll_find_in(tbl%buckets(index),key,data)
-
-  if (associated(data)) then
-
-      stat = merge(0,FHASH_INTERNAL_ERROR, &
-                    allocated(data%scalar_data) .OR. &
-                    associated(data%scalar_ptr))
-
-      return
-
-  else
-
-    stat = FHASH_KEY_NOT_FOUND
-    return
-
-  end if
-
-end subroutine fhash_tbl_check_key
-
 
 !> Retrieve data container from the hash table
 subroutine fhash_tbl_get_data(tbl,key,data,stat)
@@ -246,8 +295,9 @@ subroutine fhash_tbl_get_data(tbl,key,data,stat)
 end subroutine fhash_tbl_get_data
 
 
+
 !> Get wrapper to retrieve a scalar intrinsic type value
-subroutine fhash_tbl_get_intrinsic_scalar(tbl,key,i32,i64,r32,r64,char,bool,stat)
+subroutine fhash_tbl_get_intrinsic_scalar(tbl,key,i32,i64,r32,r64,char,raw,bool,stat)
 
   !> Hash table object
   class(fhash_tbl_t), intent(inout) :: tbl
@@ -262,6 +312,7 @@ subroutine fhash_tbl_get_intrinsic_scalar(tbl,key,i32,i64,r32,r64,char,bool,stat
   real(dp), intent(out), optional :: r64
   character(:), allocatable, intent(out), optional :: char
   logical, intent(out), optional :: bool
+  class(*), allocatable, intent(out), optional :: raw
 
   !> Status flag. Zero if successful.
   !> Unsuccessful: `FHASH_EMPTY_TABLE` | 
@@ -283,7 +334,7 @@ subroutine fhash_tbl_get_intrinsic_scalar(tbl,key,i32,i64,r32,r64,char,bool,stat
     return
   end if
 
-  call data%get(i32,i64,r32,r64,char_temp,bool,type_match)
+  call data%get(i32,i64,r32,r64,char_temp,bool,raw,type_match)
 
   if (type_match .and. present(char)) then
     char = char_temp
@@ -299,7 +350,7 @@ end subroutine fhash_tbl_get_intrinsic_scalar
 
 
 !> Get wrapper to retrieve a scalar intrinsic type pointer
-subroutine fhash_tbl_get_intrinsic_scalar_ptr(tbl,key,i32,i64,r32,r64,char,bool,stat)
+subroutine fhash_tbl_get_intrinsic_scalar_ptr(tbl,key,i32,i64,r32,r64,char,bool,raw,stat)
 
   !> Hash table object
   class(fhash_tbl_t), intent(inout) :: tbl
@@ -314,6 +365,7 @@ subroutine fhash_tbl_get_intrinsic_scalar_ptr(tbl,key,i32,i64,r32,r64,char,bool,
   real(dp), pointer, intent(out), optional :: r64
   character(:), pointer, intent(out), optional :: char
   logical, pointer, intent(out), optional :: bool
+  class(*), pointer, intent(out), optional :: raw
 
   !> Status flag. Zero if successful.
   !> Unsuccessful: `FHASH_EMPTY_TABLE` | 
@@ -335,7 +387,7 @@ subroutine fhash_tbl_get_intrinsic_scalar_ptr(tbl,key,i32,i64,r32,r64,char,bool,
     return
   end if
 
-  call data%get_ptr(i32,i64,r32,r64,char_temp,bool,type_match)
+  call data%get_ptr(i32,i64,r32,r64,char_temp,bool,raw,type_match)
 
   if (type_match .and. present(char)) then
     char => char_temp
@@ -422,6 +474,17 @@ subroutine fhash_tbl_get_logical(tbl,key,value,stat)
 end subroutine fhash_tbl_get_logical
 
 
+!> Get wrapper to directly retrieve underlying polymorhpic scalar value
+subroutine fhash_tbl_get_raw(tbl,key,value,stat)
+  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_key_t), intent(in) :: key           !! Key to retrieve
+  class(*), allocatable, intent(out) :: value     !! Output value
+  integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
+  
+  call fhash_tbl_get_intrinsic_scalar(tbl,key,raw=value,stat=stat)
+
+end subroutine fhash_tbl_get_raw
+
 
 !> Get wrapper to directly retrieve a scalar int32 value
 subroutine fhash_tbl_get_int32_ptr(tbl,key,value,stat)
@@ -493,6 +556,18 @@ subroutine fhash_tbl_get_logical_ptr(tbl,key,value,stat)
   call fhash_tbl_get_intrinsic_scalar_ptr(tbl,key,bool=value,stat=stat)
 
 end subroutine fhash_tbl_get_logical_ptr
+
+
+!> Get wrapper to directly retrieve underlying polymorhpic scalar value
+subroutine fhash_tbl_get_raw_ptr(tbl,key,value,stat)
+  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_key_t), intent(in) :: key           !! Key to retrieve
+  class(*), pointer, intent(out) :: value                   !! Output value
+  integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
+  
+  call fhash_tbl_get_intrinsic_scalar_ptr(tbl,key,raw=value,stat=stat)
+
+end subroutine fhash_tbl_get_raw_ptr
 
 
 end module fhash_tbl

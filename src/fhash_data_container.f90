@@ -65,7 +65,7 @@ contains
 
 
   !> Helper to return container value as intrinsic type
-  subroutine fhash_container_get_scalar(container,i32,i64,r32,r64,char,bool,match,type_string)
+  subroutine fhash_container_get_scalar(container,i32,i64,r32,r64,char,bool,raw,match,type_string)
     class(fhash_container_t), intent(in), target :: container
     integer(int32), intent(out), optional :: i32
     integer(int64), intent(out), optional :: i64
@@ -73,6 +73,7 @@ contains
     real(dp), intent(out), optional :: r64
     character(:), allocatable, intent(out), optional :: char
     logical, intent(out), optional :: bool
+    class(*), allocatable, intent(out), optional :: raw
     logical, intent(out), optional :: match
     character(:), allocatable, intent(out), optional :: type_string
     
@@ -86,6 +87,10 @@ contains
       data => container%scalar_data
     else
       data => container%scalar_ptr
+    end if
+
+    if (present(raw)) then
+      raw = data
     end if
 
     select type(d=>data)
@@ -146,7 +151,7 @@ contains
 
 
   !> Helper to return pointer to container value as intrinsic type
-  subroutine fhash_container_get_scalar_ptr(container,i32,i64,r32,r64,char,bool,match,type_string)
+  subroutine fhash_container_get_scalar_ptr(container,i32,i64,r32,r64,char,bool,raw,match,type_string)
     class(fhash_container_t), intent(in), target :: container
     integer(int32), pointer, intent(out), optional :: i32
     integer(int64), pointer, intent(out), optional :: i64
@@ -154,6 +159,7 @@ contains
     real(dp), pointer, intent(out), optional :: r64
     character(:), pointer, intent(out), optional :: char
     logical, pointer, intent(out), optional :: bool
+    class(*), pointer, intent(out), optional :: raw
     logical, intent(out), optional :: match
     character(:), allocatable, intent(out), optional :: type_string
     
@@ -167,6 +173,10 @@ contains
       data => container%scalar_data
     else
       data => container%scalar_ptr
+    end if
+
+    if (present(raw)) then
+      raw => data
     end if
 
     select type(d=>data)
@@ -220,7 +230,7 @@ contains
         
     class default
       if (present(type_string)) type_string = 'unknown'
-      
+
     end select
 
   end subroutine fhash_container_get_scalar_ptr
