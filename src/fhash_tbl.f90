@@ -52,6 +52,14 @@ module fhash_tbl
     generic :: get => fhash_tbl_get_float, fhash_tbl_get_double
     generic :: get => fhash_tbl_get_char, fhash_tbl_get_logical
 
+    procedure :: fhash_tbl_get_int32_ptr, fhash_tbl_get_int64_ptr
+    procedure :: fhash_tbl_get_float_ptr, fhash_tbl_get_double_ptr
+    procedure :: fhash_tbl_get_char_ptr,fhash_tbl_get_logical_ptr
+
+    generic :: get_ptr => fhash_tbl_get_int32_ptr, fhash_tbl_get_int64_ptr
+    generic :: get_ptr => fhash_tbl_get_float_ptr, fhash_tbl_get_double_ptr
+    generic :: get_ptr => fhash_tbl_get_char_ptr, fhash_tbl_get_logical_ptr
+
   end type fhash_tbl_t
   
 contains
@@ -177,7 +185,7 @@ subroutine fhash_tbl_check_key(tbl,key,stat)
   class(fhash_key_t), intent(in) :: key
 
   !> Status flag. Zero if key is found.
-  !> Unsuccessful: `FHASH_EMPTY_TABLE` | `FHASH_FOUND_WRONG_DIMENSION` | `FHASH_KEY_NOT_FOUND`
+  !> Unsuccessful: `FHASH_EMPTY_TABLE` | `FHASH_KEY_NOT_FOUND`
   integer, intent(out) :: stat
 
   integer :: index
@@ -225,7 +233,7 @@ subroutine fhash_tbl_get_scalar(tbl,key,value,stat)
   class(*), intent(out), allocatable :: value
 
   !> Status flag. Zero if successful.
-  !> Unsuccessful: `FHASH_EMPTY_TABLE` | `FHASH_FOUND_WRONG_DIMENSION` | `FHASH_KEY_NOT_FOUND`
+  !> Unsuccessful: `FHASH_EMPTY_TABLE` | `FHASH_KEY_NOT_FOUND`
   integer, intent(out), optional :: stat
 
   integer :: index
@@ -284,7 +292,7 @@ subroutine fhash_tbl_get_scalar_ptr(tbl,key,value,stat)
   class(*), intent(out), pointer :: value
 
   !> Status flag. Zero if successful.
-  !> Unsuccessful: `FHASH_EMPTY_TABLE` | `FHASH_FOUND_WRONG_DIMENSION` | `FHASH_KEY_NOT_FOUND`
+  !> Unsuccessful: `FHASH_EMPTY_TABLE` | `FHASH_KEY_NOT_FOUND`
   integer, intent(out), optional :: stat
 
   integer :: index
@@ -331,7 +339,7 @@ end subroutine fhash_tbl_get_scalar_ptr
 
 
 !> Get wrapper to retrieve a scalar intrinsic type value
-subroutine fhash_tbl_get_scalar_intrinsic(tbl,key,i32,i64,r32,r64,char,bool,stat)
+subroutine fhash_tbl_get_intrinsic_scalar(tbl,key,i32,i64,r32,r64,char,bool,stat)
 
   !> Hash table object
   class(fhash_tbl_t), intent(inout) :: tbl
@@ -348,7 +356,7 @@ subroutine fhash_tbl_get_scalar_intrinsic(tbl,key,i32,i64,r32,r64,char,bool,stat
   logical, intent(out), optional :: bool
 
   !> Status flag. Zero if successful.
-  !> Unsuccessful: `FHASH_EMPTY_TABLE` | `FHASH_FOUND_WRONG_DIMENSION`
+  !> Unsuccessful: `FHASH_EMPTY_TABLE` | 
   !>  `FHASH_FOUND_WRONG_TYPE` | `FHASH_KEY_NOT_FOUND`
   integer, intent(out), optional :: stat
   
@@ -421,132 +429,246 @@ subroutine fhash_tbl_get_scalar_intrinsic(tbl,key,i32,i64,r32,r64,char,bool,stat
     if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
   end select
 
-end subroutine fhash_tbl_get_scalar_intrinsic
+end subroutine fhash_tbl_get_intrinsic_scalar
 
+
+!> Get wrapper to retrieve a scalar intrinsic type pointer
+subroutine fhash_tbl_get_intrinsic_scalar_ptr(tbl,key,i32,i64,r32,r64,char,bool,stat)
+
+  !> Hash table object
+  class(fhash_tbl_t), intent(inout) :: tbl
+
+  !> Key to retrieve
+  class(fhash_key_t), intent(in) :: key
+
+  !> Value to retrieve
+  integer(int32), pointer, intent(out), optional :: i32
+  integer(int64), pointer, intent(out), optional :: i64
+  real(sp), pointer, intent(out), optional :: r32
+  real(dp), pointer, intent(out), optional :: r64
+  character(:), pointer, intent(out), optional :: char
+  logical, pointer, intent(out), optional :: bool
+
+  !> Status flag. Zero if successful.
+  !> Unsuccessful: `FHASH_EMPTY_TABLE` | 
+  !>  `FHASH_FOUND_WRONG_TYPE` | `FHASH_KEY_NOT_FOUND`
+  integer, intent(out), optional :: stat
+  
+  integer :: local_stat
+  class(*), pointer :: data
+
+  call fhash_tbl_get_scalar_ptr(tbl,key,data,local_stat)
+  if (local_stat /= 0) then
+    if (present(stat)) stat = local_stat
+    return
+  end if
+
+  select type(d=>data)
+
+  type is (integer(int32))
+    if (present(i32)) then
+      i32 => d
+      return
+    else
+      if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
+      return
+    end if
+
+  type is (integer(int64))
+    if (present(i64)) then
+      i64 => d
+      return
+    else
+      if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
+      return
+    end if
+
+  type is (real(sp))
+    if (present(r32)) then
+      r32 => d
+      return
+    else
+      if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
+      return
+    end if
+
+  type is (real(dp))
+    if (present(r64)) then
+      r64 => d
+      return
+    else
+      if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
+      return
+    end if
+
+  type is (character(*))
+    if (present(char)) then
+      char => d
+      return
+    else
+      if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
+      return
+    end if
+
+  type is (logical)
+    if (present(bool)) then
+      bool => d
+      return
+    else
+      if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
+      return
+    end if
+
+  class default
+    if (present(stat)) stat = FHASH_FOUND_WRONG_TYPE
+  end select
+
+end subroutine fhash_tbl_get_intrinsic_scalar_ptr
 
 
 !> Get wrapper to directly retrieve a scalar int32 value
 subroutine fhash_tbl_get_int32(tbl,key,value,stat)
   class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
   class(fhash_key_t), intent(in) :: key           !! Key to retrieve
-  integer(int32), intent(out) :: value            !! Retrieved value
+  integer(int32), intent(out) :: value            !! Output value
   integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
 
-  call fhash_tbl_get_scalar_intrinsic(tbl,key,i32=value,stat=stat)
+  call fhash_tbl_get_intrinsic_scalar(tbl,key,i32=value,stat=stat)
 
 end subroutine fhash_tbl_get_int32
 
 
 !> Get wrapper to directly retrieve a scalar int64 value
 subroutine fhash_tbl_get_int64(tbl,key,value,stat)
+  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_key_t), intent(in) :: key           !! Key to retrieve
+  integer(int64), intent(out) :: value            !! Output value
+  integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
 
-  !> Hash table object
-  class(fhash_tbl_t), intent(inout) :: tbl
-
-  !> Key to retrieve
-  class(fhash_key_t), intent(in) :: key
-
-  !> Value to retrieve
-  integer(int64), intent(out) :: value
-
-  !> Status flag. Zero if successful.
-  !> Unsuccessful: `FHASH_EMPTY_TABLE` | `FHASH_FOUND_WRONG_DIMENSION`
-  !>  `FHASH_FOUND_WRONG_TYPE` | `FHASH_KEY_NOT_FOUND`
-  integer, intent(out), optional :: stat
-
-  call fhash_tbl_get_scalar_intrinsic(tbl,key,i64=value,stat=stat)
+  call fhash_tbl_get_intrinsic_scalar(tbl,key,i64=value,stat=stat)
 
 end subroutine fhash_tbl_get_int64
 
 
 !> Get wrapper to directly retrieve a scalar float value
 subroutine fhash_tbl_get_float(tbl,key,value,stat)
+  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_key_t), intent(in) :: key           !! Key to retrieve
+  real(sp), intent(out) :: value                  !! Output value
+  integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
 
-  !> Hash table object
-  class(fhash_tbl_t), intent(inout) :: tbl
-
-  !> Key to retrieve
-  class(fhash_key_t), intent(in) :: key
-
-  !> Value to retrieve
-  real(sp), intent(out) :: value
-
-  !> Status flag. Zero if successful.
-  !> Unsuccessful: `FHASH_EMPTY_TABLE` | `FHASH_FOUND_WRONG_DIMENSION`
-  !>  `FHASH_FOUND_WRONG_TYPE` | `FHASH_KEY_NOT_FOUND`
-  integer, intent(out), optional :: stat
-
-  class(*), allocatable :: data
-
-  call fhash_tbl_get_scalar_intrinsic(tbl,key,r32=value,stat=stat)
+  call fhash_tbl_get_intrinsic_scalar(tbl,key,r32=value,stat=stat)
 
 end subroutine fhash_tbl_get_float
 
 
 !> Get wrapper to directly retrieve a scalar double value
 subroutine fhash_tbl_get_double(tbl,key,value,stat)
+  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_key_t), intent(in) :: key           !! Key to retrieve
+  real(dp), intent(out) :: value                  !! Output value
+  integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
 
-  !> Hash table object
-  class(fhash_tbl_t), intent(inout) :: tbl
-
-  !> Key to retrieve
-  class(fhash_key_t), intent(in) :: key
-
-  !> Value to retrieve
-  real(dp), intent(out) :: value
-
-  !> Status flag. Zero if successful.
-  !> Unsuccessful: `FHASH_EMPTY_TABLE` | `FHASH_FOUND_WRONG_DIMENSION`
-  !>  `FHASH_FOUND_WRONG_TYPE` | `FHASH_KEY_NOT_FOUND`
-  integer, intent(out), optional :: stat
-
-  call fhash_tbl_get_scalar_intrinsic(tbl,key,r64=value,stat=stat)
+  call fhash_tbl_get_intrinsic_scalar(tbl,key,r64=value,stat=stat)
 
 end subroutine fhash_tbl_get_double
 
 
 !> Get wrapper to directly retrieve a scalar character value
 subroutine fhash_tbl_get_char(tbl,key,value,stat)
+  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_key_t), intent(in) :: key           !! Key to retrieve
+  character(:), allocatable, intent(out) :: value !! Output value
+  integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
 
-  !> Hash table object
-  class(fhash_tbl_t), intent(inout) :: tbl
-
-  !> Key to retrieve
-  class(fhash_key_t), intent(in) :: key
-
-  !> Value to retrieve
-  character(:), allocatable, intent(out) :: value
-
-  !> Status flag. Zero if successful.
-  !> Unsuccessful: `FHASH_EMPTY_TABLE` | `FHASH_FOUND_WRONG_DIMENSION`
-  !>  `FHASH_FOUND_WRONG_TYPE` | `FHASH_KEY_NOT_FOUND`
-  integer, intent(out), optional :: stat
-
-  call fhash_tbl_get_scalar_intrinsic(tbl,key,char=value,stat=stat)
+  call fhash_tbl_get_intrinsic_scalar(tbl,key,char=value,stat=stat)
 
 end subroutine fhash_tbl_get_char
 
 
 !> Get wrapper to directly retrieve a scalar logical value
 subroutine fhash_tbl_get_logical(tbl,key,value,stat)
-
-  !> Hash table object
-  class(fhash_tbl_t), intent(inout) :: tbl
-
-  !> Key to retrieve
-  class(fhash_key_t), intent(in) :: key
-
-  !> Value to retrieve
-  logical, intent(out) :: value
-
-  !> Status flag. Zero if successful.
-  !> Unsuccessful: `FHASH_EMPTY_TABLE` | `FHASH_FOUND_WRONG_DIMENSION`
-  !>  `FHASH_FOUND_WRONG_TYPE` | `FHASH_KEY_NOT_FOUND`
-  integer, intent(out), optional :: stat
+  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_key_t), intent(in) :: key           !! Key to retrieve
+  logical, intent(out) :: value                   !! Output value
+  integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
   
-  call fhash_tbl_get_scalar_intrinsic(tbl,key,bool=value,stat=stat)
+  call fhash_tbl_get_intrinsic_scalar(tbl,key,bool=value,stat=stat)
 
 end subroutine fhash_tbl_get_logical
+
+
+
+!> Get wrapper to directly retrieve a scalar int32 value
+subroutine fhash_tbl_get_int32_ptr(tbl,key,value,stat)
+  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_key_t), intent(in) :: key           !! Key to retrieve
+  integer(int32), pointer, intent(out) :: value   !! Output value pointer
+  integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
+
+  call fhash_tbl_get_intrinsic_scalar_ptr(tbl,key,i32=value,stat=stat)
+
+end subroutine fhash_tbl_get_int32_ptr
+
+
+!> Get wrapper to directly retrieve a scalar int64 value
+subroutine fhash_tbl_get_int64_ptr(tbl,key,value,stat)
+  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_key_t), intent(in) :: key           !! Key to retrieve
+  integer(int64), pointer, intent(out) :: value   !! Output value pointer
+  integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
+
+  call fhash_tbl_get_intrinsic_scalar_ptr(tbl,key,i64=value,stat=stat)
+
+end subroutine fhash_tbl_get_int64_ptr
+
+
+!> Get wrapper to directly retrieve a scalar float value
+subroutine fhash_tbl_get_float_ptr(tbl,key,value,stat)
+  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_key_t), intent(in) :: key           !! Key to retrieve
+  real(sp), pointer, intent(out) :: value         !! Output value pointer
+  integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
+
+  call fhash_tbl_get_intrinsic_scalar_ptr(tbl,key,r32=value,stat=stat)
+
+end subroutine fhash_tbl_get_float_ptr
+
+
+!> Get wrapper to directly retrieve a scalar double value
+subroutine fhash_tbl_get_double_ptr(tbl,key,value,stat)
+  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_key_t), intent(in) :: key           !! Key to retrieve
+  real(dp), pointer, intent(out) :: value         !! Output value pointer
+  integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
+
+  call fhash_tbl_get_intrinsic_scalar_ptr(tbl,key,r64=value,stat=stat)
+
+end subroutine fhash_tbl_get_double_ptr
+
+
+!> Get wrapper to directly retrieve a scalar character value
+subroutine fhash_tbl_get_char_ptr(tbl,key,value,stat)
+  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_key_t), intent(in) :: key           !! Key to retrieve
+  character(:), pointer, intent(out) :: value     !! Output value pointer
+  integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
+
+  call fhash_tbl_get_intrinsic_scalar_ptr(tbl,key,char=value,stat=stat)
+
+end subroutine fhash_tbl_get_char_ptr
+
+
+!> Get wrapper to directly retrieve a scalar logical value
+subroutine fhash_tbl_get_logical_ptr(tbl,key,value,stat)
+  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_key_t), intent(in) :: key           !! Key to retrieve
+  logical, pointer, intent(out) :: value          !! Output value pointer
+  integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
+  
+  call fhash_tbl_get_intrinsic_scalar_ptr(tbl,key,bool=value,stat=stat)
+
+end subroutine fhash_tbl_get_logical_ptr
 
 
 end module fhash_tbl
