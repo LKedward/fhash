@@ -12,10 +12,10 @@ jobs:
         include:
         - os: ubuntu-latest
           gcc_v: 9
-        - os: macos-latest
-          gcc_v: 9
-        - os: windows-latest
-          gcc_v: 8
+#         - os: macos-latest
+#           gcc_v: 9
+#         - os: windows-latest
+#           gcc_v: 8
 
     env:
       FC: gfortran
@@ -43,6 +43,7 @@ jobs:
       if: contains(matrix.os, 'ubuntu')
       run: |
         curl -L https://github.com/LKedward/fpm/releases/download/dev-trunk-latest/fpm-bootstrap-ubuntu-latest-x86_64-debug-dev-trunk -o fpm
+        sudo chmod u+x fpm
         sudo mv fpm /usr/local/bin/
 
     - name: Install fpm MacOS
