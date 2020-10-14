@@ -44,10 +44,12 @@ contains
       if (pointer) then
         container%scalar_ptr => value
       else
-        container%scalar_data = value
+        if (allocated(container%scalar_data)) deallocate(container%scalar_data)
+        allocate(container%scalar_data, source = value)
       end if
     else
-      container%scalar_data = value
+      if (allocated(container%scalar_data)) deallocate(container%scalar_data)
+      allocate(container%scalar_data, source = value)
     end if
 
   end function fhash_container_scalar
