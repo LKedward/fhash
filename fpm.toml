@@ -1,0 +1,10 @@
+name="fhash"
+
+
+[dev-dependencies]
+errortest = {path = "../errortest"}
+
+#[[test]]
+#name="mytest"
+#source-dir="test"
+
