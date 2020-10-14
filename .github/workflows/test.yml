@@ -43,13 +43,13 @@ jobs:
       if: contains(matrix.os, 'ubuntu')
       run: |
         curl -L https://github.com/LKedward/fpm/releases/download/dev-trunk-latest/fpm-bootstrap-ubuntu-latest-x86_64-debug-dev-trunk -o h-fpm
-        mv h-fpm /usr/local/bin/fpm
+        sudo mv h-fpm /usr/local/bin/
 
     - name: Install fpm MacOS
       if: contains(matrix.os, 'macos')
       run: |
         curl -L https://github.com/LKedward/fpm/releases/download/dev-trunk-latest/fpm-bootstrap-macos-latest-x86_64-debug-dev-trunk -o h-fpm
-        mv h-fpm /usr/local/bin/fpm
+        mv h-fpm /Users/runner/.local/bin/
 
     - name: Install fpm Windows
       if: contains(matrix.os, 'windows')
