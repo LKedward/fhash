@@ -1,0 +1,63 @@
+name: fpm test
+
+on: [push, pull_request]
+
+jobs:
+  Build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        include:
+        - os: ubuntu-latest
+          gcc_v: [9]
+        - os: macos-latest
+          gcc_v: [9]
+        - os: windows-latest
+          gcc_v: [8]
+
+    env:
+      FC: gfortran
+      GCC_V: ${{ matrix.gcc_v }}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v1
+
+    - name: Install GFortran macOS
+      if: contains(matrix.os, 'macos')
+      run: |
+          ln -s /usr/local/bin/gfortran-${GCC_V} /usr/local/bin/gfortran
+          which gfortran-${GCC_V}
+          which gfortran
+
+    - name: Install GFortran Linux
+      if: contains(matrix.os, 'ubuntu')
+      run: |
+        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-${GCC_V} 100 \
+        --slave /usr/bin/gfortran gfortran /usr/bin/gfortran-${GCC_V} \
+        --slave /usr/bingcov gcov /usr/bin/gcov-${GCC_V}
+
+    - name: Install fpm Linux
+      if: contains(matrix.os, 'ubuntu')
+      run: |
+        curl -L https://github.com/LKedward/fpm/releases/download/dev-trunk-latest/fpm-bootstrap-ubuntu-latest-x86_64-debug-dev-trunk -o h-fpm
+        mv h-fpm /usr/local/bin/fpm
+
+    - name: Install fpm MacOS
+      if: contains(matrix.os, 'macos')
+      run: |
+        curl -L https://github.com/LKedward/fpm/releases/download/dev-trunk-latest/fpm-bootstrap-macos-latest-x86_64-debug-dev-trunk -o h-fpm
+        mv h-fpm /usr/local/bin/fpm
+
+    - name: Install fpm Windows
+      if: contains(matrix.os, 'windows')
+      run: |
+        (New-Object System.Net.WebClient).DownloadFile("https://github.com/LKedward/fpm/releases/download/dev-trunk-latest/fpm-bootstrap-windows-latest-x86_64-debug-dev-trunk", "fpm.exe")
+        move fpm.exe "C:\Program Files\Git\usr\bin"
+
+    - name: Run fpm test
+      run: |
+        gfortran --version
+        fpm test
