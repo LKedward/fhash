@@ -20,7 +20,9 @@ module test_tbl
         & new_unittest("fhash-tbl-intrinsic-pointers", test_fhash_intrinsic_ptrs), &
         & new_unittest("fhash-tbl-value-pointer", test_fhash_value_pointer), &
         & new_unittest("fhash-tbl-pointer-value", test_fhash_pointer_value), &
-        & new_unittest("fhash-tbl-high-load", test_fhash_high_low) &
+        & new_unittest("fhash-tbl-invalid-keys", test_fhash_invalid_keys), &
+        & new_unittest("fhash-tbl-unset", test_fhash_unset), &
+        & new_unittest("fhash-tbl-high-load", test_fhash_balanced_load) &
         ]
         
   end subroutine collect_tbl
@@ -187,6 +189,7 @@ module test_tbl
     call tbl%check_key(key('key'),stat)
     if (stat /= 0) then
       call test_failed(error,'Key check failed, error setting key-value.')
+      return
     end if
 
     call tbl%get_ptr(key('key'),ptr)
@@ -220,6 +223,7 @@ module test_tbl
     call tbl%check_key(key('key'),stat)
     if (stat /= 0) then
       call test_failed(error,'Key check failed, error setting key-value.')
+      return
     end if
 
     ! Mutate value
@@ -240,8 +244,78 @@ module test_tbl
   end subroutine test_fhash_pointer_value
 
 
+  !>  Test set and unset
+  subroutine test_fhash_unset(error)
+    use fhash_tbl, only: FHASH_KEY_NOT_FOUND
+    type(error_t), allocatable, intent(out) :: error
+
+    type(fhash_tbl_t) :: tbl
+    integer :: var, stat
+
+    call tbl%set(key('key'),'A string to store')
+
+    call tbl%check_key(key('key'),stat)
+    if (stat /= 0) then
+      call test_failed(error,'Key check failed, error setting key-value.')
+      return
+    end if
+    
+    call tbl%unset(key('key'))
+
+    call tbl%get(key('key'),var,stat)
+    if (stat /= FHASH_KEY_NOT_FOUND) then
+      print *, 'Stat = ',stat
+      call test_failed(error,'Key unset failed, tbl%get: expecting stat = FHASH_KEY_NOT_FOUND')
+      return
+    end if
+
+    call tbl%check_key(key('key'),stat)
+    if (stat /= FHASH_KEY_NOT_FOUND) then
+      print *, 'Stat = ',stat
+      call test_failed(error,'Key unset failed, tbl%check_key: expecting stat = FHASH_KEY_NOT_FOUND')
+      return
+    end if
+
+  end subroutine test_fhash_unset
+
+
+  !>  Try to retrieve invalid keys
+  subroutine test_fhash_invalid_keys(error)
+    use fhash_tbl, only: FHASH_EMPTY_TABLE, FHASH_KEY_NOT_FOUND, FHASH_FOUND_WRONG_TYPE
+    type(error_t), allocatable, intent(out) :: error
+
+    type(fhash_tbl_t) :: tbl
+    integer :: var, stat
+
+    call tbl%get(key('key1'),var,stat)
+
+    if (stat /= FHASH_EMPTY_TABLE) then
+      call test_failed(error,'Wrong stat value returned, expecting FHASH_EMPTY_TABLE.')
+      return
+    end if
+
+    call tbl%set(key('key2'),'A string to store')
+
+    call tbl%get(key('key3'),var,stat)
+
+    if (stat /= FHASH_KEY_NOT_FOUND) then
+      call test_failed(error,'Wrong stat value returned, expecting FHASH_KEY_NOT_FOUND.')
+      return
+    end if
+
+    call tbl%get(key('key2'),var,stat)
+
+    if (stat /= FHASH_FOUND_WRONG_TYPE) then
+      print *, 'stat = ',stat
+      call test_failed(error,'Wrong stat value returned, expecting FHASH_FOUND_WRONG_TYPE.')
+      return
+    end if
+
+  end subroutine test_fhash_invalid_keys
+
+
   !>  Store lots of values and check stats
-  subroutine test_fhash_high_low(error)
+  subroutine test_fhash_balanced_load(error)
     type(error_t), allocatable, intent(out) :: error
 
     type(fhash_tbl_t) :: tbl
@@ -305,7 +379,7 @@ module test_tbl
       return
     end if
 
-  end subroutine test_fhash_high_low
+  end subroutine test_fhash_balanced_load
 
 
 end module test_tbl
