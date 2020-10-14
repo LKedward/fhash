@@ -1,6 +1,6 @@
 program test
   use iso_fortran_env, only: int32, int64
-  use errortest, only: testsuite_t, new_testsuite, run_tests
+  use TestLite, only: testsuite_t, new_testsuite, run_tests
   use test_fnv, only: collect_fnv
   use test_key, only: collect_key
   use test_container, only: collect_container

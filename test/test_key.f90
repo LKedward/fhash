@@ -1,6 +1,6 @@
 module test_key
   use iso_fortran_env, only: int32, int64
-  use errortest_suite, only : new_unittest, unittest_t, error_t, test_failed
+  use TestLite_suite, only : new_unittest, unittest_t, error_t, test_failed
   use fhash_fnv, only: hash_string
   use fhash_key_base
   use fhash_key_char

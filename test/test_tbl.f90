@@ -1,6 +1,6 @@
 module test_tbl
   use iso_fortran_env, only: sp=>real32, dp=>real64, int32, int64
-  use errortest_suite, only : new_unittest, unittest_t, error_t, test_failed
+  use TestLite_suite, only : new_unittest, unittest_t, error_t, test_failed
   use fhash, only: key=>fhash_key, fhash_tbl_t
   implicit none
 

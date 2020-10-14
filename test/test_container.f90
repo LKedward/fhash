@@ -1,6 +1,6 @@
 module test_container
   use iso_fortran_env, only: int32, int64
-  use errortest_suite, only : new_unittest, unittest_t, error_t, test_failed
+  use TestLite_suite, only : new_unittest, unittest_t, error_t, test_failed
   use fhash_data_container
   implicit none
 
