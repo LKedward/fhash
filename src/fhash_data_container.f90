@@ -92,6 +92,7 @@ contains
     end if
 
     if (present(raw)) then
+      if (present(match)) match = .true.
       raw = data
     end if
 
@@ -178,6 +179,7 @@ contains
     end if
 
     if (present(raw)) then
+      if (present(match)) match = .true.
       raw => data
     end if
 

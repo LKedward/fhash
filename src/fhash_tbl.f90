@@ -120,7 +120,7 @@ end subroutine fhash_tbl_unset
 subroutine fhash_tbl_check_key(tbl,key,stat)
 
   !> Hash table object
-  class(fhash_tbl_t), intent(inout) :: tbl
+  class(fhash_tbl_t), intent(in) :: tbl
 
   !> Key to retrieve
   class(fhash_key_t), intent(in) :: key
@@ -155,7 +155,7 @@ end subroutine fhash_tbl_check_key
 subroutine fhash_tbl_stats(tbl,num_buckets,num_items,num_collisions,max_depth)
 
   !> Hash table object
-  class(fhash_tbl_t), intent(inout) :: tbl
+  class(fhash_tbl_t), intent(in) :: tbl
 
   !> Number of buckets allocated in table
   integer, intent(out), optional :: num_buckets
@@ -252,7 +252,7 @@ end subroutine fhash_tbl_set_scalar_ptr
 subroutine fhash_tbl_get_data(tbl,key,data,stat)
 
   !> Hash table object
-  class(fhash_tbl_t), intent(inout) :: tbl
+  class(fhash_tbl_t), intent(in) :: tbl
 
   !> Key to retrieve
   class(fhash_key_t), intent(in) :: key
@@ -293,7 +293,7 @@ end subroutine fhash_tbl_get_data
 subroutine fhash_tbl_get_intrinsic_scalar(tbl,key,i32,i64,r32,r64,char,raw,bool,stat)
 
   !> Hash table object
-  class(fhash_tbl_t), intent(inout) :: tbl
+  class(fhash_tbl_t), intent(in) :: tbl
 
   !> Key to retrieve
   class(fhash_key_t), intent(in) :: key
@@ -351,7 +351,7 @@ end subroutine fhash_tbl_get_intrinsic_scalar
 subroutine fhash_tbl_get_intrinsic_scalar_ptr(tbl,key,i32,i64,r32,r64,char,bool,raw,stat)
 
   !> Hash table object
-  class(fhash_tbl_t), intent(inout) :: tbl
+  class(fhash_tbl_t), intent(in) :: tbl
 
   !> Key to retrieve
   class(fhash_key_t), intent(in) :: key
@@ -407,7 +407,7 @@ end subroutine fhash_tbl_get_intrinsic_scalar_ptr
 
 !> Get wrapper to directly retrieve a scalar int32 value
 subroutine fhash_tbl_get_int32(tbl,key,value,stat)
-  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_tbl_t), intent(in) :: tbl        !! Hash table object
   class(fhash_key_t), intent(in) :: key           !! Key to retrieve
   integer(int32), intent(out) :: value            !! Output value
   integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
@@ -419,7 +419,7 @@ end subroutine fhash_tbl_get_int32
 
 !> Get wrapper to directly retrieve a scalar int64 value
 subroutine fhash_tbl_get_int64(tbl,key,value,stat)
-  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_tbl_t), intent(in) :: tbl        !! Hash table object
   class(fhash_key_t), intent(in) :: key           !! Key to retrieve
   integer(int64), intent(out) :: value            !! Output value
   integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
@@ -431,7 +431,7 @@ end subroutine fhash_tbl_get_int64
 
 !> Get wrapper to directly retrieve a scalar float value
 subroutine fhash_tbl_get_float(tbl,key,value,stat)
-  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_tbl_t), intent(in) :: tbl        !! Hash table object
   class(fhash_key_t), intent(in) :: key           !! Key to retrieve
   real(sp), intent(out) :: value                  !! Output value
   integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
@@ -443,7 +443,7 @@ end subroutine fhash_tbl_get_float
 
 !> Get wrapper to directly retrieve a scalar double value
 subroutine fhash_tbl_get_double(tbl,key,value,stat)
-  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_tbl_t), intent(in) :: tbl        !! Hash table object
   class(fhash_key_t), intent(in) :: key           !! Key to retrieve
   real(dp), intent(out) :: value                  !! Output value
   integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
@@ -455,7 +455,7 @@ end subroutine fhash_tbl_get_double
 
 !> Get wrapper to directly retrieve a scalar character value
 subroutine fhash_tbl_get_char(tbl,key,value,stat)
-  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_tbl_t), intent(in) :: tbl        !! Hash table object
   class(fhash_key_t), intent(in) :: key           !! Key to retrieve
   character(:), allocatable, intent(out) :: value !! Output value
   integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
@@ -467,7 +467,7 @@ end subroutine fhash_tbl_get_char
 
 !> Get wrapper to directly retrieve a scalar logical value
 subroutine fhash_tbl_get_logical(tbl,key,value,stat)
-  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_tbl_t), intent(in) :: tbl        !! Hash table object
   class(fhash_key_t), intent(in) :: key           !! Key to retrieve
   logical, intent(out) :: value                   !! Output value
   integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
@@ -479,7 +479,7 @@ end subroutine fhash_tbl_get_logical
 
 !> Get wrapper to directly retrieve underlying polymorhpic scalar value
 subroutine fhash_tbl_get_raw(tbl,key,value,stat)
-  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_tbl_t), intent(in) :: tbl        !! Hash table object
   class(fhash_key_t), intent(in) :: key           !! Key to retrieve
   class(*), allocatable, intent(out) :: value     !! Output value
   integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
@@ -491,7 +491,7 @@ end subroutine fhash_tbl_get_raw
 
 !> Get wrapper to directly retrieve a scalar int32 value
 subroutine fhash_tbl_get_int32_ptr(tbl,key,value,stat)
-  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_tbl_t), intent(in) :: tbl        !! Hash table object
   class(fhash_key_t), intent(in) :: key           !! Key to retrieve
   integer(int32), pointer, intent(out) :: value   !! Output value pointer
   integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
@@ -503,7 +503,7 @@ end subroutine fhash_tbl_get_int32_ptr
 
 !> Get wrapper to directly retrieve a scalar int64 value
 subroutine fhash_tbl_get_int64_ptr(tbl,key,value,stat)
-  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_tbl_t), intent(in) :: tbl        !! Hash table object
   class(fhash_key_t), intent(in) :: key           !! Key to retrieve
   integer(int64), pointer, intent(out) :: value   !! Output value pointer
   integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
@@ -515,7 +515,7 @@ end subroutine fhash_tbl_get_int64_ptr
 
 !> Get wrapper to directly retrieve a scalar float value
 subroutine fhash_tbl_get_float_ptr(tbl,key,value,stat)
-  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_tbl_t), intent(in) :: tbl        !! Hash table object
   class(fhash_key_t), intent(in) :: key           !! Key to retrieve
   real(sp), pointer, intent(out) :: value         !! Output value pointer
   integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
@@ -527,7 +527,7 @@ end subroutine fhash_tbl_get_float_ptr
 
 !> Get wrapper to directly retrieve a scalar double value
 subroutine fhash_tbl_get_double_ptr(tbl,key,value,stat)
-  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_tbl_t), intent(in) :: tbl        !! Hash table object
   class(fhash_key_t), intent(in) :: key           !! Key to retrieve
   real(dp), pointer, intent(out) :: value         !! Output value pointer
   integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
@@ -539,7 +539,7 @@ end subroutine fhash_tbl_get_double_ptr
 
 !> Get wrapper to directly retrieve a scalar character value
 subroutine fhash_tbl_get_char_ptr(tbl,key,value,stat)
-  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_tbl_t), intent(in) :: tbl        !! Hash table object
   class(fhash_key_t), intent(in) :: key           !! Key to retrieve
   character(:), pointer, intent(out) :: value     !! Output value pointer
   integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
@@ -551,7 +551,7 @@ end subroutine fhash_tbl_get_char_ptr
 
 !> Get wrapper to directly retrieve a scalar logical value
 subroutine fhash_tbl_get_logical_ptr(tbl,key,value,stat)
-  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_tbl_t), intent(in) :: tbl        !! Hash table object
   class(fhash_key_t), intent(in) :: key           !! Key to retrieve
   logical, pointer, intent(out) :: value          !! Output value pointer
   integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
@@ -563,7 +563,7 @@ end subroutine fhash_tbl_get_logical_ptr
 
 !> Get wrapper to directly retrieve underlying polymorhpic scalar value
 subroutine fhash_tbl_get_raw_ptr(tbl,key,value,stat)
-  class(fhash_tbl_t), intent(inout) :: tbl        !! Hash table object
+  class(fhash_tbl_t), intent(in) :: tbl        !! Hash table object
   class(fhash_key_t), intent(in) :: key           !! Key to retrieve
   class(*), pointer, intent(out) :: value                   !! Output value
   integer, intent(out), optional :: stat          !! Status flag. Zero if successful.
