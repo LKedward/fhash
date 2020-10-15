@@ -59,7 +59,10 @@ jobs:
         (New-Object System.Net.WebClient).DownloadFile("https://github.com/LKedward/fpm/releases/download/dev-trunk-latest/fpm-bootstrap-windows-latest-x86_64-debug-dev-trunk", "fpm.exe")
         move fpm.exe "C:\Program Files\Git\usr\bin"
 
-    - name: Run fpm test
+    - name: Run tests (fpm test)
       run: |
         gfortran --version
         fpm test
+
+    - name: Run demo programs (fpm run)
+      run: fpm run

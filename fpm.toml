@@ -1,3 +1,20 @@
 name="fhash"
 
 
+[[executable]]
+source-dir="app/simple_demo"
+main="main.f90"
+name="simple-demo"
+
+
+[[executable]]
+source-dir="app/methods_demo"
+main="main.f90"
+name="methods-demo"
+
+[[executable]]
+source-dir="app/derived_type_demo"
+main="main.f90"
+name="derived-type-demo"
+
+
