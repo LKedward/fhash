@@ -20,6 +20,7 @@ module test_tbl
         & new_unittest("fhash-tbl-intrinsic-pointers", test_fhash_intrinsic_ptrs), &
         & new_unittest("fhash-tbl-value-pointer", test_fhash_value_pointer), &
         & new_unittest("fhash-tbl-pointer-value", test_fhash_pointer_value), &
+        & new_unittest("fhash-tbl-derived-type-value", test_fhash_derived_type_value), &
         & new_unittest("fhash-tbl-invalid-keys", test_fhash_invalid_keys), &
         & new_unittest("fhash-tbl-unset", test_fhash_unset), &
         & new_unittest("fhash-tbl-high-load", test_fhash_balanced_load) &
@@ -277,6 +278,59 @@ module test_tbl
     end if
 
   end subroutine test_fhash_unset
+
+
+  subroutine test_fhash_derived_type_value(error)
+    type(error_t), allocatable, intent(out) :: error
+
+    type string_t
+      character(:), allocatable :: s
+    end type string_t
+    
+    type(fhash_tbl_t) :: tbl
+    type(string_t) :: str1, str2
+    
+    str1%s = 'Hello fhash'
+    call tbl%set(key('key_1'), value=str1)
+    
+    call fhash_get_string(tbl,key('key_1'),str2,error)
+    
+    if (str1%s /= str2%s) then
+      call test_failed(error,'Retrieved derived type does not match value set')
+      return
+    end if
+
+    contains
+    
+    !> Custom getter for string_t type
+    subroutine fhash_get_string(tbl,k,string,error)
+      use fhash, only: fhash_key_t
+      type(fhash_tbl_t), intent(in) :: tbl
+      class(fhash_key_t), intent(in) :: k
+      type(string_t), intent(out) :: string
+      type(error_t), allocatable, intent(out) :: error
+      
+      integer :: stat
+      class(*), allocatable :: data
+      
+      call tbl%get(k,data,stat)
+      
+      if (stat /= 0) then
+        call test_failed(error,'Error while trying to retrieve derived type')
+        return
+      end if 
+
+      select type(d=>data)
+      type is (string_t)
+        string = d
+      class default
+        call test_failed(error,'Retrieved value type does not match expected derived type')
+        return
+      end select
+      
+    end subroutine fhash_get_string
+
+  end subroutine test_fhash_derived_type_value
 
 
   !>  Try to retrieve invalid keys
