@@ -40,7 +40,7 @@ module test_key
     class(fhash_key_t), allocatable :: my_key1
 
     !> Create key from character(*)
-    my_key1 = fhash_key('abc')
+    allocate(my_key1, source = fhash_key('abc'))
 
     !> Check new key
     select type(k=>my_key1)
@@ -123,7 +123,7 @@ module test_key
     class(fhash_key_t), allocatable :: my_key1
 
     !> Create key from scalar int32
-    my_key1 = fhash_key(int([0,1,2,3,4,5],int32))
+    allocate(my_key1, source = fhash_key(int([0,1,2,3,4,5],int32)))
 
     !> Check new key
     select type(k=>my_key1)
@@ -201,7 +201,7 @@ module test_key
     class(fhash_key_t), allocatable :: my_key1
 
     !> Create key from scalar int64
-    my_key1 = fhash_key(int([0,1,2,3,4,5],int64))
+    allocate(my_key1, source = fhash_key(int([0,1,2,3,4,5],int64)))
 
     !> Check new key
     select type(k=>my_key1)
