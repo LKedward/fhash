@@ -74,6 +74,8 @@ module test_sll
       return
     end if
 
+    call sll_clean(node)
+
   end subroutine test_sll_set
 
 
@@ -105,6 +107,8 @@ module test_sll
     call check_node_get_int32(error,node,'key4',should_exist=.false.)
     if (allocated(error)) return
 
+    call sll_clean(node)
+
   end subroutine test_sll_get
 
 
@@ -133,6 +137,8 @@ module test_sll
 
     call check_node_get_int32(error,node,key='key3',expect=3)
     if (allocated(error)) return
+
+    call sll_clean(node)
 
   end subroutine test_sll_update
 
@@ -198,6 +204,8 @@ module test_sll
       call test_failed(error,'Incorrect node depth, expecting 0.')
       return
     end if
+
+    call sll_clean(node)
 
     contains
 

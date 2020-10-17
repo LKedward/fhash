@@ -131,6 +131,7 @@ contains
           ! Replace with next
           next_temp => node%next
           node = next_temp
+          deallocate(next_temp)
           return
         else
           ! No children, just deallocate
@@ -161,6 +162,22 @@ contains
     end if
 
   end subroutine sll_remove
+
+
+  !> Deallocate node components and those of its children
+  recursive subroutine sll_clean(node)
+
+    !> Node to search in
+    type(fhash_node_t), intent(inout) :: node
+
+    if (associated(node%next)) then
+
+      call sll_clean(node%next)
+      deallocate(node%next)
+      
+    end if
+
+  end subroutine sll_clean
 
 
   !> Determine depth of SLL

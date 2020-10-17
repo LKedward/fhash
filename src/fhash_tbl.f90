@@ -61,6 +61,8 @@ module fhash_tbl
     generic :: get_ptr => fhash_tbl_get_char_ptr, fhash_tbl_get_logical_ptr
     generic :: get_ptr => fhash_tbl_get_raw_ptr
 
+    final :: fhash_tbl_cleanup
+
   end type fhash_tbl_t
   
 contains
@@ -82,6 +84,25 @@ subroutine fhash_tbl_allocate(tbl,size)
   end if
 
 end subroutine fhash_tbl_allocate
+
+
+!> Finalizer for fhash_tbl_t
+subroutine fhash_tbl_cleanup(tbl)
+  
+  !> Table object to allocate
+  type(fhash_tbl_t), intent(inout) :: tbl
+
+  integer :: i
+
+  if (.not.allocated(tbl%buckets)) return
+
+  do i=1,size(tbl%buckets)
+
+    call sll_clean(tbl%buckets(i))
+
+  end do
+
+end subroutine fhash_tbl_cleanup
 
 
 !> Unset a value in the table
