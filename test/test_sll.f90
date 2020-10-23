@@ -42,7 +42,7 @@ module test_sll
       return
     end if
 
-    call sll_push_node(node,fhash_key('key'),value=fhash_container(9))
+    call sll_push_node(node,fhash_key('key'),value=9)
 
     if (.not.allocated(node%key)) then
       call test_failed(error,'Key not allocated.')
@@ -60,8 +60,8 @@ module test_sll
     end if
 
     ! Set child nodes
-    call sll_push_node(node,fhash_key('key2'),value=fhash_container(10))
-    call sll_push_node(node,fhash_key('key3'),value=fhash_container(11))
+    call sll_push_node(node,fhash_key('key2'),value=10)
+    call sll_push_node(node,fhash_key('key3'),value=11)
 
     if (.not.associated(node%next) .OR. &
         .not.associated(node%next%next)) then
@@ -86,15 +86,15 @@ module test_sll
     type(fhash_node_t) :: node
 
     ! Set value
-    call sll_push_node(node,fhash_key('key'),value=fhash_container(int(9,int32)))
+    call sll_push_node(node,fhash_key('key'),value=int(9,int32))
 
     ! Get value
     call check_node_get_int32(error,node,'key',expect=9)
     if (allocated(error)) return
 
     ! Set child nodes
-    call sll_push_node(node,fhash_key('key2'),value=fhash_container(10))
-    call sll_push_node(node,fhash_key('key3'),value=fhash_container(11))
+    call sll_push_node(node,fhash_key('key2'),value=10)
+    call sll_push_node(node,fhash_key('key3'),value=11)
     
     ! Check child node get
     call check_node_get_int32(error,node,'key2',expect=10)
@@ -119,14 +119,14 @@ module test_sll
     type(fhash_node_t) :: node
 
     ! Set value
-    call sll_push_node(node,fhash_key('key'),value=fhash_container(int(9,int32)))
-    call sll_push_node(node,fhash_key('key2'),value=fhash_container(10))
-    call sll_push_node(node,fhash_key('key3'),value=fhash_container(11))
+    call sll_push_node(node,fhash_key('key'),value=int(9,int32))
+    call sll_push_node(node,fhash_key('key2'),value=10)
+    call sll_push_node(node,fhash_key('key3'),value=11)
 
     ! Update value
-    call sll_push_node(node,fhash_key('key'),value=fhash_container(int(1,int32)))
-    call sll_push_node(node,fhash_key('key2'),value=fhash_container(int(2,int32)))
-    call sll_push_node(node,fhash_key('key3'),value=fhash_container(int(3,int32)))
+    call sll_push_node(node,fhash_key('key'),value=int(1,int32))
+    call sll_push_node(node,fhash_key('key2'),value=int(2,int32))
+    call sll_push_node(node,fhash_key('key3'),value=int(3,int32))
 
     ! Check updated get value
     call check_node_get_int32(error,node,key='key',expect=1)
@@ -151,10 +151,10 @@ module test_sll
     logical :: found
 
     ! Set value
-    call sll_push_node(node,fhash_key('key'),value=fhash_container(int(9,int32)))
-    call sll_push_node(node,fhash_key('key2'),value=fhash_container(int(10,int32)))
-    call sll_push_node(node,fhash_key('key3'),value=fhash_container(int(11,int32)))
-    call sll_push_node(node,fhash_key('key4'),value=fhash_container(int(12,int32)))
+    call sll_push_node(node,fhash_key('key'),value=int(9,int32))
+    call sll_push_node(node,fhash_key('key2'),value=int(10,int32))
+    call sll_push_node(node,fhash_key('key3'),value=int(11,int32))
+    call sll_push_node(node,fhash_key('key4'),value=int(12,int32))
 
     ! Try to remove non-existent node
     call sll_remove(node,fhash_key('key5'),found)
@@ -261,6 +261,9 @@ module test_sll
 
     if (found .and. present(expect)) then
       call check_int32_data(error,data,expect)
+      if (allocated(error)) then
+        error%message = 'Error while retrieving key "'//key//'"' // new_line('a') // error%message
+      end if
     end if
 
   end subroutine check_node_get_int32
