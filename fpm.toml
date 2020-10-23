@@ -18,3 +18,8 @@ main="main.f90"
 name="derived-type-demo"
 
 
+
+[[executable]]
+source-dir="app/bench"
+main="main.f90"
+name="benchmark"
