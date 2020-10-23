@@ -18,7 +18,7 @@ module fhash_sll
 contains
 
   !> Append node to SLL
-  recursive subroutine sll_push_node(node,key,value)
+  recursive subroutine sll_push_node(node,key,value,pointer)
 
     !> Node to which to add data
     type(fhash_node_t), intent(inout) :: node
@@ -27,13 +27,17 @@ contains
     class(fhash_key_t), intent(in) :: key
 
     !> Value to add
-    type(fhash_container_t), intent(in) :: value
+    class(*), intent(in), target :: value
+
+    !> Store only a point if .true.
+    logical, intent(in), optional :: pointer
+
 
     if (allocated(node%key)) then
         
       if (node%key == key) then
 
-        node%value = value
+        call sll_node_set(node,value,pointer)
         return
 
       end if
@@ -42,16 +46,42 @@ contains
         allocate(node%next)
       end if
 
-      call sll_push_node(node%next,key,value)
+      call sll_push_node(node%next,key,value,pointer)
           
     else
 
       node%key = key
-      node%value = value
+      call sll_node_set(node,value,pointer)
 
     end if
 
   end subroutine sll_push_node
+
+
+  !> Set container value in node
+  !>
+  subroutine sll_node_set(node,value,pointer)
+
+    !> Node to which to add data
+    type(fhash_node_t), intent(inout) :: node
+
+    !> Value to set
+    class(*), intent(in), target :: value
+
+    !> Store only a pointer if .true.
+    logical, intent(in), optional :: pointer
+
+    if (present(pointer)) then
+      if (pointer) then
+        node%value%scalar_ptr => value
+        return
+      end if
+    end if
+
+    if (allocated(node%value%scalar_data)) deallocate(node%value%scalar_data)
+    allocate(node%value%scalar_data, source = value)
+
+  end subroutine sll_node_set
 
 
   !> Search for a node with a specific key.

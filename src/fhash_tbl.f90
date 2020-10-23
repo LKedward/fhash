@@ -244,7 +244,7 @@ subroutine fhash_tbl_set_scalar(tbl,key,value,pointer)
 
   index = modulo(key%hash(),size(tbl%buckets)) + 1
 
-  call sll_push_node(tbl%buckets(index),key,fhash_container(value,pointer))
+  call sll_push_node(tbl%buckets(index),key,value,pointer)
 
 end subroutine fhash_tbl_set_scalar
 
