@@ -1,11 +1,15 @@
 name="fhash"
-
+version="0.1.0"
+license="MIT"
+author="Laurence Kedward"
+maintainer="laurencekedward@gmail.com"
+copyright="Laurence Kedward 2020"
+description="Implements a hash table type with support for generic keys and values."
 
 [[executable]]
 source-dir="app/simple_demo"
 main="main.f90"
 name="simple-demo"
-
 
 [[executable]]
 source-dir="app/methods_demo"
