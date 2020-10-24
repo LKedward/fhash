@@ -3,6 +3,9 @@ __[fpm](https://github.com/fortran-lang/fpm) package implementing a hash table w
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![fpm test](https://github.com/LKedward/fhash/workflows/fpm%20test/badge.svg?branch=master&event=push)](https://github.com/LKedward/fhash/actions)
+[![ford docs](https://img.shields.io/badge/FORD%20API%20Docs-Deployed-green)](https://lkedward.github.io/fhash/)
+
+
 
 ## Simple example: scalar intrinsics
 
@@ -39,3 +42,7 @@ end program fhash_demo1
 - [Using custom derived types as keys](./app/custom_key_demo)
 - Storing and retrieving pointers (*coming soon*)
 
+
+## Full API Documentation
+
+See <https://lkedward.github.io/fhash/>
