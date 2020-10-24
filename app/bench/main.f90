@@ -10,7 +10,7 @@ program fhash_demo
   integer, parameter :: n = 1e7
   real(kind(0.d0)) :: t0, t1
 
-  print *, '# fhash demo program: methods-demo'
+  print *, '# fhash demo program: benchmark'
 
   !> Manually specify number of table buckets
   call tbl%allocate(2*n)
