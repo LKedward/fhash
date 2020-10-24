@@ -55,7 +55,9 @@ contains
     select type(k2=>key2)
     type is (key_string_t)
       
-      do i=1,min(size(key1%value),size(k2%value))
+      if (size(key1%value) /= size(k2%value)) return
+
+      do i=1,size(key1%value)
         if (key1%value(i)%s /= k2%value(i)%s) then
           return
         end if
