@@ -1,4 +1,4 @@
-# fhash (_beta_)
+# fhash
 __[fpm](https://github.com/fortran-lang/fpm) package implementing a hash table with support for generic keys and values.__
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
