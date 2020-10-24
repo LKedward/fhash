@@ -1,5 +1,7 @@
-!> Example module demonstrating how a custom key-type 
-!>  can be made.
+!> Example program demonstrating how a custom key-type 
+!>  can be used.
+!> See the `my_key_type` module for the definition of the
+!>  custom key type.
 !>
 !> See README.md for an explanation
 !>
