@@ -17,9 +17,12 @@ source-dir="app/derived_type_demo"
 main="main.f90"
 name="derived-type-demo"
 
-
-
 [[executable]]
 source-dir="app/bench"
 main="main.f90"
 name="benchmark"
+
+[[executable]]
+source-dir="app/custom_key_demo"
+main="main.f90"
+name="custom-key-demo"
