@@ -41,6 +41,8 @@ jobs:
 
     - name: Install fpm
       uses: lkedward/setup-fpm@v1
+      with:
+        use-bootstrap: true
 
     - name: Run tests (fpm test)
       run: |
