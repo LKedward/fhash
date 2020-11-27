@@ -39,25 +39,10 @@ jobs:
         --slave /usr/bin/gfortran gfortran /usr/bin/gfortran-${GCC_V} \
         --slave /usr/bingcov gcov /usr/bin/gcov-${GCC_V}
 
-    - name: Install fpm Linux
-      if: contains(matrix.os, 'ubuntu')
-      run: |
-        curl -L https://github.com/LKedward/fpm/releases/download/dev-trunk-latest/fpm-bootstrap-ubuntu-latest-x86_64-debug-dev-trunk -o fpm
-        sudo chmod u+x fpm
-        sudo mv fpm /usr/local/bin/
-
-    - name: Install fpm MacOS
-      if: contains(matrix.os, 'macos')
-      run: |
-        curl -L https://github.com/LKedward/fpm/releases/download/dev-trunk-latest/fpm-bootstrap-macos-latest-x86_64-debug-dev-trunk -o fpm
-        sudo chmod u+x fpm
-        sudo mv fpm /usr/local/bin/
-
-    - name: Install fpm Windows
-      if: contains(matrix.os, 'windows')
-      run: |
-        (New-Object System.Net.WebClient).DownloadFile("https://github.com/LKedward/fpm/releases/download/dev-trunk-latest/fpm-bootstrap-windows-latest-x86_64-debug-dev-trunk", "fpm.exe")
-        move fpm.exe "C:\Program Files\Git\usr\bin"
+    - name: Install fpm
+      uses: lkedward/setup-fpm@v1
+      with:
+        use-bootstrap: true
 
     - name: Run tests (fpm test)
       run: |
