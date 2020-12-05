@@ -41,10 +41,10 @@ jobs:
         --slave /usr/bingcov gcov /usr/bin/gcov-${GCC_V}
 
     - name: Install fpm
-      uses: lkedward/setup-fpm@v1
+      uses: lkedward/setup-fpm@v2
       with:
         use-bootstrap: ${{ matrix.bootstrap }}
-        fpm-version: 'v0.1.0'
+        github-token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Run tests (fpm test)
       run: |
