@@ -131,16 +131,16 @@
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/int64_1d.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/char.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/int64_1d.f90.html'>int64_1d.f90</a></li>
+     <li><a href='../sourcefile/char.f90.html'>char.f90</a></li>
     
-     <li><a href='../module/fhash_key_int64_1d.html'>fhash_key_int64_1d</a></li>
+     <li><a href='../module/fhash_key_char.html'>fhash_key_char</a></li>
     
   
      <li class="active">fhash_key</li>
@@ -188,7 +188,7 @@
   <div id="modprocs-0" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../interface/fhash_key.html#moduleprocedure-key_from_int64_1d">key_from_int64_1d</a>
+      <a class="list-group-item" href="../interface/fhash_key.html#moduleprocedure-key_from_char">key_from_char</a>
       
     </div>
   </div>
@@ -237,7 +237,7 @@
   <div id="modprocs-1" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../interface/fhash_key.html#moduleprocedure-key_from_int64_1d">key_from_int64_1d</a>
+      <a class="list-group-item" href="../interface/fhash_key.html#moduleprocedure-key_from_char">key_from_char</a>
       
     </div>
   </div>
@@ -258,8 +258,8 @@
    
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-key_from_int64_1d"></span><h3>
-private function key_from_int64_1d(source) result(key)
+  <div class="panel-heading codesum"><span class="anchor" id="proc-key_from_char"></span><h3>
+private function key_from_char(source) result(key)
     
     
    
@@ -270,7 +270,7 @@ private function key_from_int64_1d(source) result(key)
 
 
 
-<p>Create new key container from a scalar int64</p>
+<p>Create new key container from a scalar int32</p>
     
     <h4>Arguments</h4>
     
@@ -291,12 +291,12 @@ private function key_from_int64_1d(source) result(key)
   
 <tr>
   
-  <td><span class="anchor" ></span>integer(kind=int64),</td>
+  <td><span class="anchor" ></span>character(len=*),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>source</strong>(:)</td><td></td>
+  <td><strong>source</strong></td><td></td>
   
 </tr>
 
@@ -311,7 +311,7 @@ private function key_from_int64_1d(source) result(key)
   
   
   
-     <h4>Return Value <small>type(<a href='../type/fhash_key_int64_1d_t.html'>fhash_key_int64_1d_t</a>)
+     <h4>Return Value <small>type(<a href='../type/fhash_key_char_t.html'>fhash_key_char_t</a>)
   </small></h4>
   
     
