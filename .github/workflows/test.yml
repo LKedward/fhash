@@ -9,7 +9,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        bootstrap: [true, false]
+        haskell: [true, false]
         include:
         - os: ubuntu-latest
           gcc_v: 9
@@ -41,9 +41,9 @@ jobs:
         --slave /usr/bingcov gcov /usr/bin/gcov-${GCC_V}
 
     - name: Install fpm
-      uses: lkedward/setup-fpm@v2
+      uses: fortran-lang/setup-fpm@v3
       with:
-        use-bootstrap: ${{ matrix.bootstrap }}
+        use-haskell: ${{ matrix.haskell }}
         github-token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Run tests (fpm test)
