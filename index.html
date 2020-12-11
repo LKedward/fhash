@@ -49,6 +49,8 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
         
+            <li><a href='./page/index.html'>User Guide</a></li>
+      
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
@@ -119,7 +121,44 @@
         <div class="col-md-8">
 		  
           <h1>fhash API Reference</h1>
-          
+          <h1>fhash</h1>
+<p><strong><a href="https://github.com/fortran-lang/fpm">fpm</a> package implementing a hash table with support for generic keys and values.</strong></p>
+<p><a href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
+<a href="https://github.com/LKedward/fhash/actions"><img alt="fpm test" src="https://github.com/LKedward/fhash/workflows/fpm%20test/badge.svg?branch=master&amp;event=push"></a>
+<a href="https://lkedward.github.io/fhash/"><img alt="ford docs" src="https://img.shields.io/badge/FORD%20API%20Docs-Deployed-green"></a></p>
+<h2>fpm usage</h2>
+<p>To use <em>fhash</em> within your <em>fpm</em> project, add the following to your package manifest file (<code>fpm.toml</code>):</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[dependencies]</span>
+<span class="n">fhash</span> <span class="o">=</span> <span class="p">{</span> <span class="n">git</span> <span class="o">=</span> <span class="s">&quot;https://github.com/LKedward/fhash.git&quot;</span> <span class="p">}</span>
+</code></pre></div>
+
+<h2>Simple example: scalar intrinsics</h2>
+<p>The package provides a <code>fhash_tbl_t</code> type with <code>set</code> and <code>get</code> methods for storing and retrieving key-value pairs.
+The <code>fhash_key</code> interface (aliased to <code>key</code> below) is used to define a valid key from different inputs.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">program </span><span class="n">fhash_demo1</span>
+  <span class="k">use </span><span class="n">fhash</span><span class="p">,</span> <span class="n">only</span><span class="p">:</span> <span class="n">fhash_tbl_t</span><span class="p">,</span> <span class="n">key</span><span class="o">=&gt;</span><span class="n">fhash_key</span>
+  <span class="k">implicit none</span>
+<span class="k">  type</span><span class="p">(</span><span class="n">fhash_tbl_t</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tbl</span>
+  <span class="kt">integer</span> <span class="kd">::</span> <span class="n">val</span>
+
+  <span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="s1">&#39;my_key_1&#39;</span><span class="p">),</span> <span class="k">value</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+  <span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="s1">&#39;my_key_2&#39;</span><span class="p">),</span> <span class="k">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+  <span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="mi">123456</span><span class="p">),</span> <span class="k">value</span><span class="o">=</span><span class="s1">&#39;a string value&#39;</span><span class="p">)</span>
+  <span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]),</span> <span class="k">value</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.)</span>
+
+  <span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="s1">&#39;my_key_1&#39;</span><span class="p">),</span><span class="n">val</span><span class="p">)</span>
+
+<span class="k">end program </span><span class="n">fhash_demo1</span>
+</code></pre></div>
+
+<p>See the <a href="https://lkedward.github.io/fhash/page/index.html">Quickstart Guide</a> for an explanation of this example and the API methods used.</p>
+<h2>Advanced usage</h2>
+<ul>
+<li><a href="https://lkedward.github.io/fhash/page/1-methods-demo/index.html">More table methods</a></li>
+<li><a href="https://lkedward.github.io/fhash/page/2-derived-type-demo/index.html">Storing custom derived types as values</a></li>
+<li><a href="https://lkedward.github.io/fhash/page/3-custom-key-demo/index.html">Using custom derived types as keys</a></li>
+</ul>
+<p>See <a href="https://lkedward.github.io/fhash/">https://lkedward.github.io/fhash/</a> for the full API documentation.</p>
         </div>
 		  
         <div class="col-md-4">
