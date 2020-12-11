@@ -7,17 +7,17 @@ copyright="Laurence Kedward 2020"
 description="Implements a hash table type with support for generic keys and values."
 
 [[executable]]
-source-dir="app/simple_demo"
+source-dir="app/0-simple-demo"
 main="main.f90"
 name="simple-demo"
 
 [[executable]]
-source-dir="app/methods_demo"
+source-dir="app/1-methods-demo"
 main="main.f90"
 name="methods-demo"
 
 [[executable]]
-source-dir="app/derived_type_demo"
+source-dir="app/2-derived-type-demo"
 main="main.f90"
 name="derived-type-demo"
 
@@ -27,6 +27,6 @@ main="main.f90"
 name="benchmark"
 
 [[executable]]
-source-dir="app/custom_key_demo"
+source-dir="app/3-custom-key-demo"
 main="main.f90"
 name="custom-key-demo"

@@ -6,3 +6,6 @@ summary: An fpm package implementing a hash table with support for generic keys 
 author: L. Kedward
 author_description: 
 github: https://github.com/LKedward/fhash
+page_dir: ./app/
+
+{!README.md!}
