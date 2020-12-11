@@ -7,6 +7,16 @@ __[fpm](https://github.com/fortran-lang/fpm) package implementing a hash table w
 
 
 
+## fpm usage
+
+To use *fhash* within your *fpm* project, add the following to your package manifest file (`fpm.toml`):
+
+```toml
+[dependencies]
+fhash = { git = "https://github.com/LKedward/fhash.git" }
+```
+
+
 ## Simple example: scalar intrinsics
 
 The package provides a `fhash_tbl_t` type with `set` and `get` methods for storing and retrieving key-value pairs.
@@ -29,20 +39,14 @@ program fhash_demo1
 end program fhash_demo1
 ```
 
-- The `set` method will accept any scalar variable as a value including derived types
-
-- The `get` method has generic support for retrieving scalar values of the following types: `integer(int32)`, `integer(int64)`, `real(real32)`, `real(real64)`, `character(*)`, `logical`
-
-- `fhash_key` has generic support for generating keys from scalar or 1D arrays of integers (`integer(int32)`, `integer(int64)`) or from scalar `character(*)`
+See the [Quickstart Guide](https://lkedward.github.io/fhash/page/index.html) for an explanation of this example and the API methods used.
 
 
 ## Advanced usage
 
-- [Storing custom derived types as values](./app/derived_type_demo)
-- [Using custom derived types as keys](./app/custom_key_demo)
-- Storing and retrieving pointers (*coming soon*)
+- [More table methods](https://lkedward.github.io/fhash/page/1-methods-demo/index.html)
+- [Storing custom derived types as values](https://lkedward.github.io/fhash/page/2-derived-type-demo/index.html)
+- [Using custom derived types as keys](https://lkedward.github.io/fhash/page/3-custom-key-demo/index.html)
 
 
-## Full API Documentation
-
-See <https://lkedward.github.io/fhash/>
+See <https://lkedward.github.io/fhash/> for the full API documentation.
