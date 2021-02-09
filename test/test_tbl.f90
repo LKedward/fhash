@@ -22,6 +22,7 @@ module test_tbl
         & new_unittest("fhash-tbl-pointer-value", test_fhash_pointer_value), &
         & new_unittest("fhash-tbl-derived-type-value", test_fhash_derived_type_value), &
         & new_unittest("fhash-tbl-invalid-keys", test_fhash_invalid_keys), &
+        & new_unittest("fhash-tbl-stats-empty", test_fhash_stats_empty), &
         & new_unittest("fhash-tbl-unset", test_fhash_unset), &
         & new_unittest("fhash-tbl-high-load", test_fhash_balanced_load) &
         ]
@@ -366,6 +367,41 @@ module test_tbl
     end if
 
   end subroutine test_fhash_invalid_keys
+
+  !>  Check stats for empty table
+  subroutine test_fhash_stats_empty(error)
+    type(error_t), allocatable, intent(out) :: error
+
+    type(fhash_tbl_t) :: tbl
+    integer :: num_buckets, num_items, num_collisions, max_depth
+
+    call tbl%stats(num_buckets,num_items,num_collisions,max_depth)
+
+    if (num_buckets /= 0) then
+      print *, 'num_buckets: ', num_buckets
+      call test_failed(error,'empty table returned non-zero for num_buckets')
+      return
+    end if
+
+    if (num_items /= 0) then
+      print *, 'num_items: ', num_items
+      call test_failed(error,'empty table returned non-zero for num_items')
+      return
+    end if
+
+    if (num_collisions /= 0) then
+      print *, 'num_collisions: ', num_collisions
+      call test_failed(error,'empty table returned non-zero for num_collisions')
+      return
+    end if
+
+    if (max_depth > 0) then
+      print *, 'max_depth: ', max_depth
+      call test_failed(error,'empty table returned positive for max_depth')
+      return
+    end if
+
+  end subroutine test_fhash_stats_empty
 
 
   !>  Store lots of values and check stats
