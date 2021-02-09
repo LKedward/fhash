@@ -192,18 +192,17 @@ subroutine fhash_tbl_stats(tbl,num_buckets,num_items,num_collisions,max_depth)
 
   integer :: i, depth
 
-  if (.not.allocated(tbl%buckets)) then
-    if (present(num_buckets)) num_buckets = 0
-    return
-  end if
+  ! Initialise stats
+  if (present(num_items)) num_items = 0
+  if (present(num_collisions)) num_collisions = 0
+  if (present(max_depth)) max_depth = 0
+  if (present(num_buckets)) num_buckets = 0
+
+  if (.not.allocated(tbl%buckets)) return
 
   if (present(num_buckets)) then
     num_buckets = size(tbl%buckets)
   end if
-
-  if (present(num_items)) num_items = 0
-  if (present(num_collisions)) num_collisions = 0
-  if (present(max_depth)) max_depth = -1*huge(max_depth)
 
   do i=1,size(tbl%buckets)
     
