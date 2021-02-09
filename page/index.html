@@ -152,7 +152,7 @@
 <p>A extensible interface for generating an instance of <code><a href="../type/fhash_key_t.html">fhash_key_t</a></code> needed to set and get key-value pairs.</p>
 <p>The library provides generic support for generating keys from scalar or 1D arrays of integers (<code>integer(int32)</code>, <code>integer(int64)</code>) or from scalar <code>character(*)</code></p>
 <p><strong>e.g.</strong> <em>Create a key from a string</em></p>
-<div class="codehilite"><pre><span></span><code><span class="k">use </span><span class="n">fhash</span><span class="p">,</span> <span class="n">only</span><span class="p">:</span> <span class="n">key</span><span class="o">=&gt;</span><span class="n">fhash_key</span>
+<div class="codehilite"><pre><span></span><code><span class="k">use </span><span class="n">fhash</span><span class="p">,</span> <span class="k">only</span><span class="p">:</span> <span class="n">key</span><span class="o">=&gt;</span><span class="n">fhash_key</span>
 <span class="p">...</span>
 <span class="n">key</span><span class="p">(</span><span class="s1">&#39;key_string&#39;</span><span class="p">)</span>
 </code></pre></div>
@@ -162,7 +162,7 @@
 <p>Stores (or overwrites) a key-value pair into the hash table.</p>
 <p>Will accept <strong>any scalar variable</strong> as a value, including (scalar) derived types.</p>
 <p><strong>e.g.</strong> <em>Set key value pair</em></p>
-<div class="codehilite"><pre><span></span><code><span class="k">use </span><span class="n">fhash</span><span class="p">,</span> <span class="n">only</span><span class="p">:</span> <span class="n">fhash_tbl_t</span><span class="p">,</span> <span class="n">key</span><span class="o">=&gt;</span><span class="n">fhash_key</span>
+<div class="codehilite"><pre><span></span><code><span class="k">use </span><span class="n">fhash</span><span class="p">,</span> <span class="k">only</span><span class="p">:</span> <span class="n">fhash_tbl_t</span><span class="p">,</span> <span class="n">key</span><span class="o">=&gt;</span><span class="n">fhash_key</span>
 <span class="p">...</span>
 <span class="k">type</span><span class="p">(</span><span class="n">fhash_tbl_t</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tbl</span>
 
@@ -180,7 +180,7 @@
 <li><code>logical</code></li>
 </ul>
 <p><strong>e.g.</strong> <em>Get integer value for a key</em></p>
-<div class="codehilite"><pre><span></span><code><span class="k">use </span><span class="n">fhash</span><span class="p">,</span> <span class="n">only</span><span class="p">:</span> <span class="n">fhash_tbl_t</span><span class="p">,</span> <span class="n">key</span><span class="o">=&gt;</span><span class="n">fhash_key</span>
+<div class="codehilite"><pre><span></span><code><span class="k">use </span><span class="n">fhash</span><span class="p">,</span> <span class="k">only</span><span class="p">:</span> <span class="n">fhash_tbl_t</span><span class="p">,</span> <span class="n">key</span><span class="o">=&gt;</span><span class="n">fhash_key</span>
 <span class="p">...</span>
 <span class="k">type</span><span class="p">(</span><span class="n">fhash_tbl_t</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tbl</span>
 <span class="kt">integer</span> <span class="kd">::</span> <span class="n">v</span>
@@ -195,7 +195,7 @@
 <div class="codehilite"><pre><span></span><code><span class="c">!&gt; Example program demonstrating basic set/get usage</span>
 <span class="c">!&gt;  for different key/value types</span>
 <span class="k">program </span><span class="n">fhash_demo</span>
-  <span class="k">use </span><span class="n">fhash</span><span class="p">,</span> <span class="n">only</span><span class="p">:</span> <span class="n">fhash_tbl_t</span><span class="p">,</span> <span class="n">key</span><span class="o">=&gt;</span><span class="n">fhash_key</span>
+  <span class="k">use </span><span class="n">fhash</span><span class="p">,</span> <span class="k">only</span><span class="p">:</span> <span class="n">fhash_tbl_t</span><span class="p">,</span> <span class="n">key</span><span class="o">=&gt;</span><span class="n">fhash_key</span>
   <span class="k">implicit none</span>
 
 <span class="k">  type</span><span class="p">(</span><span class="n">fhash_tbl_t</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tbl</span>
@@ -270,7 +270,7 @@
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-4"><p>&copy; 2020 
+        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
                                           </p></div>
         <div class="col-xs-6 col-md-4 col-md-push-4">
           <p class="text-right">
