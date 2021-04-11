@@ -49,7 +49,8 @@ module fhash_tbl
     generic :: get => fhash_tbl_get_int32, fhash_tbl_get_int64
     generic :: get => fhash_tbl_get_float, fhash_tbl_get_double
     generic :: get => fhash_tbl_get_char, fhash_tbl_get_logical
-    generic :: get => fhash_tbl_get_data, fhash_tbl_get_raw
+    generic :: get => fhash_tbl_get_data
+    generic :: get_raw => fhash_tbl_get_raw
 
     procedure :: fhash_tbl_get_int32_ptr, fhash_tbl_get_int64_ptr
     procedure :: fhash_tbl_get_float_ptr, fhash_tbl_get_double_ptr
@@ -59,7 +60,7 @@ module fhash_tbl
     generic :: get_ptr => fhash_tbl_get_int32_ptr, fhash_tbl_get_int64_ptr
     generic :: get_ptr => fhash_tbl_get_float_ptr, fhash_tbl_get_double_ptr
     generic :: get_ptr => fhash_tbl_get_char_ptr, fhash_tbl_get_logical_ptr
-    generic :: get_ptr => fhash_tbl_get_raw_ptr
+    generic :: get_raw_ptr => fhash_tbl_get_raw_ptr
 
     final :: fhash_tbl_cleanup
 

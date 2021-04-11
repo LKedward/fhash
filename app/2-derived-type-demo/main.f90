@@ -37,7 +37,7 @@ program fhash_demo
     integer :: stat
     class(*), allocatable :: data
     
-    call tbl%get(k,data,stat)
+    call tbl%get_raw(k,data,stat)
     
     if (stat /= 0) print *, 'error ', stat! Error handling: key not found
 

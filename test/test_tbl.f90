@@ -314,7 +314,7 @@ module test_tbl
       integer :: stat
       class(*), allocatable :: data
       
-      call tbl%get(k,data,stat)
+      call tbl%get_raw(k,data,stat)
       
       if (stat /= 0) then
         call test_failed(error,'Error while trying to retrieve derived type')
