@@ -182,7 +182,7 @@ the requested key is not of the expected derived type.</p>
     <span class="kt">integer</span> <span class="kd">::</span> <span class="nb">stat</span>
 <span class="nb">    </span><span class="k">class</span><span class="p">(</span><span class="o">*</span><span class="p">),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="k">data</span>
 
-<span class="k">    call </span><span class="n">tbl</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="k">data</span><span class="p">,</span><span class="nb">stat</span><span class="p">)</span>
+<span class="k">    call </span><span class="n">tbl</span><span class="p">%</span><span class="n">get_raw</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="k">data</span><span class="p">,</span><span class="nb">stat</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nb">stat</span> <span class="o">/=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;error &#39;</span><span class="p">,</span> <span class="nb">stat</span><span class="c">! Error handling: key not found</span>
 
