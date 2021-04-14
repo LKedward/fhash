@@ -3,13 +3,12 @@ name: fpm test
 on: [push, pull_request]
 
 jobs:
-  Build:
+  gfortran:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        haskell: [true, false]
         include:
         - os: ubuntu-latest
           gcc_v: 9
@@ -43,13 +42,67 @@ jobs:
     - name: Install fpm
       uses: fortran-lang/setup-fpm@v3
       with:
-        use-haskell: ${{ matrix.haskell }}
         github-token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Run tests (fpm test)
+    - name: Run tests and demo programs (debug)
       run: |
         gfortran --version
         fpm test
+        fpm run *-demo
 
-    - name: Run demo programs (fpm run)
-      run: fpm run
+    - name: Run tests and demo programs (release)
+      if: contains(matrix.os, 'ubuntu')
+      run: |
+        gfortran --version
+        fpm test --profile release
+        fpm run *-demo --profile release
+
+  Intel:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v1
+
+    - name: Install fpm
+      uses: fortran-lang/setup-fpm@v3
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install ifort from cache
+      id: cache-oneapi
+      uses: actions/cache@v2
+      with:
+        path: |
+          /opt/intel/oneapi/compiler
+          /opt/intel/oneapi/setvars.sh
+        key: oneapi-cache-v0
+
+    - name: Install ifort with apt
+      if: steps.cache-oneapi.outputs.cache-hit != 'true'
+      run: |
+        wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB
+        sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB
+        rm GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB
+        echo "deb https://apt.repos.intel.com/oneapi all main" | sudo tee /etc/apt/sources.list.d/oneAPI.list
+        sudo apt-get update
+        sudo apt-get install intel-oneapi-ifort
+        sudo rm -rf /opt/intel/oneapi/compiler/latest/linux/lib/emu
+        sudo rm -rf /opt/intel/oneapi/compiler/latest/linux/lib/oclfpga
+
+    - name: Setup ifort env
+      run: |
+        source /opt/intel/oneapi/setvars.sh
+        printenv >> $GITHUB_ENV
+        
+    - name: Run tests and demo programs (debug)
+      run: |
+        ifort --version
+        fpm test --compiler ifort
+        fpm run *-demo --compiler ifort
+
+    - name: Run tests and demo programs (release)
+      run: |
+        ifort --version
+        fpm test --compiler ifort --profile release
+        fpm run *-demo --compiler ifort --profile release
+          

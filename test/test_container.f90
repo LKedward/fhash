@@ -68,11 +68,6 @@ module test_container
       return
     end if
 
-    if (.not.associated(container%scalar_ptr,my_int)) then
-      call test_failed(error,'Wrong association for container%scalar_ptr.')
-      return
-    end if
-
     my_int = 10
 
     select type(v=>container%scalar_ptr)
