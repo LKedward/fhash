@@ -51,7 +51,6 @@ jobs:
         fpm run *-demo
 
     - name: Run tests and demo programs (release)
-      if: contains(matrix.os, 'ubuntu')
       run: |
         gfortran --version
         fpm test --profile release
