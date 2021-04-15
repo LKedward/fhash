@@ -65,11 +65,13 @@ contains
     integer(int64) :: hash
 
     integer :: i
+    integer(int64) :: item
 
     hash = seed
 
     do i=1,len(input)
-      hash = ieor(hash,iachar(input(i:i),int64)) * fnv_prime_32
+      item = transfer([iachar(input(i:i),int32),0_int32],item)
+      hash = ieor(hash,item) * fnv_prime_32
     end do
 
   end function fnv_1a_char_scalar_seed
