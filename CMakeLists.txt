@@ -131,3 +131,6 @@ if ( NOT SKIP_DOC_GEN )
   endif ()
 
 endif()
+
+enable_testing()
+add_subdirectory(test)
