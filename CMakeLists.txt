@@ -32,6 +32,8 @@ install(FILES
         DESTINATION lib/cmake/fhash
 )
 
+install(DIRECTORY ${CMAKE_Fortran_MODULE_DIRECTORY}/ DESTINATION ${Fortran_MODULE_DIRECTORY})
+
 install(EXPORT fhash
   FILE fhashTargets.cmake
   DESTINATION lib/cmake/fhash
