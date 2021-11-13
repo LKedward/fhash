@@ -4,14 +4,6 @@ include("${CMAKE_CURRENT_LIST_DIR}/fhashTargets.cmake")
 
 include(CMakeFindDependencyMacro)
 
-if(NOT system_mpi_FOUND AND NOT TARGET system_mpi)
-  find_package(system_mpi REQUIRED NO_POLICY_SCOPE)
-endif()
-
-if(NOT fortran_exceptions_FOUND AND NOT TARGET fortran_exceptions)
-  find_dependency(fortran_exceptions REQUIRED)
-endif()
-
 check_required_components(fhash)
 
 set(fhash_DOCDIR @CMAKE_INSTALL_PREFIX@/share/doc/fhash)
