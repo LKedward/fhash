@@ -38,7 +38,7 @@ jobs:
         --slave /usr/bingcov gcov /usr/bin/gcov-${GCC_V}
 
     - name: Install fpm
-      uses: fortran-lang/setup-fpm@v3
+      uses: fortran-lang/setup-fpm@v4
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -97,7 +97,7 @@ jobs:
       uses: actions/checkout@v1
 
     - name: Install fpm
-      uses: fortran-lang/setup-fpm@v3
+      uses: fortran-lang/setup-fpm@v4
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
 
