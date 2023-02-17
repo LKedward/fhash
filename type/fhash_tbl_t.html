@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
    <meta name="description" content="An fpm package implementing a hash table with support for generic keys and values.">
-    
     <meta name="author" content="L. Kedward" >
     <link rel="icon" href="../favicon.png">
 
@@ -16,10 +14,7 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    
     <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-    
-    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,56 +43,26 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-        
             <li><a href='../page/index.html'>User Guide</a></li>
-      
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
      aria-expanded="false">Contents <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          
-              
             <li><a href="../lists/files.html">Source Files</a></li>
-        
-        
-        
             <li><a href="../lists/modules.html">Modules</a></li>
-        
-            
-                                
             <li><a href="../lists/procedures.html">Procedures</a></li>
-        
-               
-            <li><a href="../lists/types.html">Derived Types</a></li>
-        
-               
-        
-        
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+       
             </ul>
         
             </li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-
-                             
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-
-
-
-
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
           </ul>
-        
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
@@ -106,4563 +71,3628 @@
         <button type="submit" class="btn btn-default">Submit</button>
 -->
         </form>
-        
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-    
-  
   <div class="row">
     <h1>fhash_tbl_t
-    <small>Derived Type</small>
-    
+      <small>Derived Type</small>
+      
     </h1>
-    
-<div class="row">
-  <div class="col-lg-12">
-<div class="well well-sm">
-  <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     
-     
-     
-     
-     
-    
-    
-     <li><i class="fa fa-list-ol"></i>
-       <a data-toggle="tooltip"
-    data-placement="bottom" data-html="true"
-    title="<p>35.7% of total for derived types.</p>Including implementation: 367 statements, 49.0% of total for derived types.">30 statements</a>
-     </li> 
-     
-     
-     
-    <li><i class="fa fa-code"></i><a href="../src/fhash_tbl.f90"> Source File</a></li>
-     
-     
-  </ul>
-  <ol class="breadcrumb in-well text-right">
-  
-    
-     <li><a href='../sourcefile/fhash_tbl.f90.html'>fhash_tbl.f90</a></li>
-    
-     <li><a href='../module/fhash_tbl.html'>fhash_tbl</a></li>
-    
-  
-     <li class="active">fhash_tbl_t</li>
-  </ol>
-</div>
-</div>
-</div>
-<script>
-  $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-  })
-</script>
+      <div class="row" id="info-bar">
+    <div class="col-lg-12">
+      <div class="well well-sm">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+          <li id="statements"><i class="fa fa-list-ol"></i>
+            <a data-toggle="tooltip"
+               data-placement="bottom" data-html="true"
+               title="<p>35.7% of total for derived types.</p>Including implementation: 367 statements, 49.0% of total for derived types.">30 statements</a>
+          </li>
+
+            <li id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/fhash_tbl.f90"> Source File</a>
+            </li>
+        </ul>
+        <ol class="breadcrumb in-well text-right">
+              <li><a href='../sourcefile/fhash_tbl.f90.html'>fhash_tbl.f90</a></li>
+              <li><a href='../module/fhash_tbl.html'>fhash_tbl</a></li>
+          <li class="active">fhash_tbl_t</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
 
   </div>
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    
-<div id="sidebar">
+      <div id="sidebar">
+      <h3>Contents</h3>
   
-<h3>Contents</h3>
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#fins-0">Finalization Procedures</a></h3></div>
-  <div id="fins-0" class="panel-collapse collapse">
-    <div class="list-group">
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#finalproc-fhash_tbl_cleanup">fhash_tbl_cleanup</a>
-      
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#vars-0">Variables</a>
+        </h3>
+      </div>
+      <div id="vars-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#variable-buckets">buckets</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-
-
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-0">Type-Bound Procedures</a></h3></div>
-  <div id="boundprocs-0" class="panel-collapse collapse">
-    <div class="list-group">
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-allocate">allocate</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-unset">unset</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-check_key">check_key</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-stats">stats</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_set_scalar">fhash_tbl_set_scalar</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-set">set</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_set_scalar_ptr">fhash_tbl_set_scalar_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-set_ptr">set_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int64">fhash_tbl_get_int64</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int32">fhash_tbl_get_int32</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_double">fhash_tbl_get_double</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_float">fhash_tbl_get_float</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_logical">fhash_tbl_get_logical</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_char">fhash_tbl_get_char</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_raw">fhash_tbl_get_raw</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_data">fhash_tbl_get_data</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get~2">get</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get~3">get</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get~4">get</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get~5">get</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_raw">get_raw</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int64_ptr">fhash_tbl_get_int64_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int32_ptr">fhash_tbl_get_int32_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_double_ptr">fhash_tbl_get_double_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_float_ptr">fhash_tbl_get_float_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_logical_ptr">fhash_tbl_get_logical_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_char_ptr">fhash_tbl_get_char_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_raw_ptr">fhash_tbl_get_raw_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_ptr~2">get_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_ptr~3">get_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_ptr~4">get_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_raw_ptr">get_raw_ptr</a>
-      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#fins-0">Finalization Procedures</a>
+        </h3>
+      </div>
+      <div id="fins-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#finalproc-fhash_tbl_cleanup">fhash_tbl_cleanup</a>
+        </div>
+      </div>
     </div>
+
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#boundprocs-0">Type-Bound Procedures</a>
+        </h3>
+      </div>
+      <div id="boundprocs-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-allocate">allocate</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-unset">unset</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-check_key">check_key</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-stats">stats</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_set_scalar">fhash_tbl_set_scalar</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-set">set</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_set_scalar_ptr">fhash_tbl_set_scalar_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-set_ptr">set_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int64">fhash_tbl_get_int64</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int32">fhash_tbl_get_int32</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_double">fhash_tbl_get_double</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_float">fhash_tbl_get_float</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_logical">fhash_tbl_get_logical</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_char">fhash_tbl_get_char</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_raw">fhash_tbl_get_raw</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_data">fhash_tbl_get_data</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get~2">get</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get~3">get</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get~4">get</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get~5">get</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_raw">get_raw</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int64_ptr">fhash_tbl_get_int64_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int32_ptr">fhash_tbl_get_int32_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_double_ptr">fhash_tbl_get_double_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_float_ptr">fhash_tbl_get_float_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_logical_ptr">fhash_tbl_get_logical_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_char_ptr">fhash_tbl_get_char_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_raw_ptr">fhash_tbl_get_raw_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_ptr~2">get_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_ptr~3">get_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_ptr~4">get_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_raw_ptr">get_raw_ptr</a>
+        </div>
+      </div>
+    </div>
+
+  
+
+
   </div>
-</div>
-
-
-
-
-
-</div>
 
     </div>
     
     <div class="col-md-9" id='text'>
       <h2>type, public :: fhash_tbl_t</h2>
     
-    
-    
-    
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
-      
-<h3>Contents</h3>
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#fins-1">Finalization Procedures</a></h3></div>
-  <div id="fins-1" class="panel-collapse collapse">
-    <div class="list-group">
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#finalproc-fhash_tbl_cleanup">fhash_tbl_cleanup</a>
-      
+        <h3>Contents</h3>
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#vars-1">Variables</a>
+        </h3>
+      </div>
+      <div id="vars-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#variable-buckets">buckets</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-
-
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-1">Type-Bound Procedures</a></h3></div>
-  <div id="boundprocs-1" class="panel-collapse collapse">
-    <div class="list-group">
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-allocate">allocate</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-unset">unset</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-check_key">check_key</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-stats">stats</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_set_scalar">fhash_tbl_set_scalar</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-set">set</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_set_scalar_ptr">fhash_tbl_set_scalar_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-set_ptr">set_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int64">fhash_tbl_get_int64</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int32">fhash_tbl_get_int32</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_double">fhash_tbl_get_double</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_float">fhash_tbl_get_float</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_logical">fhash_tbl_get_logical</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_char">fhash_tbl_get_char</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_raw">fhash_tbl_get_raw</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_data">fhash_tbl_get_data</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get~2">get</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get~3">get</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get~4">get</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get~5">get</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_raw">get_raw</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int64_ptr">fhash_tbl_get_int64_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int32_ptr">fhash_tbl_get_int32_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_double_ptr">fhash_tbl_get_double_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_float_ptr">fhash_tbl_get_float_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_logical_ptr">fhash_tbl_get_logical_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_char_ptr">fhash_tbl_get_char_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_raw_ptr">fhash_tbl_get_raw_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_ptr~2">get_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_ptr~3">get_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_ptr~4">get_ptr</a>
-      
-      <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_raw_ptr">get_raw_ptr</a>
-      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#fins-1">Finalization Procedures</a>
+        </h3>
+      </div>
+      <div id="fins-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#finalproc-fhash_tbl_cleanup">fhash_tbl_cleanup</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#boundprocs-1">Type-Bound Procedures</a>
+        </h3>
+      </div>
+      <div id="boundprocs-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-allocate">allocate</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-unset">unset</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-check_key">check_key</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-stats">stats</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_set_scalar">fhash_tbl_set_scalar</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-set">set</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_set_scalar_ptr">fhash_tbl_set_scalar_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-set_ptr">set_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int64">fhash_tbl_get_int64</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int32">fhash_tbl_get_int32</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_double">fhash_tbl_get_double</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_float">fhash_tbl_get_float</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_logical">fhash_tbl_get_logical</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_char">fhash_tbl_get_char</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_raw">fhash_tbl_get_raw</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_data">fhash_tbl_get_data</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get~2">get</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get~3">get</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get~4">get</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get~5">get</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_raw">get_raw</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int64_ptr">fhash_tbl_get_int64_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int32_ptr">fhash_tbl_get_int32_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_double_ptr">fhash_tbl_get_double_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_float_ptr">fhash_tbl_get_float_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_logical_ptr">fhash_tbl_get_logical_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_char_ptr">fhash_tbl_get_char_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_raw_ptr">fhash_tbl_get_raw_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_ptr~2">get_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_ptr~3">get_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_ptr~4">get_ptr</a>
+            <a class="list-group-item" href="../type/fhash_tbl_t.html#boundprocedure-get_raw_ptr">get_raw_ptr</a>
+        </div>
+      </div>
+    </div>
 
-
+  
 
 
     </section>
     <br class="visible-xs visible-sm hidden-md">
 
-    
-    
-    
-    
-    
     <section>
-    <h2>Finalization Procedures</h2>
-     
-         
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="finalproc-fhash_tbl_cleanup"></span><h3>final :: <strong>fhash_tbl_cleanup</strong> 
-    </h3></div>
-  <div class="panel-body">
-    
+    <h2>Components</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Visibility</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+<th></th><th>Initial</th>        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-buckets"></span>
+              type(<a href='../type/fhash_node_t.html'>fhash_node_t</a>),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>buckets</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
-
-    
-  </div>
-  <ul class="list-group">
-     <li class="list-group-item">
-       
-    
-    <h3>
-private subroutine fhash_tbl_cleanup(tbl)
-    
-    
-   
-</h3>
-    
-
-
-
-<p>Finalizer for fhash_tbl_t</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>type(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(inout)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Table object to allocate</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-     </li>
-  </ul>
-</div>
-
-         
     </section>
     <br>
     
-    
-     
-    <section>
-    <h2>Type-Bound Procedures</h2>
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-allocate"></span><h3>procedure, public :: <strong>allocate</strong>  => fhash_tbl_allocate 
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
+
+      <section>
+        <h2>Finalization Procedures</h2>
+            <div class="panel panel-default">
+    <div class="panel-heading codesum">
+      <span class="anchor" id="finalproc-fhash_tbl_cleanup"></span>
+      <h3>final :: <strong>fhash_tbl_cleanup</strong> </h3>
+    </div>
+    <div class="panel-body">
+      
+      
+    </div>
+    <ul class="list-group">
       <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_allocate(tbl, size)
-    
-    
-   
-</h3>
-    
+            <h3>
+    private  subroutine fhash_tbl_cleanup(tbl)  
+
+    </h3>
+  <p>Finalizer for fhash_tbl_t</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Table object to allocate</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
-
-<p>Allocate hash table</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(inout)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Table object to allocate</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>size</strong></td><td><p>Number of buckets in hash table
-If ommited, <code>tbl</code> is allocated with <code>FHASH_DEFAULT_ALLOCATION</code></p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
       </li>
-    
-  </ul>
-</div>
+    </ul>
+  </div>
 
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-unset"></span><h3>procedure, public :: <strong>unset</strong>  => fhash_tbl_unset 
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_unset(tbl, key, stat)
-    
-    
-   
+      </section>
+      <br>
+
+      <section>
+        <h2>Type-Bound Procedures</h2>
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-allocate"></span><h3>procedure, public :: <strong>allocate</strong>  => fhash_tbl_allocate         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_allocate(tbl, size)  
 </h3>
-    
+  <p>Allocate hash table</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Table object to allocate</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>size</strong></td>
+            <td>
+                <p>Number of buckets in hash table
+If ommited, <code>tbl</code> is allocated with <code>FHASH_DEFAULT_ALLOCATION</code></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Unset a value in the table</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(inout)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to remove</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.
-Unsuccessful: FHASH_EMPTY_TABLE | <code>FHASH_KEY_NOT_FOUND</code></p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-check_key"></span><h3>procedure, public :: <strong>check_key</strong>  => fhash_tbl_check_key 
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_check_key(tbl, key, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-unset"></span><h3>procedure, public :: <strong>unset</strong>  => fhash_tbl_unset         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_unset(tbl, key, stat)  
 </h3>
-    
+  <p>Unset a value in the table</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to remove</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.
+Unsuccessful: FHASH_EMPTY_TABLE | <code>FHASH_KEY_NOT_FOUND</code></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Check if key exists in table</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if key is found.
-Unsuccessful: <code>FHASH_EMPTY_TABLE</code> | <code>FHASH_KEY_NOT_FOUND</code></p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-stats"></span><h3>procedure, public :: <strong>stats</strong>  => fhash_tbl_stats 
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_stats(tbl, num_buckets, num_items, num_collisions, max_depth)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-check_key"></span><h3>procedure, public :: <strong>check_key</strong>  => fhash_tbl_check_key         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_check_key(tbl, key, stat)  
 </h3>
-    
+  <p>Check if key exists in table</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if key is found.
+Unsuccessful: <code>FHASH_EMPTY_TABLE</code> | <code>FHASH_KEY_NOT_FOUND</code></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get stats about the hash table</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>num_buckets</strong></td><td><p>Number of buckets allocated in table</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>num_items</strong></td><td><p>Number of key-value pairs stored in table</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>num_collisions</strong></td><td><p>Number of hash collisions</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>max_depth</strong></td><td><p>Maximum depth of bucket in table</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_set_scalar"></span><h3>procedure, public :: <strong>fhash_tbl_set_scalar</strong>  
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_set_scalar(tbl, key, value, pointer)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-stats"></span><h3>procedure, public :: <strong>stats</strong>  => fhash_tbl_stats         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_stats(tbl, num_buckets, num_items, num_collisions, max_depth)  
 </h3>
-    
+  <p>Get stats about the hash table</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>num_buckets</strong></td>
+            <td>
+                <p>Number of buckets allocated in table</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>num_items</strong></td>
+            <td>
+                <p>Number of key-value pairs stored in table</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>num_collisions</strong></td>
+            <td>
+                <p>Number of hash collisions</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>max_depth</strong></td>
+            <td>
+                <p>Maximum depth of bucket in table</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Set/update a polymorphic scalar value in the table</p><a href="../proc/fhash_tbl_set_scalar.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(inout)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to set/update</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(*),</td>
-  <td>intent(in),</td>
-  <td></td>
-  
-  <td>target</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Value for key</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>logical,</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>pointer</strong></td><td><p>If .true., store a pointer to value instead of copying</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set"></span><h3>generic, public :: <strong>set</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_set_scalar'>fhash_tbl_set_scalar</a> 
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-private subroutine fhash_tbl_set_scalar(tbl, key, value, pointer)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_set_scalar"></span><h3>procedure, public :: <strong>fhash_tbl_set_scalar</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_set_scalar(tbl, key, value, pointer)  
 </h3>
-    
+  <p>Set/update a polymorphic scalar value in the table</p>
+<p><code>tbl</code> is allocated with default size if not already allocated</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to set/update</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(*),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Value for key</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pointer</strong></td>
+            <td>
+                <p>If .true., store a pointer to value instead of copying</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Set/update a polymorphic scalar value in the table</p><a href="../proc/fhash_tbl_set_scalar.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(inout)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to set/update</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(*),</td>
-  <td>intent(in),</td>
-  <td></td>
-  
-  <td>target</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Value for key</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>logical,</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>pointer</strong></td><td><p>If .true., store a pointer to value instead of copying</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-         
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_set_scalar_ptr"></span><h3>procedure, public :: <strong>fhash_tbl_set_scalar_ptr</strong>  
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_set_scalar_ptr(tbl, key, value)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set"></span><h3>generic, public :: <strong>set</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_set_scalar'>fhash_tbl_set_scalar</a>         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_set_scalar(tbl, key, value, pointer)  
 </h3>
-    
+  <p>Set/update a polymorphic scalar value in the table</p>
+<p><code>tbl</code> is allocated with default size if not already allocated</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to set/update</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(*),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Value for key</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pointer</strong></td>
+            <td>
+                <p>If .true., store a pointer to value instead of copying</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper routine for generic 'set_ptr'</p><a href="../proc/fhash_tbl_set_scalar_ptr.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(inout)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to set/update</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(*),</td>
-  <td>intent(in),</td>
-  <td></td>
-  
-  <td>target</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Value for key</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_ptr"></span><h3>generic, public :: <strong>set_ptr</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_set_scalar_ptr'>fhash_tbl_set_scalar_ptr</a> 
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-private subroutine fhash_tbl_set_scalar_ptr(tbl, key, value)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_set_scalar_ptr"></span><h3>procedure, public :: <strong>fhash_tbl_set_scalar_ptr</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_set_scalar_ptr(tbl, key, value)  
 </h3>
-    
+  <p>Get wrapper routine for generic 'set_ptr'</p>
+<p><code>tbl</code> is allocated with default size if not already allocated</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to set/update</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(*),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Value for key</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper routine for generic 'set_ptr'</p><a href="../proc/fhash_tbl_set_scalar_ptr.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(inout)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to set/update</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(*),</td>
-  <td>intent(in),</td>
-  <td></td>
-  
-  <td>target</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Value for key</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-         
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_int64"></span><h3>procedure, public :: <strong>fhash_tbl_get_int64</strong>  
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_get_int64(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_ptr"></span><h3>generic, public :: <strong>set_ptr</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_set_scalar_ptr'>fhash_tbl_set_scalar_ptr</a>         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_set_scalar_ptr(tbl, key, value)  
 </h3>
-    
+  <p>Get wrapper routine for generic 'set_ptr'</p>
+<p><code>tbl</code> is allocated with default size if not already allocated</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to set/update</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(*),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Value for key</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve a scalar int64 value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer(kind=int64),</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_int32"></span><h3>procedure, public :: <strong>fhash_tbl_get_int32</strong>  
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_get_int32(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_int64"></span><h3>procedure, public :: <strong>fhash_tbl_get_int64</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_int64(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar int64 value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=int64),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve a scalar int32 value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer(kind=int32),</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_double"></span><h3>procedure, public :: <strong>fhash_tbl_get_double</strong>  
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_get_double(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_int32"></span><h3>procedure, public :: <strong>fhash_tbl_get_int32</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_int32(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar int32 value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=int32),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve a scalar double value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_float"></span><h3>procedure, public :: <strong>fhash_tbl_get_float</strong>  
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_get_float(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_double"></span><h3>procedure, public :: <strong>fhash_tbl_get_double</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_double(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar double value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=dp),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve a scalar float value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>real(kind=sp),</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_logical"></span><h3>procedure, public :: <strong>fhash_tbl_get_logical</strong>  
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_get_logical(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_float"></span><h3>procedure, public :: <strong>fhash_tbl_get_float</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_float(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar float value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=sp),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve a scalar logical value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>logical,</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_char"></span><h3>procedure, public :: <strong>fhash_tbl_get_char</strong>  
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_get_char(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_logical"></span><h3>procedure, public :: <strong>fhash_tbl_get_logical</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_logical(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar logical value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve a scalar character value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>character,</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>allocatable</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_raw"></span><h3>procedure, public :: <strong>fhash_tbl_get_raw</strong>  
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_get_raw(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_char"></span><h3>procedure, public :: <strong>fhash_tbl_get_char</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_char(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar character value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character,
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve underlying polymorhpic scalar value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(*),</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>allocatable</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_data"></span><h3>procedure, public :: <strong>fhash_tbl_get_data</strong>  
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_get_data(tbl, key, data, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_raw"></span><h3>procedure, public :: <strong>fhash_tbl_get_raw</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_raw(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve underlying polymorhpic scalar value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(*),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Retrieve data container from the hash table</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>type(<a href='../type/fhash_container_t.html'>fhash_container_t</a>),</td>
-  <td></td>
-  <td></td>
-  
-  <td>pointer</td><td>::</td>
-  <td><strong>data</strong></td><td><p>Copy of value retrieved for key</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.
-Unsuccessful: <code>FHASH_EMPTY_TABLE</code> | <code>FHASH_KEY_NOT_FOUND</code></p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get~2"></span><h3>generic, public :: <strong>get</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int32'>fhash_tbl_get_int32</a>, <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int64'>fhash_tbl_get_int64</a> 
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-private subroutine fhash_tbl_get_int32(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_data"></span><h3>procedure, public :: <strong>fhash_tbl_get_data</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_data(tbl, key, data, stat)  
 </h3>
-    
+  <p>Retrieve data container from the hash table</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/fhash_container_t.html'>fhash_container_t</a>),
+            </td>
+<td></td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>data</strong></td>
+            <td>
+                <p>Copy of value retrieved for key</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.
+Unsuccessful: <code>FHASH_EMPTY_TABLE</code> | <code>FHASH_KEY_NOT_FOUND</code></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve a scalar int32 value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer(kind=int32),</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-         
-      
-      </li>
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-private subroutine fhash_tbl_get_int64(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get~2"></span><h3>generic, public :: <strong>get</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int32'>fhash_tbl_get_int32</a>, <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int64'>fhash_tbl_get_int64</a>         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_int32(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar int32 value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=int32),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
-
-<p>Get wrapper to directly retrieve a scalar int64 value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer(kind=int64),</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-         
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get~3"></span><h3>generic, public :: <strong>get</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_float'>fhash_tbl_get_float</a>, <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_double'>fhash_tbl_get_double</a> 
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-private subroutine fhash_tbl_get_float(tbl, key, value, stat)
-    
-    
-   
+        </li>
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_int64(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar int64 value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=int64),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve a scalar float value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>real(kind=sp),</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-         
-      
-      </li>
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-private subroutine fhash_tbl_get_double(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get~3"></span><h3>generic, public :: <strong>get</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_float'>fhash_tbl_get_float</a>, <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_double'>fhash_tbl_get_double</a>         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_float(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar float value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=sp),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
-
-<p>Get wrapper to directly retrieve a scalar double value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-         
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get~4"></span><h3>generic, public :: <strong>get</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_char'>fhash_tbl_get_char</a>, <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_logical'>fhash_tbl_get_logical</a> 
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-private subroutine fhash_tbl_get_char(tbl, key, value, stat)
-    
-    
-   
+        </li>
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_double(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar double value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=dp),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve a scalar character value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>character,</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>allocatable</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-         
-      
-      </li>
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-private subroutine fhash_tbl_get_logical(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get~4"></span><h3>generic, public :: <strong>get</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_char'>fhash_tbl_get_char</a>, <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_logical'>fhash_tbl_get_logical</a>         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_char(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar character value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character,
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
-
-<p>Get wrapper to directly retrieve a scalar logical value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>logical,</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-         
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get~5"></span><h3>generic, public :: <strong>get</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_data'>fhash_tbl_get_data</a> 
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-private subroutine fhash_tbl_get_data(tbl, key, data, stat)
-    
-    
-   
+        </li>
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_logical(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar logical value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Retrieve data container from the hash table</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>type(<a href='../type/fhash_container_t.html'>fhash_container_t</a>),</td>
-  <td></td>
-  <td></td>
-  
-  <td>pointer</td><td>::</td>
-  <td><strong>data</strong></td><td><p>Copy of value retrieved for key</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.
-Unsuccessful: <code>FHASH_EMPTY_TABLE</code> | <code>FHASH_KEY_NOT_FOUND</code></p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-         
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_raw"></span><h3>generic, public :: <strong>get_raw</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_raw'>fhash_tbl_get_raw</a> 
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-private subroutine fhash_tbl_get_raw(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get~5"></span><h3>generic, public :: <strong>get</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_data'>fhash_tbl_get_data</a>         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_data(tbl, key, data, stat)  
 </h3>
-    
+  <p>Retrieve data container from the hash table</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/fhash_container_t.html'>fhash_container_t</a>),
+            </td>
+<td></td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>data</strong></td>
+            <td>
+                <p>Copy of value retrieved for key</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.
+Unsuccessful: <code>FHASH_EMPTY_TABLE</code> | <code>FHASH_KEY_NOT_FOUND</code></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve underlying polymorhpic scalar value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(*),</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>allocatable</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-         
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_int64_ptr"></span><h3>procedure, public :: <strong>fhash_tbl_get_int64_ptr</strong>  
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_get_int64_ptr(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_raw"></span><h3>generic, public :: <strong>get_raw</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_raw'>fhash_tbl_get_raw</a>         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_raw(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve underlying polymorhpic scalar value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(*),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve a scalar int64 value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer(kind=int64),</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>pointer</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value pointer</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_int32_ptr"></span><h3>procedure, public :: <strong>fhash_tbl_get_int32_ptr</strong>  
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_get_int32_ptr(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_int64_ptr"></span><h3>procedure, public :: <strong>fhash_tbl_get_int64_ptr</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_int64_ptr(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar int64 value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=int64),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value pointer</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve a scalar int32 value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer(kind=int32),</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>pointer</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value pointer</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_double_ptr"></span><h3>procedure, public :: <strong>fhash_tbl_get_double_ptr</strong>  
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_get_double_ptr(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_int32_ptr"></span><h3>procedure, public :: <strong>fhash_tbl_get_int32_ptr</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_int32_ptr(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar int32 value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=int32),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value pointer</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve a scalar double value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>pointer</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value pointer</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_float_ptr"></span><h3>procedure, public :: <strong>fhash_tbl_get_float_ptr</strong>  
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_get_float_ptr(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_double_ptr"></span><h3>procedure, public :: <strong>fhash_tbl_get_double_ptr</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_double_ptr(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar double value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=dp),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value pointer</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve a scalar float value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>real(kind=sp),</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>pointer</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value pointer</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_logical_ptr"></span><h3>procedure, public :: <strong>fhash_tbl_get_logical_ptr</strong>  
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_get_logical_ptr(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_float_ptr"></span><h3>procedure, public :: <strong>fhash_tbl_get_float_ptr</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_float_ptr(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar float value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=sp),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value pointer</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve a scalar logical value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>logical,</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>pointer</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value pointer</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_char_ptr"></span><h3>procedure, public :: <strong>fhash_tbl_get_char_ptr</strong>  
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_get_char_ptr(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_logical_ptr"></span><h3>procedure, public :: <strong>fhash_tbl_get_logical_ptr</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_logical_ptr(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar logical value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value pointer</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve a scalar character value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>character,</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>pointer</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value pointer</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_raw_ptr"></span><h3>procedure, public :: <strong>fhash_tbl_get_raw_ptr</strong>  
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine fhash_tbl_get_raw_ptr(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_char_ptr"></span><h3>procedure, public :: <strong>fhash_tbl_get_char_ptr</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_char_ptr(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar character value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character,
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value pointer</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve underlying polymorhpic scalar value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(*),</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>pointer</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_ptr~2"></span><h3>generic, public :: <strong>get_ptr</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int32_ptr'>fhash_tbl_get_int32_ptr</a>, <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int64_ptr'>fhash_tbl_get_int64_ptr</a> 
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-private subroutine fhash_tbl_get_int32_ptr(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-fhash_tbl_get_raw_ptr"></span><h3>procedure, public :: <strong>fhash_tbl_get_raw_ptr</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_raw_ptr(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve underlying polymorhpic scalar value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(*),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve a scalar int32 value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer(kind=int32),</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>pointer</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value pointer</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-         
-      
-      </li>
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-private subroutine fhash_tbl_get_int64_ptr(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_ptr~2"></span><h3>generic, public :: <strong>get_ptr</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int32_ptr'>fhash_tbl_get_int32_ptr</a>, <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int64_ptr'>fhash_tbl_get_int64_ptr</a>         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_int32_ptr(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar int32 value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=int32),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value pointer</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
-
-<p>Get wrapper to directly retrieve a scalar int64 value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer(kind=int64),</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>pointer</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value pointer</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-         
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_ptr~3"></span><h3>generic, public :: <strong>get_ptr</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_float_ptr'>fhash_tbl_get_float_ptr</a>, <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_double_ptr'>fhash_tbl_get_double_ptr</a> 
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-private subroutine fhash_tbl_get_float_ptr(tbl, key, value, stat)
-    
-    
-   
+        </li>
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_int64_ptr(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar int64 value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=int64),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value pointer</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve a scalar float value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>real(kind=sp),</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>pointer</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value pointer</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-         
-      
-      </li>
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-private subroutine fhash_tbl_get_double_ptr(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_ptr~3"></span><h3>generic, public :: <strong>get_ptr</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_float_ptr'>fhash_tbl_get_float_ptr</a>, <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_double_ptr'>fhash_tbl_get_double_ptr</a>         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_float_ptr(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar float value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=sp),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value pointer</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
-
-<p>Get wrapper to directly retrieve a scalar double value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>pointer</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value pointer</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-         
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_ptr~4"></span><h3>generic, public :: <strong>get_ptr</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_char_ptr'>fhash_tbl_get_char_ptr</a>, <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_logical_ptr'>fhash_tbl_get_logical_ptr</a> 
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-private subroutine fhash_tbl_get_char_ptr(tbl, key, value, stat)
-    
-    
-   
+        </li>
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_double_ptr(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar double value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=dp),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value pointer</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve a scalar character value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>character,</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>pointer</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value pointer</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-         
-      
-      </li>
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-private subroutine fhash_tbl_get_logical_ptr(tbl, key, value, stat)
-    
-    
-   
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_ptr~4"></span><h3>generic, public :: <strong>get_ptr</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_char_ptr'>fhash_tbl_get_char_ptr</a>, <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_logical_ptr'>fhash_tbl_get_logical_ptr</a>         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_char_ptr(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar character value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character,
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value pointer</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
-
-<p>Get wrapper to directly retrieve a scalar logical value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>logical,</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>pointer</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value pointer</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-         
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_raw_ptr"></span><h3>generic, public :: <strong>get_raw_ptr</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_raw_ptr'>fhash_tbl_get_raw_ptr</a> 
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-private subroutine fhash_tbl_get_raw_ptr(tbl, key, value, stat)
-    
-    
-   
+        </li>
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_logical_ptr(tbl, key, value, stat)  
 </h3>
-    
+  <p>Get wrapper to directly retrieve a scalar logical value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value pointer</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<p>Get wrapper to directly retrieve underlying polymorhpic scalar value</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_raw_ptr"></span><h3>generic, public :: <strong>get_raw_ptr</strong>  => <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_raw_ptr'>fhash_tbl_get_raw_ptr</a>         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_tbl_get_raw_ptr(tbl, key, value, stat)  
+</h3>
+  <p>Get wrapper to directly retrieve underlying polymorhpic scalar value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+            <td>
+                <p>Hash table object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+                <p>Key to retrieve</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(*),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p>Output value</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+            <td>
+                <p>Status flag. Zero if successful.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+        </li>
+    </ul>
+  </div>
 
-<tbody>
+      </section>
 
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>tbl</strong></td><td><p>Hash table object</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>key</strong></td><td><p>Key to retrieve</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(*),</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>pointer</td><td>::</td>
-  <td><strong>value</strong></td><td><p>Output value</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>stat</strong></td><td><p>Status flag. Zero if successful.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-         
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-    </section>
-    
-    
-    
     
     </div>
   </div>
-
 
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>fhash API Reference was developed by L. Kedward<br>&copy; 2021 
-                                          </p>
+        <div class="col-xs-6 col-md-6"><p>fhash API Reference was developed by L. Kedward<br>&copy; 2023 
+</p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-            
-            
           </p>
         </div>
       </div>
@@ -4690,14 +3720,11 @@ private subroutine fhash_tbl_get_raw_ptr(tbl, key, value, stat)
         extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     
     <script src="../tipuesearch/tipuesearch_content.js"></script>
     <script src="../tipuesearch/tipuesearch_set.js"></script>
     <script src="../tipuesearch/tipuesearch.js"></script>
-    
     
   </body>
 </html>

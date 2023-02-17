@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
    <meta name="description" content="An fpm package implementing a hash table with support for generic keys and values.">
-    
     <meta name="author" content="L. Kedward" >
     <link rel="icon" href="../../favicon.png">
 
@@ -16,10 +14,7 @@
     <link href="../../css/pygments.css" rel="stylesheet">
     <link href="../../css/font-awesome.min.css" rel="stylesheet">
     <link href="../../css/local.css" rel="stylesheet">
-    
     <link  href="../../tipuesearch/tipuesearch.css" rel="stylesheet">
-    
-    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,56 +43,26 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-        
             <li><a href='../../page/index.html'>User Guide</a></li>
-      
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
      aria-expanded="false">Contents <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          
-              
             <li><a href="../../lists/files.html">Source Files</a></li>
-        
-        
-        
             <li><a href="../../lists/modules.html">Modules</a></li>
-        
-            
-                                
             <li><a href="../../lists/procedures.html">Procedures</a></li>
-        
-               
-            <li><a href="../../lists/types.html">Derived Types</a></li>
-        
-               
-        
-        
+                   <li><a href="../../lists/types.html">Derived Types</a></li>
+       
             </ul>
         
             </li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../../lists/files.html">Source Files</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../../lists/modules.html">Modules</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../../lists/procedures.html">Procedures</a></li>
-
-                             
-<li class="visible-xs hidden-sm visible-lg"><a href="../../lists/types.html">Derived Types</a></li>
-
-
-
-
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../../lists/types.html">Derived Types</a></li>
           </ul>
-        
         <form action="../../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
@@ -106,29 +71,22 @@
         <button type="submit" class="btn btn-default">Submit</button>
 -->
         </form>
-        
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-    
   <div class="row">
     <h1>Hash table methods</h1>
     <div class="row">
     <div class="col-lg-12">
     <div class="well well-sm" style="min-height: 40px;">
       <ul class="list-inline" style="margin-bottom:0px; display:inline">
-         
-         
 <!--
-        
 -->
       </ul>
         <ol class="breadcrumb in-well">
-      
          <li><a href='../../page/index.html'>User Guide</a></li>
-      
          <li class="active">Hash table methods</li>
       </ol>
     </div>
@@ -157,51 +115,50 @@
 <h3>Example</h3>
 <div class="codehilite"><pre><span></span><code><span class="c">!&gt; Example program demonstrating useful</span>
 <span class="c">!&gt;  fhash_tbl_t methods </span>
-<span class="k">program </span><span class="n">fhash_demo</span>
-  <span class="k">use </span><span class="n">fhash</span><span class="p">,</span> <span class="k">only</span><span class="p">:</span> <span class="n">fhash_tbl_t</span><span class="p">,</span> <span class="n">key</span><span class="o">=&gt;</span><span class="n">fhash_key</span>
-  <span class="k">implicit none</span>
+<span class="k">program </span><span class="n">fhash_demo</span><span class="w"></span>
+<span class="w">  </span><span class="k">use </span><span class="n">fhash</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">fhash_tbl_t</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="o">=&gt;</span><span class="n">fhash_key</span><span class="w"></span>
+<span class="w">  </span><span class="k">implicit none</span>
 
-<span class="k">  type</span><span class="p">(</span><span class="n">fhash_tbl_t</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tbl</span>
-  <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span> <span class="nb">stat</span>
-<span class="nb">  </span><span class="kt">integer</span> <span class="kd">::</span> <span class="n">num_buckets</span><span class="p">,</span> <span class="n">num_items</span><span class="p">,</span> <span class="n">num_collisions</span><span class="p">,</span> <span class="n">max_depth</span>
+<span class="k">  type</span><span class="p">(</span><span class="n">fhash_tbl_t</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tbl</span><span class="w"></span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="nb">stat</span>
+<span class="nb">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">num_buckets</span><span class="p">,</span><span class="w"> </span><span class="n">num_items</span><span class="p">,</span><span class="w"> </span><span class="n">num_collisions</span><span class="p">,</span><span class="w"> </span><span class="n">max_depth</span><span class="w"></span>
 
-  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;# fhash demo program: methods-demo&#39;</span>
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;# fhash demo program: methods-demo&#39;</span><span class="w"></span>
 
-  <span class="c">!&gt; Manually specify number of table buckets</span>
-  <span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="k">allocate</span><span class="p">(</span><span class="mi">301</span><span class="p">)</span>
+<span class="w">  </span><span class="c">!&gt; Manually specify number of table buckets</span>
+<span class="w">  </span><span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="k">allocate</span><span class="p">(</span><span class="mi">301</span><span class="p">)</span><span class="w"></span>
 
-  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;Setting keys... &#39;</span>
-  <span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="mi">256</span>
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Setting keys... &#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="mi">256</span><span class="w"></span>
 
-    <span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
 
-  <span class="k">end do</span>
+<span class="w">  </span><span class="k">end do</span><span class="w"></span>
 
-  <span class="c">!&gt; Query information about the hash table</span>
-  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;Querying table info...&#39;</span>
-  <span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">stats</span><span class="p">(</span><span class="n">num_buckets</span><span class="p">,</span><span class="n">num_items</span><span class="p">,</span><span class="n">num_collisions</span><span class="p">,</span><span class="n">max_depth</span><span class="p">)</span>
-  <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(A,T40,I0)&#39;</span><span class="p">)</span> <span class="s1">&#39;  Number of buckets allocated: &#39;</span><span class="p">,</span><span class="n">num_buckets</span>
-  <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(A,T40,I0)&#39;</span><span class="p">)</span> <span class="s1">&#39;  Number of key-value pairs stored: &#39;</span><span class="p">,</span><span class="n">num_items</span>
-  <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(A,T40,I0)&#39;</span><span class="p">)</span> <span class="s1">&#39;  Total number of hash-collisions: &#39;</span><span class="p">,</span><span class="n">num_collisions</span>
-  <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(A,T40,I0)&#39;</span><span class="p">)</span> <span class="s1">&#39;  The worst case bucket depth is &#39;</span><span class="p">,</span><span class="n">max_depth</span>
-  <span class="k">print</span> <span class="o">*</span>
+<span class="w">  </span><span class="c">!&gt; Query information about the hash table</span>
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Querying table info...&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">stats</span><span class="p">(</span><span class="n">num_buckets</span><span class="p">,</span><span class="n">num_items</span><span class="p">,</span><span class="n">num_collisions</span><span class="p">,</span><span class="n">max_depth</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(A,T40,I0)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;  Number of buckets allocated: &#39;</span><span class="p">,</span><span class="n">num_buckets</span><span class="w"></span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(A,T40,I0)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;  Number of key-value pairs stored: &#39;</span><span class="p">,</span><span class="n">num_items</span><span class="w"></span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(A,T40,I0)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;  Total number of hash-collisions: &#39;</span><span class="p">,</span><span class="n">num_collisions</span><span class="w"></span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(A,T40,I0)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;  The worst case bucket depth is &#39;</span><span class="p">,</span><span class="n">max_depth</span><span class="w"></span>
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
 
-  <span class="c">!&gt; Check for existence of a key</span>
-  <span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">check_key</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="nb">stat</span><span class="p">)</span>
-  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;Check key 0: &#39;</span><span class="p">,</span><span class="nb">merge</span><span class="p">(</span><span class="s1">&#39;FOUND    &#39;</span><span class="p">,</span><span class="s1">&#39;NOT FOUND&#39;</span><span class="p">,</span><span class="nb">stat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+<span class="w">  </span><span class="c">!&gt; Check for existence of a key</span>
+<span class="w">  </span><span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">check_key</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="nb">stat</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Check key 0: &#39;</span><span class="p">,</span><span class="nb">merge</span><span class="p">(</span><span class="s1">&#39;FOUND    &#39;</span><span class="p">,</span><span class="s1">&#39;NOT FOUND&#39;</span><span class="p">,</span><span class="nb">stat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
 
-  <span class="c">!&gt; Unset a key in the table</span>
-  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;Removing key 0...&#39;</span>
-  <span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">unset</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="w">  </span><span class="c">!&gt; Unset a key in the table</span>
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Removing key 0...&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">unset</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="w"></span>
 
-  <span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">check_key</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="nb">stat</span><span class="p">)</span>
-  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;Check key 0: &#39;</span><span class="p">,</span><span class="nb">merge</span><span class="p">(</span><span class="s1">&#39;FOUND    &#39;</span><span class="p">,</span><span class="s1">&#39;NOT FOUND&#39;</span><span class="p">,</span><span class="nb">stat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
-  <span class="k">print</span> <span class="o">*</span>
+<span class="w">  </span><span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">check_key</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="nb">stat</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Check key 0: &#39;</span><span class="p">,</span><span class="nb">merge</span><span class="p">(</span><span class="s1">&#39;FOUND    &#39;</span><span class="p">,</span><span class="s1">&#39;NOT FOUND&#39;</span><span class="p">,</span><span class="nb">stat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
 
-<span class="k">end program </span><span class="n">fhash_demo</span>
+<span class="k">end program </span><span class="n">fhash_demo</span><span class="w"></span>
 </code></pre></div>
     </div>
-    
     <div class="col-md-3 col-md-pull-9">
       <hr class="visible-xs visible-sm">
         <div class="well toc">
@@ -210,51 +167,37 @@
           </ul>
           <hr>
           <ul class="nav nav-stacked nav-pills">
-            
             <li role="presentation" class="disabled">
             <a href='../../page/1-methods-demo/index.html'>Hash table methods</a>
-            
             </li>
-            
             <li role="presentation">
             <a href='../../page/2-derived-type-demo/index.html'>Example: Custom value types</a>
-            
             </li>
-            
             <li role="presentation">
             <a href='../../page/3-custom-key-demo/index.html'>Example: Custom key types</a>
-            
             <ul class="nav nav-stacked nav-pills">
-              
-            <li role="presentation">
+                          <li role="presentation">
             <a href='../../page/3-custom-key-demo/key_implementation.html'>Key implementation</a>
-            
             </li>
-            
+
             </ul>
-            
             </li>
-            
           </ul>
         </div>
     </div>
-    
   </div>
-
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>fhash API Reference was developed by L. Kedward<br>&copy; 2021 
-                                          </p>
+        <div class="col-xs-6 col-md-6"><p>fhash API Reference was developed by L. Kedward<br>&copy; 2023 
+</p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-            
-            
           </p>
         </div>
       </div>
@@ -282,14 +225,11 @@
         extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     
     <script src="../../tipuesearch/tipuesearch_content.js"></script>
     <script src="../../tipuesearch/tipuesearch_set.js"></script>
     <script src="../../tipuesearch/tipuesearch.js"></script>
-    
     
   </body>
 </html>

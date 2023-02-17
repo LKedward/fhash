@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
    <meta name="description" content="An fpm package implementing a hash table with support for generic keys and values.">
-    
     <meta name="author" content="L. Kedward" >
     <link rel="icon" href="./favicon.png">
 
@@ -16,10 +14,7 @@
     <link href="./css/pygments.css" rel="stylesheet">
     <link href="./css/font-awesome.min.css" rel="stylesheet">
     <link href="./css/local.css" rel="stylesheet">
-    
     <link  href="./tipuesearch/tipuesearch.css" rel="stylesheet">
-    
-    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,56 +43,26 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-        
             <li><a href='./page/index.html'>User Guide</a></li>
-      
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
      aria-expanded="false">Contents <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          
-              
             <li><a href="./lists/files.html">Source Files</a></li>
-        
-        
-        
             <li><a href="./lists/modules.html">Modules</a></li>
-        
-            
-                                
             <li><a href="./lists/procedures.html">Procedures</a></li>
-        
-               
-            <li><a href="./lists/types.html">Derived Types</a></li>
-        
-               
-        
-        
+                   <li><a href="./lists/types.html">Derived Types</a></li>
+       
             </ul>
         
             </li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="./lists/files.html">Source Files</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="./lists/modules.html">Modules</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="./lists/procedures.html">Procedures</a></li>
-
-                             
-<li class="visible-xs hidden-sm visible-lg"><a href="./lists/types.html">Derived Types</a></li>
-
-
-
-
+                             <li class="visible-xs hidden-sm visible-lg"><a href="./lists/types.html">Derived Types</a></li>
           </ul>
-        
         <form action="./search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
@@ -106,25 +71,19 @@
         <button type="submit" class="btn btn-default">Submit</button>
 -->
         </form>
-        
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-    
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
         <p>An fpm package implementing a hash table with support for generic keys and values.</p>
-        	 
-			 
         </p>
       </div>
 
       <div class="row" id='text'>
-		  
         <div class="col-md-8">
-		  
           <h1>fhash API Reference</h1>
           <h1>fhash</h1>
 <p><strong><a href="https://github.com/fortran-lang/fpm">fpm</a> package implementing a hash table with support for generic keys and values.</strong></p>
@@ -133,27 +92,27 @@
 <a href="https://lkedward.github.io/fhash/"><img alt="ford docs" src="https://img.shields.io/badge/FORD%20API%20Docs-Deployed-green"></a></p>
 <h2>fpm usage</h2>
 <p>To use <em>fhash</em> within your <em>fpm</em> project, add the following to your package manifest file (<code>fpm.toml</code>):</p>
-<div class="codehilite"><pre><span></span><code><span class="k">[dependencies]</span>
-<span class="n">fhash</span> <span class="o">=</span> <span class="p">{</span> <span class="n">git</span> <span class="o">=</span> <span class="s">&quot;https://github.com/LKedward/fhash.git&quot;</span> <span class="p">}</span>
+<div class="codehilite"><pre><span></span><code><span class="k">[dependencies]</span><span class="w"></span>
+<span class="n">fhash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://github.com/LKedward/fhash.git&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
 <h2>Simple example: scalar intrinsics</h2>
 <p>The package provides a <code>fhash_tbl_t</code> type with <code>set</code> and <code>get</code> methods for storing and retrieving key-value pairs.
 The <code>fhash_key</code> interface (aliased to <code>key</code> below) is used to define a valid key from different inputs.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">program </span><span class="n">fhash_demo1</span>
-  <span class="k">use </span><span class="n">fhash</span><span class="p">,</span> <span class="k">only</span><span class="p">:</span> <span class="n">fhash_tbl_t</span><span class="p">,</span> <span class="n">key</span><span class="o">=&gt;</span><span class="n">fhash_key</span>
-  <span class="k">implicit none</span>
-<span class="k">  type</span><span class="p">(</span><span class="n">fhash_tbl_t</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tbl</span>
-  <span class="kt">integer</span> <span class="kd">::</span> <span class="n">val</span>
+<div class="codehilite"><pre><span></span><code><span class="k">program </span><span class="n">fhash_demo1</span><span class="w"></span>
+<span class="w">  </span><span class="k">use </span><span class="n">fhash</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">fhash_tbl_t</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="o">=&gt;</span><span class="n">fhash_key</span><span class="w"></span>
+<span class="w">  </span><span class="k">implicit none</span>
+<span class="k">  type</span><span class="p">(</span><span class="n">fhash_tbl_t</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tbl</span><span class="w"></span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">val</span><span class="w"></span>
 
-  <span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="s1">&#39;my_key_1&#39;</span><span class="p">),</span> <span class="k">value</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-  <span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="s1">&#39;my_key_2&#39;</span><span class="p">),</span> <span class="k">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-  <span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="mi">123456</span><span class="p">),</span> <span class="k">value</span><span class="o">=</span><span class="s1">&#39;a string value&#39;</span><span class="p">)</span>
-  <span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]),</span> <span class="k">value</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="s1">&#39;my_key_1&#39;</span><span class="p">),</span><span class="w"> </span><span class="k">value</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="s1">&#39;my_key_2&#39;</span><span class="p">),</span><span class="w"> </span><span class="k">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="mi">123456</span><span class="p">),</span><span class="w"> </span><span class="k">value</span><span class="o">=</span><span class="s1">&#39;a string value&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]),</span><span class="w"> </span><span class="k">value</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.)</span><span class="w"></span>
 
-  <span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="s1">&#39;my_key_1&#39;</span><span class="p">),</span><span class="n">val</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">tbl</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">(</span><span class="s1">&#39;my_key_1&#39;</span><span class="p">),</span><span class="n">val</span><span class="p">)</span><span class="w"></span>
 
-<span class="k">end program </span><span class="n">fhash_demo1</span>
+<span class="k">end program </span><span class="n">fhash_demo1</span><span class="w"></span>
 </code></pre></div>
 
 <p>See the <a href="https://lkedward.github.io/fhash/page/index.html">Quickstart Guide</a> for an explanation of this example and the API methods used.</p>
@@ -165,160 +124,86 @@ The <code>fhash_key</code> interface (aliased to <code>key</code> below) is used
 </ul>
 <p>See <a href="https://lkedward.github.io/fhash/">https://lkedward.github.io/fhash/</a> for the full API documentation.</p>
         </div>
-		  
         <div class="col-md-4">
 	  <div class="well">
           <h2>Developer Info</h2>
           <h4>L. Kedward</h4>
           
-          
-			   
             <div class="text-center"><div class="btn-group" role="group">
-              
-              
-              
               <a class="btn btn-lg btn-primary" href="https://github.com/LKedward/fhash"><i class="fa fa-github fa-lg"></i></a>
-              
-              
-				  
-              
-              
-              
-              
             </div></div>
-            
        </div>
        </div>
-       
       </div>
-      
-      
-      
-      
-      
-      
-		
-        
       <div class="row">
-        
         <div class="col-xs-6 col-sm-3">
               <h3>Source Files</h3>
-              <ul>
-                    <li><a href='./sourcefile/base.f90.html'>base.f90</a></li>
-                  
+              <ul>                    <li><a href='./sourcefile/base.f90.html'>base.f90</a></li>
                     <li><a href='./sourcefile/char.f90.html'>char.f90</a></li>
-                  
                     <li><a href='./sourcefile/fhash.f90.html'>fhash.f90</a></li>
-                  
                     <li><a href='./sourcefile/fhash_data_container.f90.html'>fhash_data_container.f90</a></li>
-                  
                     <li><a href='./sourcefile/fhash_fnv.f90.html'>fhash_fnv.f90</a></li>
-                  
                     <li><a href='./sourcefile/fhash_sll.f90.html'>fhash_sll.f90</a></li>
-                  
                     <li><a href='./sourcefile/fhash_tbl.f90.html'>fhash_tbl.f90</a></li>
-                  
                     <li><a href='./sourcefile/int32.f90.html'>int32.f90</a></li>
-                  
                     <li><a href='./sourcefile/int32_1d.f90.html'>int32_1d.f90</a></li>
-                  
                     <li><a href='./sourcefile/int64.f90.html'>int64.f90</a></li>
-                  </ul>
+</ul>
           </div>
-        
-          
 		  <div class="col-xs-6 col-sm-3">
               <h3>Modules</h3>
-              <ul>
-                    <li><a href='./module/fhash.html'>fhash</a></li>
-                  
+              <ul>                    <li><a href='./module/fhash.html'>fhash</a></li>
                     <li><a href='./module/fhash_data_container.html'>fhash_data_container</a></li>
-                  
                     <li><a href='./module/fhash_fnv.html'>fhash_fnv</a></li>
-                  
                     <li><a href='./module/fhash_key_base.html'>fhash_key_base</a></li>
-                  
                     <li><a href='./module/fhash_key_char.html'>fhash_key_char</a></li>
-                  
                     <li><a href='./module/fhash_key_int32.html'>fhash_key_int32</a></li>
-                  
                     <li><a href='./module/fhash_key_int32_1d.html'>fhash_key_int32_1d</a></li>
-                  
                     <li><a href='./module/fhash_key_int64.html'>fhash_key_int64</a></li>
-                  
                     <li><a href='./module/fhash_key_int64_1d.html'>fhash_key_int64_1d</a></li>
-                  
                     <li><a href='./module/fhash_sll.html'>fhash_sll</a></li>
-                  </ul>
+</ul>
           </div>
-          
-          
 		  <div class="col-xs-6 col-sm-3">
               <h3>Procedures</h3>
-              <ul>
-                    <li><a href='./interface/fhash_container.html'>fhash_container</a></li>
-                  
+              <ul>                    <li><a href='./interface/fhash_container.html'>fhash_container</a></li>
                     <li><a href='./interface/fhash_key.html'>fhash_key</a></li>
-                  
                     <li><a href='./interface/fhash_key~2.html'>fhash_key</a></li>
-                  
                     <li><a href='./interface/fhash_key~3.html'>fhash_key</a></li>
-                  
                     <li><a href='./interface/fhash_key~4.html'>fhash_key</a></li>
-                  
                     <li><a href='./interface/fhash_key~5.html'>fhash_key</a></li>
-                  
                     <li><a href='./interface/fnv_1a.html'>fnv_1a</a></li>
-                  
                     <li><a href='./proc/hash_string.html'>hash_string</a></li>
-                  
                     <li><a href='./proc/node_depth.html'>node_depth</a></li>
-                  
                     <li><a href='./proc/sll_clean.html'>sll_clean</a></li>
-                  </ul>
+</ul>
           </div>
-          
-          
 		  <div class="col-xs-6 col-sm-3">
               <h3>Derived Types</h3>
-              <ul>
-                    <li><a href='./type/fhash_container_t.html'>fhash_container_t</a></li>
-                  
+              <ul>                    <li><a href='./type/fhash_container_t.html'>fhash_container_t</a></li>
                     <li><a href='./type/fhash_key_char_t.html'>fhash_key_char_t</a></li>
-                  
                     <li><a href='./type/fhash_key_int32_1d_t.html'>fhash_key_int32_1d_t</a></li>
-                  
                     <li><a href='./type/fhash_key_int32_t.html'>fhash_key_int32_t</a></li>
-                  
                     <li><a href='./type/fhash_key_int64_1d_t.html'>fhash_key_int64_1d_t</a></li>
-                  
                     <li><a href='./type/fhash_key_int64_t.html'>fhash_key_int64_t</a></li>
-                  
                     <li><a href='./type/fhash_key_t.html'>fhash_key_t</a></li>
-                  
                     <li><a href='./type/fhash_node_t.html'>fhash_node_t</a></li>
-                  
                     <li><a href='./type/fhash_tbl_t.html'>fhash_tbl_t</a></li>
-                  </ul>
+</ul>
           </div>
-          
       </div>
-      
-
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>fhash API Reference was developed by L. Kedward<br>&copy; 2021 
-                                          </p>
+        <div class="col-xs-6 col-md-6"><p>fhash API Reference was developed by L. Kedward<br>&copy; 2023 
+</p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-            
-            
           </p>
         </div>
       </div>
@@ -346,14 +231,11 @@ The <code>fhash_key</code> interface (aliased to <code>key</code> below) is used
         extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     
     <script src="./tipuesearch/tipuesearch_content.js"></script>
     <script src="./tipuesearch/tipuesearch_set.js"></script>
     <script src="./tipuesearch/tipuesearch.js"></script>
-    
     
   </body>
 </html>

@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
    <meta name="description" content="An fpm package implementing a hash table with support for generic keys and values.">
-    
     <meta name="author" content="L. Kedward" >
     <link rel="icon" href="../favicon.png">
 
@@ -16,10 +14,7 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    
     <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-    
-    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,56 +43,26 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-        
             <li><a href='../page/index.html'>User Guide</a></li>
-      
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
      aria-expanded="false">Contents <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          
-              
             <li><a href="../lists/files.html">Source Files</a></li>
-        
-        
-        
             <li><a href="../lists/modules.html">Modules</a></li>
-        
-            
-                                
             <li><a href="../lists/procedures.html">Procedures</a></li>
-        
-               
-            <li><a href="../lists/types.html">Derived Types</a></li>
-        
-               
-        
-        
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+       
             </ul>
         
             </li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-
-                             
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-
-
-
-
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
           </ul>
-        
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
@@ -106,462 +71,641 @@
         <button type="submit" class="btn btn-default">Submit</button>
 -->
         </form>
-        
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-    
-  
   <div class="row">
     <h1>fhash_tbl 
     <small>Module</small>
     
     </h1>
-    
-<div class="row">
-  <div class="col-lg-12">
-<div class="well well-sm">
-  <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     
-     
-     
-     
-     
-    
-    
-     <li><i class="fa fa-list-ol"></i>
-       <a data-toggle="tooltip"
-    data-placement="bottom" data-html="true"
-    title="31.8% of total for modules and submodules.">312 statements</a>
-     </li> 
-     
-     
-     
-    <li><i class="fa fa-code"></i><a href="../src/fhash_tbl.f90"> Source File</a></li>
-     
-     
-  </ul>
-  <ol class="breadcrumb in-well text-right">
-  
-    
-     <li><a href='../sourcefile/fhash_tbl.f90.html'>fhash_tbl.f90</a></li>
-    
-  
-     <li class="active">fhash_tbl</li>
-  </ol>
-</div>
-</div>
-</div>
-<script>
-  $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-  })
-</script>
+      <div class="row" id="info-bar">
+    <div class="col-lg-12">
+      <div class="well well-sm">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+          <li id="statements"><i class="fa fa-list-ol"></i>
+            <a data-toggle="tooltip"
+               data-placement="bottom" data-html="true"
+               title="31.8% of total for modules and submodules.">312 statements</a>
+          </li>
+
+            <li id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/fhash_tbl.f90"> Source File</a>
+            </li>
+        </ul>
+        <ol class="breadcrumb in-well text-right">
+              <li><a href='../sourcefile/fhash_tbl.f90.html'>fhash_tbl.f90</a></li>
+          <li class="active">fhash_tbl</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
 
   </div>
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    
-<div id="sidebar">
+      <div id="sidebar">
+      <h3>Contents</h3>
   
-<h3>Contents</h3>
- 
-
-
-
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
-    <div class="list-group">
-      
-      <a class="list-group-item" href="../module/fhash_tbl.html#variable-fhash_internal_error">FHASH_INTERNAL_ERROR</a>
-      
-      <a class="list-group-item" href="../module/fhash_tbl.html#variable-fhash_empty_table">FHASH_EMPTY_TABLE</a>
-      
-      <a class="list-group-item" href="../module/fhash_tbl.html#variable-fhash_found_wrong_type">FHASH_FOUND_WRONG_TYPE</a>
-      
-      <a class="list-group-item" href="../module/fhash_tbl.html#variable-fhash_key_not_found">FHASH_KEY_NOT_FOUND</a>
-      
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#vars-0">Variables</a>
+        </h3>
+      </div>
+      <div id="vars-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/fhash_tbl.html#variable-fhash_internal_error">FHASH_INTERNAL_ERROR</a>
+            <a class="list-group-item" href="../module/fhash_tbl.html#variable-fhash_empty_table">FHASH_EMPTY_TABLE</a>
+            <a class="list-group-item" href="../module/fhash_tbl.html#variable-fhash_found_wrong_type">FHASH_FOUND_WRONG_TYPE</a>
+            <a class="list-group-item" href="../module/fhash_tbl.html#variable-fhash_key_not_found">FHASH_KEY_NOT_FOUND</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-
-
-
-
-
-
-
-
-
-
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-0">Derived Types</a></h3></div>
-  <div id="types-0" class="panel-collapse collapse">
-    <div class="list-group">
-      
-      <a class="list-group-item" href="../module/fhash_tbl.html#type-fhash_tbl_t">fhash_tbl_t</a>
-      
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#types-0">Derived Types</a>
+        </h3>
+      </div>
+      <div id="types-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/fhash_tbl.html#type-fhash_tbl_t">fhash_tbl_t</a>
+        </div>
+      </div>
     </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+
   </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
 
     </div>
     
     <div class="col-md-9" id='text'>
     
-      <br>
-    
-  
-    <div class="panel panel-default">
+<br>        <div class="panel panel-default">
       <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
+        <h3 class="panel-title">Uses</h3>
       </div>
       <ul class="list-group">
-      
-      <li class="list-group-item">
-  <ul class="list-inline">
-    
-    <li><a href='../module/fhash_data_container.html'>fhash_data_container</a></li>
-    
-    <li><a href='../module/fhash_sll.html'>fhash_sll</a></li>
-    
-    <li><a href="http://fortranwiki.org/fortran/show/iso_fortran_env">iso_fortran_env</a></li>
-    
-  </ul>
-      </li>
-      
-      
-      
+          <li class="list-group-item">
+            <ul class="list-inline">
+                <li><a href='../module/fhash_sll.html'>fhash_sll</a></li>
+                <li><a href='../module/fhash_data_container.html'>fhash_data_container</a></li>
+                <li><a href="http://fortranwiki.org/fortran/show/iso_fortran_env">iso_fortran_env</a></li>
+            </ul>
+          </li>
       </ul>
     </div>
-    
 
     
-    
-
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
-      
-<h3>Contents</h3>
- 
-
-
-
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
-    <div class="list-group">
-      
-      <a class="list-group-item" href="../module/fhash_tbl.html#variable-fhash_internal_error">FHASH_INTERNAL_ERROR</a>
-      
-      <a class="list-group-item" href="../module/fhash_tbl.html#variable-fhash_empty_table">FHASH_EMPTY_TABLE</a>
-      
-      <a class="list-group-item" href="../module/fhash_tbl.html#variable-fhash_found_wrong_type">FHASH_FOUND_WRONG_TYPE</a>
-      
-      <a class="list-group-item" href="../module/fhash_tbl.html#variable-fhash_key_not_found">FHASH_KEY_NOT_FOUND</a>
-      
+        <h3>Contents</h3>
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#vars-1">Variables</a>
+        </h3>
+      </div>
+      <div id="vars-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/fhash_tbl.html#variable-fhash_internal_error">FHASH_INTERNAL_ERROR</a>
+            <a class="list-group-item" href="../module/fhash_tbl.html#variable-fhash_empty_table">FHASH_EMPTY_TABLE</a>
+            <a class="list-group-item" href="../module/fhash_tbl.html#variable-fhash_found_wrong_type">FHASH_FOUND_WRONG_TYPE</a>
+            <a class="list-group-item" href="../module/fhash_tbl.html#variable-fhash_key_not_found">FHASH_KEY_NOT_FOUND</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-
-
-
-
-
-
-
-
-
-
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-1">Derived Types</a></h3></div>
-  <div id="types-1" class="panel-collapse collapse">
-    <div class="list-group">
-      
-      <a class="list-group-item" href="../module/fhash_tbl.html#type-fhash_tbl_t">fhash_tbl_t</a>
-      
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#types-1">Derived Types</a>
+        </h3>
+      </div>
+      <div id="types-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/fhash_tbl.html#type-fhash_tbl_t">fhash_tbl_t</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-
-
-
-
-
-
-
-
-
+  
+  
+  
+  
+  
+  
+  
+  
 
 
     </section>
     <br class="visible-xs visible-sm hidden-md">
 
-    
 
-    
     <section>
     <h2>Variables</h2>
-    
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th>
-
-<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-fhash_internal_error"></span>integer,</td>
-  
-  <td>public,</td>
-  <td>parameter</td><td>::</td>
-  <td><strong>FHASH_INTERNAL_ERROR</strong></td><td> =</td><td>-4</td><td><p>This condition should be unreachable by the public interface</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-fhash_empty_table"></span>integer,</td>
-  
-  <td>public,</td>
-  <td>parameter</td><td>::</td>
-  <td><strong>FHASH_EMPTY_TABLE</strong></td><td> =</td><td>-3</td><td><p>Error flag for operating on an unallocated table</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-fhash_found_wrong_type"></span>integer,</td>
-  
-  <td>public,</td>
-  <td>parameter</td><td>::</td>
-  <td><strong>FHASH_FOUND_WRONG_TYPE</strong></td><td> =</td><td>-2</td><td><p>Error flag for when retrieved data-type does not 
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Visibility</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+<th></th><th>Initial</th>        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fhash_internal_error"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>FHASH_INTERNAL_ERROR</strong></td>
+<td> =</td>
+                <td>-4</td>
+            <td>
+                <p>This condition should be unreachable by the public interface</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fhash_empty_table"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>FHASH_EMPTY_TABLE</strong></td>
+<td> =</td>
+                <td>-3</td>
+            <td>
+                <p>Error flag for operating on an unallocated table</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fhash_found_wrong_type"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>FHASH_FOUND_WRONG_TYPE</strong></td>
+<td> =</td>
+                <td>-2</td>
+            <td>
+                <p>Error flag for when retrieved data-type does not 
  match that expected by the invoked getter function 
- (<code>get_int32</code>,<code>get_int63</code>,<code>get_float</code>,'get_double<code>,</code>get_char`)</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-fhash_key_not_found"></span>integer,</td>
-  
-  <td>public,</td>
-  <td>parameter</td><td>::</td>
-  <td><strong>FHASH_KEY_NOT_FOUND</strong></td><td> =</td><td>-1</td><td><p>Error flag for when specified key is not found in the hash table</p></td>
-  
-</tr>
-
-</tbody>
-</table>
+ (<code>get_int32</code>,<code>get_int63</code>,<code>get_float</code>,'get_double<code>,</code>get_char`)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fhash_key_not_found"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>FHASH_KEY_NOT_FOUND</strong></td>
+<td> =</td>
+                <td>-1</td>
+            <td>
+                <p>Error flag for when specified key is not found in the hash table</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
     </section>
     <br>
     
     
-    
-    
-    
 
-    
-    
     
     <section>
      <h2>Derived Types</h2>
-   
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="type-fhash_tbl_t"></span><h3>type, public :: <a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>
-    
-  </h3></div>
-  <div class="panel-body">
-    
-     
-     
-     
-     <h4>Finalizations Procedures</h4>
-      <table class="table table-striped varlist">
-      <tbody>
+       <div class="panel panel-default">
+    <div class="panel-heading codesum">
+      <span class="anchor" id="type-fhash_tbl_t"></span>
+      <h3>
+        type, public&nbsp;::&nbsp;
+        <a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>
+        
+      </h3>
+    </div>
+    <div class="panel-body">
       
-       <tr><td>final :: <strong>fhash_tbl_cleanup</strong></h3></td><td></td></tr>
-      
-       </tbody>
-       </table>  
-          
-     
-     <h4>Type-Bound Procedures</h4>
-      <table class="table table-striped varlist">
-      <tbody>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-allocate'>allocate</a></strong>  => fhash_tbl_allocate </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-unset'>unset</a></strong>  => fhash_tbl_unset </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-check_key'>check_key</a></strong>  => fhash_tbl_check_key </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-stats'>stats</a></strong>  => fhash_tbl_stats </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_set_scalar'>fhash_tbl_set_scalar</a></strong>  </td>
-       <td></td></tr>
-      
-       <tr><td>generic, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-set'>set</a></strong>  => fhash_tbl_set_scalar </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_set_scalar_ptr'>fhash_tbl_set_scalar_ptr</a></strong>  </td>
-       <td></td></tr>
-      
-       <tr><td>generic, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-set_ptr'>set_ptr</a></strong>  => fhash_tbl_set_scalar_ptr </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int64'>fhash_tbl_get_int64</a></strong>  </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int32'>fhash_tbl_get_int32</a></strong>  </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_double'>fhash_tbl_get_double</a></strong>  </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_float'>fhash_tbl_get_float</a></strong>  </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_logical'>fhash_tbl_get_logical</a></strong>  </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_char'>fhash_tbl_get_char</a></strong>  </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_raw'>fhash_tbl_get_raw</a></strong>  </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_data'>fhash_tbl_get_data</a></strong>  </td>
-       <td></td></tr>
-      
-       <tr><td>generic, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-get~2'>get</a></strong>  => fhash_tbl_get_int32, fhash_tbl_get_int64 </td>
-       <td></td></tr>
-      
-       <tr><td>generic, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-get~3'>get</a></strong>  => fhash_tbl_get_float, fhash_tbl_get_double </td>
-       <td></td></tr>
-      
-       <tr><td>generic, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-get~4'>get</a></strong>  => fhash_tbl_get_char, fhash_tbl_get_logical </td>
-       <td></td></tr>
-      
-       <tr><td>generic, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-get~5'>get</a></strong>  => fhash_tbl_get_data </td>
-       <td></td></tr>
-      
-       <tr><td>generic, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-get_raw'>get_raw</a></strong>  => fhash_tbl_get_raw </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int64_ptr'>fhash_tbl_get_int64_ptr</a></strong>  </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int32_ptr'>fhash_tbl_get_int32_ptr</a></strong>  </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_double_ptr'>fhash_tbl_get_double_ptr</a></strong>  </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_float_ptr'>fhash_tbl_get_float_ptr</a></strong>  </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_logical_ptr'>fhash_tbl_get_logical_ptr</a></strong>  </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_char_ptr'>fhash_tbl_get_char_ptr</a></strong>  </td>
-       <td></td></tr>
-      
-       <tr><td>procedure, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_raw_ptr'>fhash_tbl_get_raw_ptr</a></strong>  </td>
-       <td></td></tr>
-      
-       <tr><td>generic, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-get_ptr~2'>get_ptr</a></strong>  => fhash_tbl_get_int32_ptr, fhash_tbl_get_int64_ptr </td>
-       <td></td></tr>
-      
-       <tr><td>generic, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-get_ptr~3'>get_ptr</a></strong>  => fhash_tbl_get_float_ptr, fhash_tbl_get_double_ptr </td>
-       <td></td></tr>
-      
-       <tr><td>generic, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-get_ptr~4'>get_ptr</a></strong>  => fhash_tbl_get_char_ptr, fhash_tbl_get_logical_ptr </td>
-       <td></td></tr>
-      
-       <tr><td>generic, public :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-get_raw_ptr'>get_raw_ptr</a></strong>  => fhash_tbl_get_raw_ptr </td>
-       <td></td></tr>
-      
-       </tbody>
-       </table>
-     
-  </div>
-</div>
 
-     
-    </section>
-  <br>
-    
-    
-    
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Visibility</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+<th></th><th>Initial</th>        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-buckets"></span>
+              type(<a href='../type/fhash_node_t.html'>fhash_node_t</a>),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>buckets</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
 
-    
-    
-    
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+        <h4>Finalizations Procedures</h4>
+        <table class="table table-striped varlist">
+          <tbody>
+              <tr>
+                <td>final :: <strong>fhash_tbl_cleanup</strong></td>
+                <td></td>
+              </tr>
+          </tbody>
+        </table>
+
+        <h4>Type-Bound Procedures</h4>
+        <table class="table table-striped varlist">
+          <tbody>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-allocate'>allocate</a></strong>
+ =>
+                    fhash_tbl_allocate
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-unset'>unset</a></strong>
+ =>
+                    fhash_tbl_unset
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-check_key'>check_key</a></strong>
+ =>
+                    fhash_tbl_check_key
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-stats'>stats</a></strong>
+ =>
+                    fhash_tbl_stats
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_set_scalar'>fhash_tbl_set_scalar</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+generic,
+                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-set'>set</a></strong>
+ =>
+                    <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_set_scalar'>fhash_tbl_set_scalar</a>
+<small></small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_set_scalar_ptr'>fhash_tbl_set_scalar_ptr</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+generic,
+                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-set_ptr'>set_ptr</a></strong>
+ =>
+                    <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_set_scalar_ptr'>fhash_tbl_set_scalar_ptr</a>
+<small></small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int64'>fhash_tbl_get_int64</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int32'>fhash_tbl_get_int32</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_double'>fhash_tbl_get_double</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_float'>fhash_tbl_get_float</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_logical'>fhash_tbl_get_logical</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_char'>fhash_tbl_get_char</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_raw'>fhash_tbl_get_raw</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_data'>fhash_tbl_get_data</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+generic,
+                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-get~2'>get</a></strong>
+ =>
+                    <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int32'>fhash_tbl_get_int32</a>, <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int64'>fhash_tbl_get_int64</a>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+generic,
+                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-get~3'>get</a></strong>
+ =>
+                    <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_float'>fhash_tbl_get_float</a>, <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_double'>fhash_tbl_get_double</a>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+generic,
+                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-get~4'>get</a></strong>
+ =>
+                    <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_char'>fhash_tbl_get_char</a>, <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_logical'>fhash_tbl_get_logical</a>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+generic,
+                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-get~5'>get</a></strong>
+ =>
+                    <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_data'>fhash_tbl_get_data</a>
+<small></small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+generic,
+                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-get_raw'>get_raw</a></strong>
+ =>
+                    <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_raw'>fhash_tbl_get_raw</a>
+<small></small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int64_ptr'>fhash_tbl_get_int64_ptr</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int32_ptr'>fhash_tbl_get_int32_ptr</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_double_ptr'>fhash_tbl_get_double_ptr</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_float_ptr'>fhash_tbl_get_float_ptr</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_logical_ptr'>fhash_tbl_get_logical_ptr</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_char_ptr'>fhash_tbl_get_char_ptr</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_raw_ptr'>fhash_tbl_get_raw_ptr</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+generic,
+                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-get_ptr~2'>get_ptr</a></strong>
+ =>
+                    <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int32_ptr'>fhash_tbl_get_int32_ptr</a>, <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_int64_ptr'>fhash_tbl_get_int64_ptr</a>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+generic,
+                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-get_ptr~3'>get_ptr</a></strong>
+ =>
+                    <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_float_ptr'>fhash_tbl_get_float_ptr</a>, <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_double_ptr'>fhash_tbl_get_double_ptr</a>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+generic,
+                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-get_ptr~4'>get_ptr</a></strong>
+ =>
+                    <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_char_ptr'>fhash_tbl_get_char_ptr</a>, <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_logical_ptr'>fhash_tbl_get_logical_ptr</a>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+generic,
+                  public
+                  :: <strong><a href='../type/fhash_tbl_t.html#boundprocedure-get_raw_ptr'>get_raw_ptr</a></strong>
+ =>
+                    <a href='../type/fhash_tbl_t.html#boundprocedure-fhash_tbl_get_raw_ptr'>fhash_tbl_get_raw_ptr</a>
+<small></small>                </td>
+                <td></td>
+              </tr>
+          </tbody>
+        </table>
     </div>
   </div>
 
-  
+    </section>
+  <br>
+    
+
+
+
+
+    </div>
+  </div>
+
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>fhash API Reference was developed by L. Kedward<br>&copy; 2021 
-                                          </p>
+        <div class="col-xs-6 col-md-6"><p>fhash API Reference was developed by L. Kedward<br>&copy; 2023 
+</p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-            
-            
           </p>
         </div>
       </div>
@@ -589,14 +733,11 @@
         extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     
     <script src="../tipuesearch/tipuesearch_content.js"></script>
     <script src="../tipuesearch/tipuesearch_set.js"></script>
     <script src="../tipuesearch/tipuesearch.js"></script>
-    
     
   </body>
 </html>
