@@ -130,7 +130,7 @@ subroutine fhash_tbl_unset(tbl,key,stat)
     return
   end if
 
-  index = modulo(key%hash(),size(tbl%buckets)) + 1
+  index = modulo(key%hash(),size(tbl%buckets,kind=int64)) + 1
   call sll_remove(tbl%buckets(index),key,found)
 
   if (present(stat)) stat = merge(0,FHASH_KEY_NOT_FOUND,found)
@@ -162,7 +162,7 @@ subroutine fhash_tbl_check_key(tbl,key,stat)
 
   stat = 0
 
-  index = modulo(key%hash(),size(tbl%buckets)) + 1
+  index = modulo(key%hash(),size(tbl%buckets,kind=int64)) + 1
 
   call sll_find_in(tbl%buckets(index),key,data,found)
 
@@ -242,7 +242,7 @@ subroutine fhash_tbl_set_scalar(tbl,key,value,pointer)
 
   if (.not.allocated(tbl%buckets)) call fhash_tbl_allocate(tbl)
 
-  index = modulo(key%hash(),size(tbl%buckets)) + 1
+  index = modulo(key%hash(),size(tbl%buckets,kind=int64)) + 1
 
   call sll_push_node(tbl%buckets(index),key,value,pointer)
 
@@ -295,7 +295,7 @@ subroutine fhash_tbl_get_data(tbl,key,data,stat)
 
   if (present(stat)) stat = 0
 
-  index = modulo(key%hash(),size(tbl%buckets)) + 1
+  index = modulo(key%hash(),size(tbl%buckets,kind=int64)) + 1
 
   call sll_find_in(tbl%buckets(index),key,data,found)
 
