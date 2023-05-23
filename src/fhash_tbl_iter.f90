@@ -8,6 +8,7 @@ module fhash_tbl_iter
   private
   public fhash_iter_t
 
+  !> Iterator type for iterating over hash table items
   type fhash_iter_t
 
     type(fhash_tbl_t), pointer :: tbl => NULL()
@@ -17,7 +18,9 @@ module fhash_tbl_iter
 
   contains
     procedure :: next => fhash_iter_next
+    procedure :: reset => fhash_iter_reset
   end type fhash_iter_t
+
 
   interface fhash_iter_t
     module procedure :: fhash_iter_init
@@ -25,6 +28,7 @@ module fhash_tbl_iter
 
   contains
 
+  !> Initialise fhash iterator
   function fhash_iter_init(tbl) result(iter)
     type(fhash_tbl_t), intent(in), target :: tbl
     type(fhash_iter_t) :: iter
@@ -33,7 +37,8 @@ module fhash_tbl_iter
 
   end function fhash_iter_init
 
-    
+  
+  !> Return next item from iterator
   function fhash_iter_next(iter,key,data) result(found)
     class(fhash_iter_t), intent(inout) :: iter
     class(fhash_key_t), intent(out), allocatable :: key
@@ -67,6 +72,16 @@ module fhash_tbl_iter
     end if
 
   end function fhash_iter_next
+
+
+  !> Reset iterator to beginning
+  subroutine fhash_iter_reset(iter)
+    class(fhash_iter_t), intent(inout) :: iter
+
+    iter%bucket = 1
+    iter%depth = 1
+
+  end subroutine fhash_iter_reset
 
 
 end module fhash_tbl_iter
