@@ -4,6 +4,7 @@ module test_sll
   use fhash_sll
   use fhash_data_container
   use fhash_key_char
+  use fhash_key_int32
   implicit none
 
   private
@@ -20,6 +21,7 @@ module test_sll
     testsuite = [ &
         & new_unittest("sll-set", test_sll_set), &
         & new_unittest("sll-get", test_sll_get), &
+        & new_unittest("sll-get_at", test_sll_get_at), &
         & new_unittest("sll-update", test_sll_update), &
         & new_unittest("sll-remove", test_sll_remove) &
         ]
@@ -110,6 +112,56 @@ module test_sll
     call sll_clean(node)
 
   end subroutine test_sll_get
+
+
+  !> Get node data at specific depth
+  subroutine test_sll_get_at(error)
+    type(error_t), allocatable, intent(out) :: error
+
+    type(fhash_node_t) :: node
+    type(fhash_container_t), pointer :: data
+    class(*), allocatable :: data_raw
+    integer(int32) :: depth, data_values(3)
+    class(fhash_key_t), allocatable :: key_out
+    logical :: found
+
+    ! Set value
+    data_values = [9_int32,10_int32,11_int32]
+    do depth=1,3
+      call sll_push_node(node,fhash_key(depth),value=data_values(depth))
+    end do
+
+    ! Get nodes
+    do depth=1,3
+
+      call sll_get_at(node, depth=depth, key=key_out, data=data, found=found)
+
+      if (.not.found) then
+        call test_failed(error,'Could not find node at specified depth')
+        return
+      end if
+
+      call data%get(raw=data_raw)
+
+      select type(d=>data_raw)
+
+      type is(integer(int32))
+
+        if (d /= data_values(depth)) then
+          call test_failed(error,'Incorrect values returned from sll_get_at')
+          return
+        end if
+
+      class default
+        call test_failed(error,'Retrieved data is not int32')
+        return
+      end select
+
+    end do
+
+    call sll_clean(node)
+
+  end subroutine test_sll_get_at
 
 
   !> Update node data
