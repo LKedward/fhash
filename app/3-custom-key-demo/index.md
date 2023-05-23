@@ -6,9 +6,9 @@ title: Example: Custom key types
 
 Custom key types can be defined simply by extension of the abstract `fhash_key_t` type
 defined in [`fhash_key_base`](../../src/fhash_key/base.f90).
-Extensions of this type must implement the `equals` and `hash` procedures.
-Optionally, you may also override the `fhash_key` interface with a helper
-function to generate a key from your custom type.
+Extensions of this type must implement the `equals`, `hash` and `to_string` procedures.
+Optionally, you may also override the `fhash_key` interface with a helper function to
+generate a key from your custom type.
 
 To perform the hashing, the included `fhash_fnv` module provides the `fnv_1a` interface
 which supports default scalar characters and 32bit/64bit scalar/1D integers.
