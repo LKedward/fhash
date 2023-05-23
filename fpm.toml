@@ -30,3 +30,8 @@ name="benchmark"
 source-dir="app/3-custom-key-demo"
 main="main.f90"
 name="custom-key-demo"
+
+[[executable]]
+source-dir="app/4-iter-demo"
+main="main.f90"
+name="iter-demo"
