@@ -4,7 +4,7 @@ add_library(TestLite TestLite.f90 TestLite_suite.f90 TestLite_error.f90)
 target_include_directories(TestLite PUBLIC
   $<BUILD_INTERFACE:${CMAKE_Fortran_MODULE_DIRECTORY}>)
 
-add_library(tests test_container.f90 test_fnv.f90 test_key.f90 test_sll.f90 test_tbl.f90)
+add_library(tests test_container.f90 test_fnv.f90 test_key.f90 test_sll.f90 test_tbl.f90 test_tbl_iter.f90)
 target_link_libraries(tests fhash TestLite)
 
 
