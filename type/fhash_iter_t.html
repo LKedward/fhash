@@ -8,7 +8,7 @@
     <meta name="author" content="L. Kedward" >
     <link rel="icon" href="../favicon.png">
 
-    <title>fhash_data_container &ndash; fhash API Reference</title>
+    <title>fhash_iter_t &ndash; fhash API Reference </title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -85,8 +85,8 @@
 
     <div class="container">
   <div class="row">
-    <h1>fhash_data_container
-      <small>Module</small>
+    <h1>fhash_iter_t
+      <small>Derived Type</small>
       
     </h1>
       <div class="row" id="info-bar">
@@ -97,17 +97,18 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title="16.3% of total for modules and submodules.">180 statements</a>
+               title="<p>10.9% of total for derived types.</p>Including implementation: 40 statements,  4.8% of total for derived types.">8 statements</a>
           </li>
 
             <li id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/fhash_data_container.f90"> Source File</a>
+              <a href="../src/fhash_tbl_iter.f90"> Source File</a>
             </li>
         </ul>
         <ol class="breadcrumb in-well text-right">
-              <li><a href='../sourcefile/fhash_data_container.f90.html'>fhash_data_container.f90</a></li>
-          <li class="active">fhash_data_container</li>
+              <li><a href='../sourcefile/fhash_tbl_iter.f90.html'>fhash_tbl_iter.f90</a></li>
+              <li><a href='../module/fhash_tbl_iter.html'>fhash_tbl_iter</a></li>
+          <li class="active">fhash_iter_t</li>
         </ol>
       </div>
     </div>
@@ -119,12 +120,47 @@
   </script>
 
   </div>
-
+  
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-        <div id="sidebar">
+      <div id="sidebar">
       <h3>Contents</h3>
   
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#vars-0">Variables</a>
+        </h3>
+      </div>
+      <div id="vars-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../type/fhash_iter_t.html#variable-tbl~25">tbl</a>
+            <a class="list-group-item" href="../type/fhash_iter_t.html#variable-bucket">bucket</a>
+            <a class="list-group-item" href="../type/fhash_iter_t.html#variable-depth~2">depth</a>
+        </div>
+      </div>
+    </div>
+
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#cons-0">Constructor</a>
+        </h3>
+      </div>
+      <div id="cons-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../type/fhash_iter_t.html#interface-fhash_iter_t">fhash_iter_t</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
   
   
   
@@ -135,82 +171,43 @@
       <div class="panel panel-primary">
       <div class="panel-heading text-left">
         <h3 class="panel-title">
-          <a data-toggle="collapse" href="#inters-0">Interfaces</a>
+          <a data-toggle="collapse" href="#boundprocs-0">Type-Bound Procedures</a>
         </h3>
       </div>
-      <div id="inters-0" class="panel-collapse collapse">
+      <div id="boundprocs-0" class="panel-collapse collapse">
         <div class="list-group">
-            <a class="list-group-item" href="../module/fhash_data_container.html#interface-fhash_container">fhash_container</a>
+            <a class="list-group-item" href="../type/fhash_iter_t.html#boundprocedure-next~2">next</a>
+            <a class="list-group-item" href="../type/fhash_iter_t.html#boundprocedure-reset">reset</a>
         </div>
       </div>
     </div>
 
-  
-      <div class="panel panel-primary">
-      <div class="panel-heading text-left">
-        <h3 class="panel-title">
-          <a data-toggle="collapse" href="#types-0">Derived Types</a>
-        </h3>
-      </div>
-      <div id="types-0" class="panel-collapse collapse">
-        <div class="list-group">
-            <a class="list-group-item" href="../module/fhash_data_container.html#type-fhash_container_t">fhash_container_t</a>
-        </div>
-      </div>
-    </div>
-
-  
-  
-  
-  
-  
-  
-  
   
 
 
   </div>
 
     </div>
-
+    
     <div class="col-md-9" id='text'>
-      <p>Implements simple container type
- for polymorphic scalars and 1D arrays</p>
-<br>          <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-          <li class="list-group-item">
-            <ul class="list-inline">
-                <li><a href='<a href="http://fortranwiki.org/fortran/show/iso_fortran_env">iso_fortran_env</a>'>iso_fortran_env</a></li>
-            </ul>
-          </li>
-      </ul>
-    </div>
+      <h2>type, public :: fhash_iter_t</h2>
+    <p>Iterator type for iterating over hash table items</p>
+    <br>
 
-      
-      <br>
-
-      <section class="visible-xs visible-sm hidden-md">
-          <h3>Contents</h3>
-  
-  
-  
-  
-  
-  
-  
+    <section class="visible-xs visible-sm hidden-md">
+        <h3>Contents</h3>
   
       <div class="panel panel-primary">
       <div class="panel-heading text-left">
         <h3 class="panel-title">
-          <a data-toggle="collapse" href="#inters-1">Interfaces</a>
+          <a data-toggle="collapse" href="#vars-1">Variables</a>
         </h3>
       </div>
-      <div id="inters-1" class="panel-collapse collapse">
+      <div id="vars-1" class="panel-collapse collapse">
         <div class="list-group">
-            <a class="list-group-item" href="../module/fhash_data_container.html#interface-fhash_container">fhash_container</a>
+            <a class="list-group-item" href="../type/fhash_iter_t.html#variable-tbl~25">tbl</a>
+            <a class="list-group-item" href="../type/fhash_iter_t.html#variable-bucket">bucket</a>
+            <a class="list-group-item" href="../type/fhash_iter_t.html#variable-depth~2">depth</a>
         </div>
       </div>
     </div>
@@ -219,12 +216,12 @@
       <div class="panel panel-primary">
       <div class="panel-heading text-left">
         <h3 class="panel-title">
-          <a data-toggle="collapse" href="#types-1">Derived Types</a>
+          <a data-toggle="collapse" href="#cons-1">Constructor</a>
         </h3>
       </div>
-      <div id="types-1" class="panel-collapse collapse">
+      <div id="cons-1" class="panel-collapse collapse">
         <div class="list-group">
-            <a class="list-group-item" href="../module/fhash_data_container.html#type-fhash_container_t">fhash_container_t</a>
+            <a class="list-group-item" href="../type/fhash_iter_t.html#interface-fhash_iter_t">fhash_iter_t</a>
         </div>
       </div>
     </div>
@@ -237,32 +234,115 @@
   
   
   
+  
+  
+  
+  
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#boundprocs-1">Type-Bound Procedures</a>
+        </h3>
+      </div>
+      <div id="boundprocs-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../type/fhash_iter_t.html#boundprocedure-next~2">next</a>
+            <a class="list-group-item" href="../type/fhash_iter_t.html#boundprocedure-reset">reset</a>
+        </div>
+      </div>
+    </div>
+
+  
 
 
-      </section>
-      <br class="visible-xs visible-sm hidden-md">
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
 
+    <section>
+    <h2>Components</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Visibility</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+<th></th><th>Initial</th>        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-tbl~25"></span>
+              type(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
+            </td>
+              <td>public,</td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>tbl</strong></td>
+<td>=&gt; </td>
+                <td>NULL()</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bucket"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>bucket</strong></td>
+<td> =</td>
+                <td>1</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-depth~2"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>depth</strong></td>
+<td> =</td>
+                <td>1</td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
-
-
-        <section>
-          <h2>Interfaces</h2>
-              <div class="panel panel-default">
+    </section>
+    <br>
+    
+      <section>
+        <h2>Constructor</h2>
+            <div class="panel panel-default">
     <div class="panel-heading codesum">
-      <span class="anchor" id="interface-fhash_container"></span>
-      <h3>public        interface <a href='../interface/fhash_container.html'>fhash_container</a> 
+      <span class="anchor" id="interface-fhash_iter_t"></span>
+      <h3>public        interface <a href='../interface/fhash_iter_t.html'>fhash_iter_t</a> 
       </h3>
     </div>
-      <div class="panel-body">
-        <p>Create a fhash_container object from a polymorphic value</p>
-      </div>
     <ul class="list-group">
           <li class="list-group-item">
                 <h3>
-    private  function fhash_container_scalar(value, pointer) result(container)  
+    private  function fhash_iter_init(tbl) result(iter)  
 
     </h3>
-  <p>Helper to initialise a polymorphic data container with scalar</p>
+  <p>Initialise fhash iterator</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -278,31 +358,16 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(*),
+              type(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
             </td>
 <td>intent(in),</td>
               <td></td>            <td>
               target
             </td>
             <td>::</td>
-            <td><strong>value</strong></td>
+            <td><strong>tbl</strong></td>
             <td>
-                <p>Value to store</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              logical,
-            </td>
-<td>intent(in),</td>
-              <td>optional</td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>pointer</strong></td>
-            <td>
-                <p>If .true., store pointer to value instead of copying</p>
+                
             </td>
         </tr>
     </tbody>
@@ -310,7 +375,7 @@
 
     <h4>
     Return Value
-    <small>type(<a href='../type/fhash_container_t.html'>fhash_container_t</a>)</small>
+    <small>type(<a href='../type/fhash_iter_t.html'>fhash_iter_t</a>)</small>
     </h4>
     
 
@@ -318,120 +383,138 @@
     </ul>
   </div>
 
-        </section>
-        <br>
+      </section>
+      <br>
 
 
-        <section>
-          <h2>Derived Types</h2>
-              <div class="panel panel-default">
-    <div class="panel-heading codesum">
-      <span class="anchor" id="type-fhash_container_t"></span>
-      <h3>
-        type, public&nbsp;::&nbsp;
-        <a href='../type/fhash_container_t.html'>fhash_container_t</a>
-        
-      </h3>
-    </div>
-    <div class="panel-body">
-      <p>Generic container for scalar and 1D data</p>
+      <section>
+        <h2>Type-Bound Procedures</h2>
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-next~2"></span><h3>procedure, public,  :: <strong>next</strong>  => fhash_iter_next         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  function fhash_iter_next(iter, key, data) result(found)  
+</h3>
+  <p>Return next item from iterator</p>
 
-        <h4>Components</h4>
-          <table class="table table-striped varlist">
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
     <thead>
       <tr>
         <th>Type</th>
-<th>Visibility</th>        <th>Attributes</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
         <th></th>
         <th>Name</th>
-<th></th><th>Initial</th>        <th></th>
+        <th></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-scalar_data"></span>
-              class(*),
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_iter_t.html'>fhash_iter_t</a>),
             </td>
-              <td>public,</td>
-            <td>
-              allocatable
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
             </td>
             <td>::</td>
-            <td><strong>scalar_data</strong></td>
-                <td></td>
-                <td></td>
+            <td><strong>iter</strong></td>
             <td>
-
+                
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-scalar_ptr"></span>
-              class(*),
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_key_t.html'>fhash_key_t</a>),
             </td>
-              <td>public,</td>
-            <td>
-              pointer
+<td>intent(out),</td>
+              <td></td>            <td>
+              allocatable
             </td>
             <td>::</td>
-            <td><strong>scalar_ptr</strong></td>
-<td>=&gt; </td>
-                <td>NULL()</td>
+            <td><strong>key</strong></td>
             <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(*),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>data</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-reset"></span><h3>procedure, public,  :: <strong>reset</strong>  => fhash_iter_reset         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine fhash_iter_reset(iter)  
+</h3>
+  <p>Reset iterator to beginning</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/fhash_iter_t.html'>fhash_iter_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iter</strong></td>
+            <td>
+                
             </td>
         </tr>
     </tbody>
   </table>
 
 
-
-
-        <h4>Type-Bound Procedures</h4>
-        <table class="table table-striped varlist">
-          <tbody>
-              <tr>
-                <td>
-                    procedure
-                    ,                  public
-,                   :: <strong><a href='../type/fhash_container_t.html#boundprocedure-allocated'>allocated</a></strong>
- =>
-                    fhash_container_allocated
-<small>Function</small>                </td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                    procedure
-                    ,                  public
-,                   :: <strong><a href='../type/fhash_container_t.html#boundprocedure-get'>get</a></strong>
- =>
-                    fhash_container_get_scalar
-<small>Subroutine</small>                </td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                    procedure
-                    ,                  public
-,                   :: <strong><a href='../type/fhash_container_t.html#boundprocedure-get_ptr'>get_ptr</a></strong>
- =>
-                    fhash_container_get_scalar_ptr
-<small>Subroutine</small>                </td>
-                <td></td>
-              </tr>
-          </tbody>
-        </table>
-    </div>
+        </li>
+    </ul>
   </div>
 
-        </section>
-        <br>
+      </section>
 
-
-
-
-
+    
     </div>
   </div>
 

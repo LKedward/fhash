@@ -124,6 +124,49 @@ contains
   end subroutine sll_find_in
 
 
+  !> Return a node at a specific depth in the sll
+  recursive subroutine sll_get_at(node,depth,key,data,found)
+
+    !> Node to search in
+    type(fhash_node_t), intent(in), target :: node
+
+    !> Node depth to access
+    integer, intent(in) :: depth
+
+    !> Key of found item
+    !>  (Unallocated if no node is found at specified depth)
+    class(fhash_key_t), intent(out), allocatable :: key
+
+    !> Pointer to value container if found.
+    !> (Unassociated if no node is found at specified depth)
+    type(fhash_container_t), pointer, intent(out) :: data
+
+    logical, intent(out), optional :: found
+    
+    data => NULL()
+
+    if (present(found)) found = .false.
+
+    if (.not.allocated(node%key)) then
+
+      return
+
+    else if (depth == 1) then
+
+      if (present(found)) found = .true.
+      key = node%key
+      data => node%value
+      return
+
+    else if (associated(node%next)) then
+      
+      call sll_get_at(node%next,depth-1,key,data,found) 
+      
+    end if
+
+  end subroutine sll_get_at
+
+
   !> Search for a node with a specific key and remove
   recursive subroutine sll_remove(node,key,found,parent_node)
 

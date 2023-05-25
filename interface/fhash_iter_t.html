@@ -8,7 +8,7 @@
     <meta name="author" content="L. Kedward" >
     <link rel="icon" href="../favicon.png">
 
-    <title>fhash_key &ndash; fhash API Reference</title>
+    <title>fhash_iter_t &ndash; fhash API Reference</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -85,7 +85,7 @@
 
     <div class="container">
   <div class="row">
-    <h1>fhash_key
+    <h1>fhash_iter_t
       <small>Interface</small>
       
     </h1>
@@ -102,13 +102,13 @@
 
             <li id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/int32_1d.f90"> Source File</a>
+              <a href="../src/fhash_tbl_iter.f90"> Source File</a>
             </li>
         </ul>
         <ol class="breadcrumb in-well text-right">
-              <li><a href='../sourcefile/int32_1d.f90.html'>int32_1d.f90</a></li>
-              <li><a href='../module/fhash_key_int32_1d.html'>fhash_key_int32_1d</a></li>
-          <li class="active">fhash_key</li>
+              <li><a href='../sourcefile/fhash_tbl_iter.f90.html'>fhash_tbl_iter.f90</a></li>
+              <li><a href='../module/fhash_tbl_iter.html'>fhash_tbl_iter</a></li>
+          <li class="active">fhash_iter_t</li>
         </ol>
       </div>
     </div>
@@ -151,7 +151,7 @@
       </div>
       <div id="modprocs-0" class="panel-collapse collapse">
         <div class="list-group">
-            <a class="list-group-item" href="../interface/fhash_key~5.html#moduleprocedure-key_from_int32_1d">key_from_int32_1d</a>
+            <a class="list-group-item" href="../interface/fhash_iter_t.html#moduleprocedure-fhash_iter_init">fhash_iter_init</a>
         </div>
       </div>
     </div>
@@ -163,7 +163,7 @@
     </div>
 
     <div class="col-md-9" id='text'>
-      <h2>public interface fhash_key</h2>
+      <h2>public interface fhash_iter_t</h2>
       
 
       <section class="visible-xs visible-sm hidden-md">
@@ -194,7 +194,7 @@
       </div>
       <div id="modprocs-1" class="panel-collapse collapse">
         <div class="list-group">
-            <a class="list-group-item" href="../interface/fhash_key~5.html#moduleprocedure-key_from_int32_1d">key_from_int32_1d</a>
+            <a class="list-group-item" href="../interface/fhash_iter_t.html#moduleprocedure-fhash_iter_init">fhash_iter_init</a>
         </div>
       </div>
     </div>
@@ -208,10 +208,10 @@
 
         <h2>Module Procedures</h2>
             <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-key_from_int32_1d"></span><h3>private  function key_from_int32_1d(source) result(key)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-fhash_iter_init"></span><h3>private  function fhash_iter_init(tbl) result(iter)  
 </h3></div>
     <div class="panel-body">
-        <p>Create new key container from a scalar int32</p>
+        <p>Initialise fhash iterator</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -227,14 +227,14 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              integer(kind=int32),
+              type(<a href='../type/fhash_tbl_t.html'>fhash_tbl_t</a>),
             </td>
-<td>intent(in)</td>
+<td>intent(in),</td>
               <td></td>            <td>
-              
+              target
             </td>
             <td>::</td>
-            <td><strong>source</strong>(:)</td>
+            <td><strong>tbl</strong></td>
             <td>
                 
             </td>
@@ -244,7 +244,7 @@
 
     <h4>
     Return Value
-    <small>type(<a href='../type/fhash_key_int32_1d_t.html'>fhash_key_int32_1d_t</a>)</small>
+    <small>type(<a href='../type/fhash_iter_t.html'>fhash_iter_t</a>)</small>
     </h4>
     
 

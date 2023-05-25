@@ -93,7 +93,7 @@ contains
 
     if (present(raw)) then
       if (present(match)) match = .true.
-      raw = data
+      allocate(raw, source=data)
     end if
 
     select type(d=>data)
