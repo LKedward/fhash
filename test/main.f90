@@ -8,6 +8,7 @@ program test
   use test_container, only: collect_container
   use test_sll, only: collect_sll
   use test_tbl, only: collect_tbl
+  use test_tbl_iter, only: collect_tbl_iter
   implicit none
 
   type(testsuite_t), allocatable :: testsuite(:)
@@ -17,7 +18,8 @@ program test
       & new_testsuite("fhash_key", collect_key), &
       & new_testsuite("fhash_container", collect_container), &
       & new_testsuite("fhash_sll", collect_sll), &
-      & new_testsuite("fhash_tbl", collect_tbl) &
+      & new_testsuite("fhash_tbl", collect_tbl), &
+      & new_testsuite("fhash_tbl_iter", collect_tbl_iter) &
   ]
 
   call run_tests(testsuite)

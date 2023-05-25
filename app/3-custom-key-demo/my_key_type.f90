@@ -29,6 +29,7 @@ module my_key_type
 
       procedure :: hash => key_hash_string_t
       procedure :: equals => key_equals_string_t
+      procedure, pass :: to_string => key_to_string
 
   end type key_string_t
 
@@ -93,6 +94,21 @@ contains
     end do
 
   end function key_hash_string_t
+
+
+  !> Generate string representation of hash
+  pure function key_to_string(key) result(str)
+    class(key_string_t), intent(in) :: key
+    character(:), allocatable :: str
+
+    integer :: i
+
+    str = ''
+    do i=1,size(key%value)
+      str = str//','//key%value(i)%s
+    end do
+
+  end function key_to_string
 
 
   !> Helper function to create new key container from

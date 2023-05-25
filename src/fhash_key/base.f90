@@ -12,6 +12,7 @@ module fhash_key_base
   contains
     procedure(hash_proc), deferred :: hash
     procedure(equality_proc), deferred :: equals
+    procedure(to_string_proc), deferred :: to_string
     generic, public :: operator(==) => equals
   end type fhash_key_t
 
@@ -29,6 +30,12 @@ module fhash_key_base
       class(fhash_key_t), intent(in) :: key
       integer(int64) :: hash
     end function hash_proc
+
+     function to_string_proc(key) result(str)
+      import
+      class(fhash_key_t), intent(in) :: key
+      character(:), allocatable :: str
+    end function to_string_proc
 
   end interface
 

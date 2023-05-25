@@ -17,7 +17,8 @@ module fhash_key_int32
   contains
     procedure, pass :: hash => key_hash_int32  
     procedure, pass :: equals => key_equal_int32
-  end type fhash_key_int32_t
+    procedure, pass :: to_string => key_int32_to_string
+    end type fhash_key_int32_t
 
   interface fhash_key
     module procedure :: key_from_int32
@@ -53,6 +54,18 @@ contains
       hash = fnv_1a(key%value)
 
   end function key_hash_int32
+
+
+  !> Generate string representation of hash
+  pure function key_int32_to_string(key) result(str)
+    class(fhash_key_int32_t), intent(in) :: key
+    character(:), allocatable :: str
+
+    allocate(character(1024) :: str)
+    write(str,*) key%value
+    str = trim(str)
+
+  end function key_int32_to_string
 
 
   !> Create new key container from a scalar int32

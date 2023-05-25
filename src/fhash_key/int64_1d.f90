@@ -17,7 +17,8 @@ module fhash_key_int64_1d
   contains
     procedure, pass :: hash => key_hash_int64_1d  
     procedure, pass :: equals => key_equal_int64_1d
-  end type fhash_key_int64_1d_t
+    procedure, pass :: to_string => key_int64_1d_to_string
+    end type fhash_key_int64_1d_t
 
   interface fhash_key
     module procedure :: key_from_int64_1d
@@ -59,6 +60,18 @@ contains
       hash = fnv_1a(key%value)
 
   end function key_hash_int64_1d
+
+
+  !> Generate string representation of hash
+  pure function key_int64_1d_to_string(key) result(str)
+    class(fhash_key_int64_1d_t), intent(in) :: key
+    character(:), allocatable :: str
+
+    allocate(character(1024) :: str)
+    write(str,*) key%value
+    str = trim(str)
+
+  end function key_int64_1d_to_string
 
 
   !> Create new key container from a scalar int64

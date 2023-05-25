@@ -3,56 +3,49 @@ name: fpm test
 on: [push, pull_request]
 
 jobs:
-  gfortran-nix:
+  test:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        toolchain:
+          - {compiler: gcc, version: 10}
         include:
-        - os: ubuntu-latest
-          gcc_v: 9
-        - os: macos-latest
-          gcc_v: 9
-
-    env:
-      FC: gfortran
-      GCC_V: ${{ matrix.gcc_v }}
+          - os: ubuntu-latest
+            toolchain: {compiler: intel, version: '2023.1'}
+          - os: ubuntu-latest
+            toolchain: {compiler: gcc, version: 12}
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v1
+      - uses: awvwgk/setup-fortran@v1
+        id: setup-fortran
+        with:
+          compiler: ${{ matrix.toolchain.compiler }}
+          version: ${{ matrix.toolchain.version }}
 
-    - name: Install GFortran macOS
-      if: contains(matrix.os, 'macos')
-      run: |
-          ln -s /usr/local/bin/gfortran-${GCC_V} /usr/local/bin/gfortran
-          which gfortran-${GCC_V}
-          which gfortran
+      - run: ${{ env.FC }} --version
+        env:
+          FC: ${{ steps.setup-fortran.outputs.fc }}
+      
+      - name: Install fpm
+        uses: fortran-lang/setup-fpm@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Install GFortran Linux
-      if: contains(matrix.os, 'ubuntu')
-      run: |
-        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-${GCC_V} 100 \
-        --slave /usr/bin/gfortran gfortran /usr/bin/gfortran-${GCC_V} \
-        --slave /usr/bingcov gcov /usr/bin/gcov-${GCC_V}
+      - name: Checkout code
+        uses: actions/checkout@v1
 
-    - name: Install fpm
-      uses: fortran-lang/setup-fpm@v4
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run tests and demo programs (debug)
+        run: |
+          fpm test
+          fpm run *-demo
 
-    - name: Run tests and demo programs (debug)
-      run: |
-        gfortran --version
-        fpm test
-        fpm run *-demo
+      - name: Run tests and demo programs (release)
+        run: |
+          fpm test --profile release
+          fpm run *-demo --profile release
 
-    - name: Run tests and demo programs (release)
-      run: |
-        gfortran --version
-        fpm test --profile release
-        fpm run *-demo --profile release
 
   gfortran-windows-msys2-mingw64:
     runs-on: windows-latest
@@ -89,53 +82,3 @@ jobs:
         gfortran --version
         fpm test --profile release
         fpm run *-demo --profile release
-
-  Intel:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v1
-
-    - name: Install fpm
-      uses: fortran-lang/setup-fpm@v4
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Install ifort from cache
-      id: cache-oneapi
-      uses: actions/cache@v2
-      with:
-        path: |
-          /opt/intel/oneapi/compiler
-          /opt/intel/oneapi/setvars.sh
-        key: oneapi-cache-v0
-
-    - name: Install ifort with apt
-      if: steps.cache-oneapi.outputs.cache-hit != 'true'
-      run: |
-        wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB
-        sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB
-        rm GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB
-        echo "deb https://apt.repos.intel.com/oneapi all main" | sudo tee /etc/apt/sources.list.d/oneAPI.list
-        sudo apt-get update
-        sudo apt-get install intel-oneapi-ifort
-        sudo rm -rf /opt/intel/oneapi/compiler/latest/linux/lib/emu
-        sudo rm -rf /opt/intel/oneapi/compiler/latest/linux/lib/oclfpga
-
-    - name: Setup ifort env
-      run: |
-        source /opt/intel/oneapi/setvars.sh
-        printenv >> $GITHUB_ENV
-        
-    - name: Run tests and demo programs (debug)
-      run: |
-        ifort --version
-        fpm test --compiler ifort
-        fpm run *-demo --compiler ifort
-
-    - name: Run tests and demo programs (release)
-      run: |
-        ifort --version
-        fpm test --compiler ifort --profile release
-        fpm run *-demo --compiler ifort --profile release
-          
